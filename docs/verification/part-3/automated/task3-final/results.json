@@ -1,0 +1,23 @@
+[
+  {
+    "command": "npm run test:e2e -- tests/e2e/reports.spec.js --workers=1",
+    "exit": 0,
+    "started": "2026-10-18T07:49:50.0948992+08:00",
+    "seconds": 27.99,
+    "log": "1.log"
+  },
+  {
+    "command": "npm test",
+    "exit": 0,
+    "started": "2026-10-18T07:50:18.9643073+08:00",
+    "seconds": 2.16,
+    "log": "2.log"
+  },
+  {
+    "command": "npm run test:e2e -- tests/e2e/recovery-navigation.spec.js tests/e2e/reports.spec.js tests/e2e/activities.spec.js tests/e2e/world-editor.spec.js --workers=1",
+    "exit": 0,
+    "started": "2026-10-18T07:50:21.1735081+08:00",
+    "seconds": 85.15,
+    "log": "3.log"
+  }
+]

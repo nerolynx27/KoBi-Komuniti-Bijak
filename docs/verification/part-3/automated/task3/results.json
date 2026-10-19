@@ -1,0 +1,16 @@
+[
+  {
+    "command": "npm test -- tests/unit/worldLayout.test.js",
+    "exit": 0,
+    "started": "2026-10-18T07:45:31.8388797+08:00",
+    "seconds": 1.26,
+    "log": "1.log"
+  },
+  {
+    "command": "npm run test:e2e -- tests/e2e/recovery-navigation.spec.js --workers=1",
+    "exit": 1,
+    "started": "2026-10-18T07:45:33.1353165+08:00",
+    "seconds": 63.48,
+    "log": "2.log"
+  }
+]

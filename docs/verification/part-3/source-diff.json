@@ -1,0 +1,50 @@
+[
+  {
+    "path": "eslint.config.js",
+    "change": "changed"
+  },
+  {
+    "path": "scripts/part3-contact-sheets.py",
+    "change": "added"
+  },
+  {
+    "path": "scripts/part3-evidence.mjs",
+    "change": "added"
+  },
+  {
+    "path": "src/styles/app.css",
+    "change": "changed"
+  },
+  {
+    "path": "tests/e2e/part3-accessibility.spec.js",
+    "change": "added"
+  },
+  {
+    "path": "tests/e2e/part3-visual.spec.js",
+    "change": "added"
+  },
+  {
+    "path": "tests/e2e/recovery-navigation.spec.js",
+    "change": "changed"
+  },
+  {
+    "path": "tests/e2e/reports.spec.js",
+    "change": "changed"
+  },
+  {
+    "path": "tests/e2e/shell-journeys.spec.js",
+    "change": "added"
+  },
+  {
+    "path": "tests/helpers/shellActions.js",
+    "change": "added"
+  },
+  {
+    "path": "tests/production/production.spec.js",
+    "change": "changed"
+  },
+  {
+    "path": "tests/unit/worldLayout.test.js",
+    "change": "changed"
+  }
+]

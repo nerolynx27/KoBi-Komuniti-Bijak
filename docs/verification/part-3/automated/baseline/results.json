@@ -1,0 +1,16 @@
+[
+  {
+    "command": "npm run lint",
+    "exit": 0,
+    "started": "2026-10-18T07:38:17.9109504+08:00",
+    "seconds": 33.11,
+    "log": "1.log"
+  },
+  {
+    "command": "npm test",
+    "exit": 0,
+    "started": "2026-10-18T07:38:51.1841839+08:00",
+    "seconds": 6.76,
+    "log": "2.log"
+  }
+]

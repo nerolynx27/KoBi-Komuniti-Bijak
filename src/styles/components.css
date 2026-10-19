@@ -1,0 +1,52 @@
+.icon { display: inline-block; flex: none; width: 20px; height: 20px; vertical-align: middle; fill: currentColor; }
+.icon-large { width: 40px; height: 40px; }
+.card { border: 2px solid var(--border-strong); padding: var(--space-4); box-shadow: 2px 2px var(--shadow-hard); background: var(--surface-panel); }
+.card h2, .feedback h2 { font-size: var(--type-section); line-height: var(--line-section); }
+.card h3 { font-size: var(--type-card); line-height: var(--line-card); }
+.card > :last-child { margin-bottom: 0; }
+.card-context { background: var(--surface-context); }
+.card-subtle { background: var(--surface-subtle); }
+.status-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-2); border: 1px solid var(--border-strong); font-size: var(--type-helper); line-height: var(--line-helper); }
+.tone-subtle { background: var(--surface-subtle); }.tone-context { background: var(--surface-context); }.tone-selected { background: var(--surface-selected); }.tone-muted { color: var(--text-secondary); }.tone-error { color: var(--text-error); background: var(--surface-panel); }
+.form-field { display: grid; gap: var(--space-2); min-width: 0; }
+.form-field > label, legend { font-size: var(--type-label); line-height: var(--line-label); font-weight: 700; }
+.form-input { font: 400 var(--type-body)/var(--line-body) var(--font-ui); min-height: 48px; padding: var(--space-3); border: 2px solid var(--border-strong); border-radius: 0; background: var(--surface-input); color: var(--text-primary); width: 100%; min-width: 0; }
+textarea.form-input { min-height: 120px; resize: vertical; }
+.form-input[readonly] { background: var(--surface-context); }.form-input:disabled { background: var(--surface-disabled); color: var(--text-disabled); opacity: 1; }
+.form-input[aria-invalid] { border-color: var(--text-error); }
+.helper { color: var(--text-secondary); font-size: var(--type-helper); line-height: var(--line-helper); margin: 0; }
+.field-error { display: flex; align-items: start; gap: var(--space-2); color: var(--text-error); background: var(--surface-panel); font-size: var(--type-helper); line-height: var(--line-helper); margin: 0; }
+.choice { display: flex; align-items: center; gap: var(--space-2); min-height: 44px; cursor: pointer; }
+.choice input, .segmented input { flex: none; width: 20px; height: 20px; accent-color: var(--text-primary); margin: 0; }
+.choice:has(input:disabled) { cursor: not-allowed; color: var(--text-secondary); }
+.filter-chip { min-height: 44px; padding: 10px var(--space-5) 10px var(--space-4); font: 400 var(--type-label)/var(--line-label) var(--font-action); color: var(--text-primary); cursor: pointer; }
+.is-selected { --frame-fill: var(--surface-selected); }
+.filter-row { display: flex; flex-wrap: wrap; gap: var(--space-4); padding: var(--space-2) 4px var(--space-3) 0; }
+.segmented { margin: 0; padding: 0; border: 0; min-width: 0; }
+.segmented legend { margin-bottom: var(--space-2); }
+.segmented-options { display: flex; flex-wrap: wrap; border: 2px solid var(--border-strong); }
+.segmented-options label { font-family: var(--font-action); font-weight: 400; display: flex; align-items: center; gap: var(--space-2); min-height: 44px; padding: var(--space-2); flex: 1 1 100px; cursor: pointer; }
+.segmented-options .is-selected { background: var(--surface-selected); }
+.segmented-options span { display: flex; align-items: center; gap: var(--space-2); }
+.feedback { display: flex; align-items: start; gap: var(--space-3); border: 2px solid var(--border-strong); background: var(--surface-context); padding: var(--space-4); }
+.feedback > .icon { margin-top: 4px; }.feedback p { margin: var(--space-2) 0 0; }
+.feedback-error { background: var(--surface-panel); border-color: var(--text-error); }.feedback-error > .icon { color: var(--text-error); }
+.paint-space { margin-top: var(--space-4); padding: var(--space-2) 4px var(--space-2) 0; }
+.action-pair { display: flex; flex-wrap: wrap; gap: var(--space-4); padding: var(--space-2) 4px var(--space-2) 0; }
+.action-pair > .button { flex: 1 1 144px; }
+.modal { color: var(--text-primary); background: var(--surface-panel); border: 2px solid var(--border-strong); box-shadow: 2px 2px var(--shadow-hard); width: min(480px, calc(100% - 32px)); max-height: 85vh; max-height: 85dvh; padding: 0; overflow: auto; overscroll-behavior: contain; }
+.modal::backdrop { background: var(--action-strong); }
+.modal-content { padding: var(--space-5); position: relative; overflow-wrap: anywhere; }
+.modal-body > p { margin-top: var(--space-4); }
+.modal-sheet { width: 100%; max-width: 480px; margin: auto auto 0; border-top: 4px solid var(--border-strong); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.modal-sheet { overflow: hidden; }
+.modal-sheet .modal-content { padding: 0; display: flex; flex-direction: column; max-height: calc(85vh - 4px); max-height: calc(85dvh - 4px - env(safe-area-inset-bottom, 0px)); }
+.modal-sheet .modal-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4); border-bottom: 2px solid var(--border-strong); flex: none; }
+.modal-sheet .modal-heading h2 { flex: 1; }
+.modal-sheet .modal-body { overflow: auto; min-height: 0; padding: var(--space-4); overscroll-behavior: contain; }
+.sheet-body { display: grid; gap: var(--space-4); }.modal[open] { animation: modal-in var(--motion-sheet) ease-out; }
+@keyframes modal-in { from { transform: translateY(8px); } to { transform: translateY(0); } }
+.toast-region { position: fixed; bottom: var(--bottom-nav-reserve, calc(96px + env(safe-area-inset-bottom, 0px))); left: 50%; transform: translateX(-50%); width: min(448px, calc(100% - 32px)); z-index: var(--layer-toast); pointer-events: none; }
+.toast { display: flex; align-items: start; gap: var(--space-2); margin: 0; padding: var(--space-3); background: var(--surface-context); border: 2px solid var(--border-strong); box-shadow: 2px 2px var(--shadow-hard); }
+@media (min-width: 768px) { .modal-sheet { width: 480px; margin: auto; } }
+@media (prefers-reduced-motion: reduce) { .modal[open] { animation: none; } }

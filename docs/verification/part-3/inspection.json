@@ -1,0 +1,811 @@
+{
+  "date": "2026-10-18",
+  "scope": "Desktop Chromium, phone sizes and touch emulation; no physical Android",
+  "captures": [
+    {
+      "capture": "activities-1280x800-text100.png",
+      "sha256": "652b1a335dab96df24f44d5597869acca0d1cd8bfa98f0592acaa9551d722cdb",
+      "result": "Passed",
+      "method": "Full-content sheet-01.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activities-360x800-text100.png",
+      "sha256": "067d34cc6e3b5fbcff76d7a37b2d2c4a9fa2bea72ab187781f0b6ab766dfaf4d",
+      "result": "Passed",
+      "method": "Full-content sheet-01.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activities-390x844-text100.png",
+      "sha256": "0da30fb00c301574e974fe9bc057a91e1813746faa13a9fe9188df75f2f39473",
+      "result": "Passed",
+      "method": "Full-content sheet-01.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activities-768x1024-text100.png",
+      "sha256": "347ded7d171c64aa332a91112743ef0230fef2055ad3afbef4e08510008a10d4",
+      "result": "Passed",
+      "method": "Full-content sheet-01.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activities-800x360-text100.png",
+      "sha256": "09ea9ffd4fda84b907f6bb352c22f8ce673f75fc4db67563b3c33a222b9af120",
+      "result": "Passed",
+      "method": "Full-content sheet-02.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-bottom-390x400.png",
+      "sha256": "7fdc8d927e81fc5c4aaea57c8d111498f6299c77602187afdec5fd1b23a3eba1",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-bottom-390x844.png",
+      "sha256": "573d510fb4d609eee933dce77660c6784c74985cc869fcf7b9faacae6c8af447",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-cancelled-390x844.png",
+      "sha256": "4b7f6f2b320694950ccc416c33c556d563abf479eafd24089dc066ed37b37d30",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-1280x800-text100.png",
+      "sha256": "e65119da0e68c6c796a2037ee72eb19cdb513b9c3362253d20f5778dd12a700e",
+      "result": "Passed",
+      "method": "Full-content sheet-03.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-360x800-text100.png",
+      "sha256": "316b5141f3ae3baf1089a6660ea7ae956221c1998b89432657be180078fcf757",
+      "result": "Passed",
+      "method": "Full-content sheet-03.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-360x800-text200.png",
+      "sha256": "ff912fa3de3fa76d8430036b7bd9047dccfbba630fd9fc6161971fb42ce741fa",
+      "result": "Passed",
+      "method": "Full-content overview and detail-01.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-390x844-text100.png",
+      "sha256": "714a0f2a6a7c336cd5f06aacd6258962b8665cf0994f0279a01d4fe2234a96a4",
+      "result": "Passed",
+      "method": "Full-content sheet-03.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-768x1024-text100.png",
+      "sha256": "61216fc73358ef3510934547229183bb64109383bc03dd5d1ab9bfe5a057ccd6",
+      "result": "Passed",
+      "method": "Full-content sheet-04.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-800x360-text100.png",
+      "sha256": "e0665f37925f90f3bcd601891de557ad74e75c452d23c8855a5ba7d730e7325c",
+      "result": "Passed",
+      "method": "Full-content sheet-04.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-detail-800x360-text200.png",
+      "sha256": "eeb2b961375f0a6cc6b5ec4ce4c81a5c30c6edfee23322302cd9944fe273893e",
+      "result": "Passed",
+      "method": "Full-content overview and detail-02.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-1280x800-text100.png",
+      "sha256": "fe8ed962df1b528373a34a82767d75d4449dcd55bd630358d7a330e29ff012fa",
+      "result": "Passed",
+      "method": "Full-content sheet-04.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-360x800-text100.png",
+      "sha256": "d728442c43eeb2b10cf7ba063ad37e16e0f983384b81166075f94d1789269709",
+      "result": "Passed",
+      "method": "Full-content sheet-05.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-360x800-text200.png",
+      "sha256": "507740beadb727439143d86cf198c577b180de36ebf0c053199f22296a14298f",
+      "result": "Passed",
+      "method": "Full-content overview and detail-03.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-390x844-text100.png",
+      "sha256": "e5d7ca54e828e69b498ad299a2dacd51448529ac6d784cad54e8ddd872e14bbb",
+      "result": "Passed",
+      "method": "Full-content sheet-05.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-768x1024-text100.png",
+      "sha256": "522d19cd56022ef2ca0a02d48d7012b71490fc5ba16a64d3f1f5fc7ec7c18a9e",
+      "result": "Passed",
+      "method": "Full-content sheet-05.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-800x360-text100.png",
+      "sha256": "f2b49a6d0a2a5d501b2eb8b19f5ef3dd8bce5298a22078ef7e1ab0260eb6e722",
+      "result": "Passed",
+      "method": "Full-content sheet-06.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-form-800x360-text200.png",
+      "sha256": "33fc590502b1858bed6aa7ca9942722fa11c2f7343b9a5fb72249df8a940c171",
+      "result": "Passed",
+      "method": "Full-content overview and detail-04.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "activity-started-390x844.png",
+      "sha256": "acdedabd83e7eb5cdaf629c6726901e067942d7cb6afeedebaa8f135969301e7",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "create-account-1280x800-text100.png",
+      "sha256": "f2a725bbfc365817733c6c670248acb244831bb204a9a1c508658d8916455611",
+      "result": "Passed",
+      "method": "Full-content sheet-06.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "create-account-360x800-text100.png",
+      "sha256": "e595254fde048355b59e477615ed151dcb9e87c494190a1ff1adca3be7becc2f",
+      "result": "Passed",
+      "method": "Full-content sheet-07.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "create-account-390x844-text100.png",
+      "sha256": "91921c46afc5cf8fc8696271245ebdb5c5e6605212986bbd1aa3a25b9e34c257",
+      "result": "Passed",
+      "method": "Full-content sheet-07.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "create-account-768x1024-text100.png",
+      "sha256": "dc48357dee1180819664fde114a3dbeaa1840c5668d270e88fe4f900091dabe3",
+      "result": "Passed",
+      "method": "Full-content sheet-07.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "create-account-800x360-text100.png",
+      "sha256": "6cd21f45509d2c63cc35799fde7fc3aeab199d1cd41a219ad58c2df7f72be5e0",
+      "result": "Passed",
+      "method": "Full-content sheet-07.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-1280x800-text100.png",
+      "sha256": "e3805f4cddd6dac25a00e22ec9346e5ee6672eb6a85f62f91caa7cc7ee101549",
+      "result": "Passed",
+      "method": "Full-content sheet-08.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-360x800-text100.png",
+      "sha256": "184dd3efd7b4196bbfd063a308d41c99faa5518b3521e5ca7462a4e5d5065063",
+      "result": "Passed",
+      "method": "Full-content sheet-08.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-360x800-text200.png",
+      "sha256": "01ea6ccfdbf91dc7cbc5a4ab0f7ee997732d78946dbbf9401f0041eb9ab3730d",
+      "result": "Passed",
+      "method": "Full-content overview and detail-05.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-390x844-text100.png",
+      "sha256": "08c491e9edacb40f507ca0d776131b5b8eb7b9697918cab56b100f8e8e3299ad",
+      "result": "Passed",
+      "method": "Full-content sheet-08.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-768x1024-text100.png",
+      "sha256": "cda540036eb5c2d0cdf89a1ffe16c3e1c6d35593f3315281a8557d90f5fa4898",
+      "result": "Passed",
+      "method": "Full-content sheet-09.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-800x360-text100.png",
+      "sha256": "ae10e6c1c37933d6acaae91437dc58e6543fb416313e7056fee8f0882464d626",
+      "result": "Passed",
+      "method": "Full-content sheet-09.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "editor-800x360-text200.png",
+      "sha256": "81ea6d977fdda0302b3576b2e1be79b0e7718953aca48a736ffe96984ba1e198",
+      "result": "Passed",
+      "method": "Full-content overview and detail-06.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "fallback-form-390x844.png",
+      "sha256": "ff7823ee8c8af537304272f476ddcb9d0fc7d285be03246a4ee12b9ce2487f7d",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "map-1280x800-text100.png",
+      "sha256": "5ad4d5b8f93f448b137b44f88c7be26a74f639c88e564783cb9028528192b47d",
+      "result": "Passed",
+      "method": "Full-content sheet-10.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "map-360x800-text100.png",
+      "sha256": "2c03a9d1dc9f6b94c281da959270eb6339b6df602a12b2e6f862221baf8e7331",
+      "result": "Passed",
+      "method": "Full-content sheet-10.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "map-390x844-text100.png",
+      "sha256": "e2ef9ca778432a10aac1f745dfec7a8a5ad970a3e7e4f639b02a735a04ea302d",
+      "result": "Passed",
+      "method": "Full-content sheet-10.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "map-768x1024-text100.png",
+      "sha256": "bc4372f1b6e4c9d42692d274066da22950ab41837de6237ddac06588291ff134",
+      "result": "Passed",
+      "method": "Full-content sheet-10.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "map-800x360-text100.png",
+      "sha256": "abaeb422ad202c6b5c6dc1570883e2fbbdd46c0796c37efa77f5ad2e1758eb8c",
+      "result": "Passed",
+      "method": "Full-content sheet-11.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "profile-1280x800-text100.png",
+      "sha256": "3db19aed9f6652f58ff48480347acc9d88b04d8195be55904314a768d8b69c5c",
+      "result": "Passed",
+      "method": "Full-content sheet-11.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "profile-360x800-text100.png",
+      "sha256": "d354358fc53daf832e2b48977baef2ed9746134e83784bffca1853a917e1d1c6",
+      "result": "Passed",
+      "method": "Full-content sheet-11.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "profile-390x844-text100.png",
+      "sha256": "e61dc6110e7fb9b748e1fa3e370de013a1ba3521aedc8738fd5b494469a5135b",
+      "result": "Passed",
+      "method": "Full-content sheet-11.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "profile-768x1024-text100.png",
+      "sha256": "22330338705e31536bbe037174b02f6bd1e12247c8fb0ae8d72a6ef5e1f75dc7",
+      "result": "Passed",
+      "method": "Full-content sheet-12.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "profile-800x360-text100.png",
+      "sha256": "33a7d338596849b25017dc09139e50a99bebf957230ec42b1ab1bd91ed7db453",
+      "result": "Passed",
+      "method": "Full-content sheet-12.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-bottom-390x400.png",
+      "sha256": "1f26a36ba55ab9d0049b142bf8ff953963625adecffc94f9efed75e731cdf235",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-bottom-390x844.png",
+      "sha256": "b198c7ed7c6bbc1ac7e29971c99de547ba32ec74167ef0ece6cc0dbe5aefa794",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-1280x800-text100.png",
+      "sha256": "acd67bc08d1b1b57353641add3cd9b3f6224516a398a578bc83071de88890819",
+      "result": "Passed",
+      "method": "Full-content sheet-13.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-360x800-text100.png",
+      "sha256": "78558fe4061aa96343839f99b1c7ac22f6728598d37114d42a1c800487bca2b7",
+      "result": "Passed",
+      "method": "Full-content sheet-13.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-360x800-text200.png",
+      "sha256": "685978d0540f21fce9f1b2905a3382819477da32137ecab8be7e2b46042fa7d8",
+      "result": "Passed",
+      "method": "Full-content overview and detail-07.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-390x844-text100.png",
+      "sha256": "d5ea2a4e410b5e3899aae98252586d13cdae76f3307d97f4482b9e25679e3fde",
+      "result": "Passed",
+      "method": "Full-content sheet-13.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-768x1024-text100.png",
+      "sha256": "622b121deda133b0ecaa17d299fc3647d250b8941102f54f18483401457c2190",
+      "result": "Passed",
+      "method": "Full-content sheet-14.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-800x360-text100.png",
+      "sha256": "5adb9030226ec16712c91a948e849f64afcc87b1ba19d97ac2ac9e1b8b5a0818",
+      "result": "Passed",
+      "method": "Full-content sheet-14.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-detail-800x360-text200.png",
+      "sha256": "bcaaf4cbce6695ec26e247250fba551dda5e17c0e90016e1426b33405d6cba8a",
+      "result": "Passed",
+      "method": "Full-content overview and detail-08.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-1280x800-text100.png",
+      "sha256": "9b21f2f18cc023cba42f7e47cd0945a510000fd19a815b72385e4af67ef0e28c",
+      "result": "Passed",
+      "method": "Full-content sheet-14.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-360x800-text100.png",
+      "sha256": "a1a8453ccc3cf6698e8717c6784f73c8ccc8fba564cd9005a6b8bab2f7c8ed56",
+      "result": "Passed",
+      "method": "Full-content sheet-15.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-360x800-text200.png",
+      "sha256": "bbac6933911d264b15edad5df0af99792ebdb806a1b30174e3aad0ee299b4d47",
+      "result": "Passed",
+      "method": "Full-content overview and detail-09.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-390x844-text100.png",
+      "sha256": "31919bd84af4d7fdd2ec99529b486742cca0924526957b621bceadd1e0f24533",
+      "result": "Passed",
+      "method": "Full-content sheet-15.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-768x1024-text100.png",
+      "sha256": "53afdd844f5ea32bcc9142fcaa937d0f98cb084b064fdd54aa5eeddb29addca3",
+      "result": "Passed",
+      "method": "Full-content sheet-15.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-800x360-text100.png",
+      "sha256": "fa69a5f497adf4c28a0aa0ab1f2a690a5dd12ccced4fdcce61d869896a0ac30d",
+      "result": "Passed",
+      "method": "Full-content sheet-16.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "report-form-800x360-text200.png",
+      "sha256": "e51e68e193096385d522d302bbf9d1709c9b8288222c25e8a92ab24c5bb9eff1",
+      "result": "Passed",
+      "method": "Full-content overview and detail-10.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "reports-1280x800-text100.png",
+      "sha256": "3c35d93f309b7e30510e5a25e5dc2f7ba60c2a178a7aff74b366aee962e701ce",
+      "result": "Passed",
+      "method": "Full-content sheet-16.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "reports-360x800-text100.png",
+      "sha256": "8188ce4ef7c86bf538f0b78d7c07bea10e445f399b78fcdbb3d02a23e79fbd42",
+      "result": "Passed",
+      "method": "Full-content sheet-16.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "reports-390x844-text100.png",
+      "sha256": "91580fc574f5f6a62863eadde38e9ecdd9d5a52cb3295b66ec1e63a6a4f8e78a",
+      "result": "Passed",
+      "method": "Full-content sheet-17.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "reports-768x1024-text100.png",
+      "sha256": "71c302512440d0d10c8d1fe6e5e09722cc4a7a7bca950a7d14ec552e13fe0be4",
+      "result": "Passed",
+      "method": "Full-content sheet-17.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "reports-800x360-text100.png",
+      "sha256": "810d717f2e2c1cba13080ba407e6cb7f537288eba98d79880cf717c3b3d8f93d",
+      "result": "Passed",
+      "method": "Full-content sheet-17.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "resolution-bottom-390x400.png",
+      "sha256": "454da614ec8504cefbe13c415287d9f222a97a5de39face1e1db93f2b5d87a16",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "resolution-bottom-390x844.png",
+      "sha256": "d8df79da329f58438657cededd445d86629eddd5afbce87a9d1429d7363f1a51",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-1280x800-text100.png",
+      "sha256": "7028fa08e3852df7ec6b507fff99a69d536b8b24ffc44c58c4da680646a9de58",
+      "result": "Passed",
+      "method": "Full-content sheet-18.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-360x800-text100.png",
+      "sha256": "f4f218b868a5c5cae6bcf0631b0649deb1516a3e51f35d5fa016601fce8a8b02",
+      "result": "Passed",
+      "method": "Full-content sheet-18.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-390x844-text100.png",
+      "sha256": "7acaec851a9eac2458eba796c94bdf74d5f3cd0f956002c8714390d64c00a21f",
+      "result": "Passed",
+      "method": "Full-content sheet-18.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-768x1024-text100.png",
+      "sha256": "fda7de194ac4852b9b46db1f9beee41c3f68fc3fdc9021f364c1fb5eaaeee00a",
+      "result": "Passed",
+      "method": "Full-content sheet-19.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-800x360-text100.png",
+      "sha256": "f2cd57df7705f7e3b11bbdbc71a41df3f97bba4de023cb489bb09d06cff72565",
+      "result": "Passed",
+      "method": "Full-content sheet-19.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-activities-1280x800-text100.png",
+      "sha256": "197b892c33b2829b3603079ac3eb5e7135d773edf26fca3cb546bf37fb38d439",
+      "result": "Passed",
+      "method": "Full-content sheet-19.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-activities-360x800-text100.png",
+      "sha256": "dd78070a9e6878e04bcf6691278919e6c608b8932c019733960a49a693e28125",
+      "result": "Passed",
+      "method": "Full-content sheet-19.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-activities-390x844-text100.png",
+      "sha256": "33c61fde89403e9157537cf56d140773ea31bfed53d07c16521ae48724a0307a",
+      "result": "Passed",
+      "method": "Full-content sheet-20.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-activities-768x1024-text100.png",
+      "sha256": "b2f2befbad3c3537450c115aae449683cab51444c196268e27342b3836870034",
+      "result": "Passed",
+      "method": "Full-content sheet-20.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-activities-800x360-text100.png",
+      "sha256": "2b6d5684fee58b37b826b20614edb3fdc7156ee09ad79e917cf3f045560075a0",
+      "result": "Passed",
+      "method": "Full-content sheet-20.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-1280x800-text100.png",
+      "sha256": "e38b848ef29c74922a3e0e52850aa349d43d2aa29dfaf347c3c2eb50d0d76943",
+      "result": "Passed",
+      "method": "Full-content sheet-20.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-360x800-text100.png",
+      "sha256": "c3ed8d80acbc81f99945cb1aa68b52d116fd49d4aa7072f2cb1abd999f32c1c8",
+      "result": "Passed",
+      "method": "Full-content sheet-21.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-360x800-text200.png",
+      "sha256": "b8e015cb703920337f6ce0b2887e1babad9026b229bdbbebf038a525c9d9ef38",
+      "result": "Passed",
+      "method": "Full-content overview and detail-11.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-390x844-text100.png",
+      "sha256": "62731883bc1a2f5b8f3d4428ad2ce112c024bdf2505f16d50e066d4ebc7e9e86",
+      "result": "Passed",
+      "method": "Full-content sheet-21.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-768x1024-text100.png",
+      "sha256": "0258260f7b10cf03e7863abefc747f44f33b84f23ae0b9d3b054fbebe399eb0c",
+      "result": "Passed",
+      "method": "Full-content sheet-21.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-800x360-text100.png",
+      "sha256": "2aefcac76f7811a65410acd0e3c699bd402f79e143f78fc55c28aa88be93dbbf",
+      "result": "Passed",
+      "method": "Full-content sheet-22.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-report-detail-800x360-text200.png",
+      "sha256": "5914e9bc87b1b23b2b220c753b27ff828cbfbd4257311d49021b445dbee17dad",
+      "result": "Passed",
+      "method": "Full-content overview and detail-12.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-reports-1280x800-text100.png",
+      "sha256": "806e0bb04b825aae6fb66bd447328d8ff97de05ea2d7bb195303aa4f835fcf7e",
+      "result": "Passed",
+      "method": "Full-content sheet-22.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-reports-360x800-text100.png",
+      "sha256": "2f6f4a092d409323b361f6f108d0d587b7aca0a935985583518d3dc0fd3df1cb",
+      "result": "Passed",
+      "method": "Full-content sheet-22.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-reports-390x844-text100.png",
+      "sha256": "84024f6de54f6b9336c7290829027acd9e996898e3bef7d3fbf9a5dbd4fe4ba7",
+      "result": "Passed",
+      "method": "Full-content sheet-23.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-reports-768x1024-text100.png",
+      "sha256": "b145c4dfa894b76c3722396999525f3baa9d5f9ee4a0fd1bb5a5dba3481323a8",
+      "result": "Passed",
+      "method": "Full-content sheet-23.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sdp-reports-800x360-text100.png",
+      "sha256": "21ea4c4d5dd6a71cd70205790989cc5992bf04c48cbd99d4f4f0daac085b5496",
+      "result": "Passed",
+      "method": "Full-content sheet-23.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-1280x800-text100.png",
+      "sha256": "95f943ceace8b2249fc97d2d5aa5b6b5443f1575b7fe4683746e68ae22317e12",
+      "result": "Passed",
+      "method": "Full-content sheet-23.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-360x800-text100.png",
+      "sha256": "418154421a56a85a1affbbfd7f975c4c0fe08e611e6c75d4992c3374dd34e256",
+      "result": "Passed",
+      "method": "Full-content sheet-24.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-360x800-text200.png",
+      "sha256": "4446a74ae7a59b47118725c47de5d061214aaa6a7007d7ec86339e3a22c0608d",
+      "result": "Passed",
+      "method": "Full-content overview and detail-13.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-390x844-text100.png",
+      "sha256": "486a51669f41fe155c835378cd4c97111b2541a539f7b9186af849963e505272",
+      "result": "Passed",
+      "method": "Full-content sheet-24.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-768x1024-text100.png",
+      "sha256": "c029961b9a6ec735382a9cb4041b1826a7b20c4f7c44812c826561d363b2d626",
+      "result": "Passed",
+      "method": "Full-content sheet-24.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-800x360-text100.png",
+      "sha256": "7a7f47b14a09bbc82dd1b5c2532f7dfe835e467c66e0a8b44acb0d2209bbb078",
+      "result": "Passed",
+      "method": "Full-content sheet-25.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "settings-800x360-text200.png",
+      "sha256": "a75ec37dd7392d4b2073a69c10eac4efbae24f0e87cac4cacca62694a40411a9",
+      "result": "Passed",
+      "method": "Full-content overview and detail-14.png at top/middle/bottom",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sign-in-1280x800-text100.png",
+      "sha256": "1d70ed9eb73bbc048e85f9923d9d9b0ceff59e686ab6b86c8753d9845e080988",
+      "result": "Passed",
+      "method": "Full-content sheet-25.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sign-in-360x800-text100.png",
+      "sha256": "e9a558072de4d53a49f152426b5ec6ce49bdce893e0801f64a2ca8fd32a4118f",
+      "result": "Passed",
+      "method": "Full-content sheet-25.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sign-in-390x844-text100.png",
+      "sha256": "f216e7291119bef4534538e38c8c5b4d7e9cd5c3fd93f31b569f00ca00db93f6",
+      "result": "Passed",
+      "method": "Full-content sheet-26.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sign-in-768x1024-text100.png",
+      "sha256": "0e630fc4cfc7669f1536cb4a801b272af8b2ae2cce40219699de1fdb27d753a8",
+      "result": "Passed",
+      "method": "Full-content sheet-26.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "sign-in-800x360-text100.png",
+      "sha256": "3b73c7f7be1d90e76d1d17881af95fd5156f06bd06cf270b21fac30301d52021",
+      "result": "Passed",
+      "method": "Full-content sheet-26.png",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-activity-dirty-confirmation-390x844.png",
+      "sha256": "23f3aabb19d346952a9be8b9082b11bbeab92f2f76394ed8a52a3d0bccd4a4ca",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-activity-unsaved-preview-390x844.png",
+      "sha256": "431a89324c899db904fb26f349215ca1b2765f7b0125f7d50dec26f2a5257e12",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-editor-catalog-390x844.png",
+      "sha256": "56c58c595ebb4bb1300908fb455cfe88c6dec8177d669f9c314faaa863f9d5e3",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-editor-invalid-preview-390x844.png",
+      "sha256": "386a49c3fa0975f03f92b8766b31c73d054746ac6762c4b180bd9fbeffe57bef",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-editor-reference-blocker-390x844.png",
+      "sha256": "f292e334f913905fe4d89f8530b66450dd0460de933fbd28801158bca2f36e7e",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-editor-valid-preview-390x844.png",
+      "sha256": "98db476700158180bc5c1c8436444cb2958bf19c0c56d4690a15eb97861b829b",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-photo-invalid-replacement-390x844.png",
+      "sha256": "054c48a02e404fcb1ba631ca93a97015ef3f0abe86fc9aed30b07b1f1753c66b",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-photo-preview-dialog-390x844.png",
+      "sha256": "4e4493d40cdfd6c286969030786ac65a3d0ac5442a3928071def9fc58ea5523a",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-report-photo-unavailable-1280x800.png",
+      "sha256": "f9ab82354ea10d0c0c6ff17a0942a36e4380709a6ff36e76670b3c4d9c1ca915",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-report-resolved-evidence-390x844.png",
+      "sha256": "0414690493cb4365131862048ac430893121d3f62e6f695365c36a20d6825f71",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-report-save-failure-390x844.png",
+      "sha256": "3d1f5210d4f6d897b05ea36a9fff70626cc787e2f83a540897e2b3166b49c2cb",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    },
+    {
+      "capture": "state-report-validation-390x844.png",
+      "sha256": "6d4fc37cec9fb11b20c3e5f881dbba1f88fef377064f763abd35a4de59ec4939",
+      "result": "Passed",
+      "method": "Original opened directly",
+      "finding": "Required labels and controls readable; no additional blocking defect. Fixed chrome in full-page images assessed with separate viewport checks."
+    }
+  ]
+}

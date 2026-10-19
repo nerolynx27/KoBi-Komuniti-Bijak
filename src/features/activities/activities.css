@@ -1,0 +1,6 @@
+.activity-form { max-width: 30rem; }
+.staff-shell:has(.activity-form) { max-width: 640px; }
+.activity-form { margin-inline: auto; width: 100%; }
+.activity-date-fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-4); }
+.activity-date-fields .form-input { min-width: 0; width: 100%; }
+@media (max-width: 380px) { .activity-date-fields { grid-template-columns: minmax(0, 1fr); } }

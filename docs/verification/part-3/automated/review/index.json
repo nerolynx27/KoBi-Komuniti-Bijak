@@ -1,0 +1,262 @@
+[
+  {
+    "sheet": "sheet-01.png",
+    "captures": [
+      "activities-1280x800-text100.png",
+      "activities-360x800-text100.png",
+      "activities-390x844-text100.png",
+      "activities-768x1024-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-02.png",
+    "captures": [
+      "activities-800x360-text100.png",
+      "activity-bottom-390x400.png",
+      "activity-bottom-390x844.png",
+      "activity-cancelled-390x844.png"
+    ]
+  },
+  {
+    "sheet": "sheet-03.png",
+    "captures": [
+      "activity-detail-1280x800-text100.png",
+      "activity-detail-360x800-text100.png",
+      "activity-detail-360x800-text200.png",
+      "activity-detail-390x844-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-04.png",
+    "captures": [
+      "activity-detail-768x1024-text100.png",
+      "activity-detail-800x360-text100.png",
+      "activity-detail-800x360-text200.png",
+      "activity-form-1280x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-05.png",
+    "captures": [
+      "activity-form-360x800-text100.png",
+      "activity-form-360x800-text200.png",
+      "activity-form-390x844-text100.png",
+      "activity-form-768x1024-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-06.png",
+    "captures": [
+      "activity-form-800x360-text100.png",
+      "activity-form-800x360-text200.png",
+      "activity-started-390x844.png",
+      "create-account-1280x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-07.png",
+    "captures": [
+      "create-account-360x800-text100.png",
+      "create-account-390x844-text100.png",
+      "create-account-768x1024-text100.png",
+      "create-account-800x360-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-08.png",
+    "captures": [
+      "editor-1280x800-text100.png",
+      "editor-360x800-text100.png",
+      "editor-360x800-text200.png",
+      "editor-390x844-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-09.png",
+    "captures": [
+      "editor-768x1024-text100.png",
+      "editor-800x360-text100.png",
+      "editor-800x360-text200.png",
+      "fallback-form-390x844.png"
+    ]
+  },
+  {
+    "sheet": "sheet-10.png",
+    "captures": [
+      "map-1280x800-text100.png",
+      "map-360x800-text100.png",
+      "map-390x844-text100.png",
+      "map-768x1024-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-11.png",
+    "captures": [
+      "map-800x360-text100.png",
+      "profile-1280x800-text100.png",
+      "profile-360x800-text100.png",
+      "profile-390x844-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-12.png",
+    "captures": [
+      "profile-768x1024-text100.png",
+      "profile-800x360-text100.png",
+      "report-bottom-390x400.png",
+      "report-bottom-390x844.png"
+    ]
+  },
+  {
+    "sheet": "sheet-13.png",
+    "captures": [
+      "report-detail-1280x800-text100.png",
+      "report-detail-360x800-text100.png",
+      "report-detail-360x800-text200.png",
+      "report-detail-390x844-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-14.png",
+    "captures": [
+      "report-detail-768x1024-text100.png",
+      "report-detail-800x360-text100.png",
+      "report-detail-800x360-text200.png",
+      "report-form-1280x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-15.png",
+    "captures": [
+      "report-form-360x800-text100.png",
+      "report-form-360x800-text200.png",
+      "report-form-390x844-text100.png",
+      "report-form-768x1024-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-16.png",
+    "captures": [
+      "report-form-800x360-text100.png",
+      "report-form-800x360-text200.png",
+      "reports-1280x800-text100.png",
+      "reports-360x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-17.png",
+    "captures": [
+      "reports-390x844-text100.png",
+      "reports-768x1024-text100.png",
+      "reports-800x360-text100.png",
+      "resolution-bottom-390x400.png"
+    ]
+  },
+  {
+    "sheet": "sheet-18.png",
+    "captures": [
+      "resolution-bottom-390x844.png",
+      "sdp-1280x800-text100.png",
+      "sdp-360x800-text100.png",
+      "sdp-390x844-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-19.png",
+    "captures": [
+      "sdp-768x1024-text100.png",
+      "sdp-800x360-text100.png",
+      "sdp-activities-1280x800-text100.png",
+      "sdp-activities-360x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-20.png",
+    "captures": [
+      "sdp-activities-390x844-text100.png",
+      "sdp-activities-768x1024-text100.png",
+      "sdp-activities-800x360-text100.png",
+      "sdp-report-detail-1280x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-21.png",
+    "captures": [
+      "sdp-report-detail-360x800-text100.png",
+      "sdp-report-detail-360x800-text200.png",
+      "sdp-report-detail-390x844-text100.png",
+      "sdp-report-detail-768x1024-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-22.png",
+    "captures": [
+      "sdp-report-detail-800x360-text100.png",
+      "sdp-report-detail-800x360-text200.png",
+      "sdp-reports-1280x800-text100.png",
+      "sdp-reports-360x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-23.png",
+    "captures": [
+      "sdp-reports-390x844-text100.png",
+      "sdp-reports-768x1024-text100.png",
+      "sdp-reports-800x360-text100.png",
+      "settings-1280x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-24.png",
+    "captures": [
+      "settings-360x800-text100.png",
+      "settings-360x800-text200.png",
+      "settings-390x844-text100.png",
+      "settings-768x1024-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-25.png",
+    "captures": [
+      "settings-800x360-text100.png",
+      "settings-800x360-text200.png",
+      "sign-in-1280x800-text100.png",
+      "sign-in-360x800-text100.png"
+    ]
+  },
+  {
+    "sheet": "sheet-26.png",
+    "captures": [
+      "sign-in-390x844-text100.png",
+      "sign-in-768x1024-text100.png",
+      "sign-in-800x360-text100.png",
+      "state-activity-dirty-confirmation-390x844.png"
+    ]
+  },
+  {
+    "sheet": "sheet-27.png",
+    "captures": [
+      "state-activity-unsaved-preview-390x844.png",
+      "state-editor-catalog-390x844.png",
+      "state-editor-invalid-preview-390x844.png",
+      "state-editor-reference-blocker-390x844.png"
+    ]
+  },
+  {
+    "sheet": "sheet-28.png",
+    "captures": [
+      "state-editor-valid-preview-390x844.png",
+      "state-photo-invalid-replacement-390x844.png",
+      "state-photo-preview-dialog-390x844.png",
+      "state-report-photo-unavailable-1280x800.png"
+    ]
+  },
+  {
+    "sheet": "sheet-29.png",
+    "captures": [
+      "state-report-resolved-evidence-390x844.png",
+      "state-report-save-failure-390x844.png",
+      "state-report-validation-390x844.png"
+    ]
+  }
+]

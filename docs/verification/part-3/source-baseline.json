@@ -1,0 +1,406 @@
+[
+  {
+    "path": "eslint.config.js",
+    "sha256": "B8D597EF10C194807387F4371E3121D28B0EAA915E038D3BE541E2DCC43AAA28"
+  },
+  {
+    "path": "index.html",
+    "sha256": "D0D1B6194D5F288D5035E44E5319D464B44C1156B3AE36421DF0430A6F64EF35"
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "DEF5AF2E82E750B8EC411B92A43E401DBA3B076625BA50DEBF9D274971853D2C"
+  },
+  {
+    "path": "package.json",
+    "sha256": "1EC06F3A3CCFE35F62D72C12058AD2BA70F1A4501DF8B369A6A8FC96AFBA9D28"
+  },
+  {
+    "path": "playwright.config.js",
+    "sha256": "301171D6AA7B4DF3F5F6A3B9A4C337C426D8CA632E237D33013B313C7BFA38FE"
+  },
+  {
+    "path": "playwright.production.config.js",
+    "sha256": "21197C50FD65506FB82FEF125B4E096A4E405C2C3C43446F8B8BDE45B6977F26"
+  },
+  {
+    "path": "scripts\\acquire-fonts.mjs",
+    "sha256": "58750D7A9D1A647D56EF2B5620E1B125B64541288744186617451224FD4DADDB"
+  },
+  {
+    "path": "scripts\\asset-manifest.mjs",
+    "sha256": "80BF1032EF9EDB182AF2CDA5BD07D028E1521501C174435EE73EB6C153C4B6D6"
+  },
+  {
+    "path": "scripts\\part2-contact-sheets.py",
+    "sha256": "18E2DBA8EB94AAFCC24E190060A4C6C0FBF62132ECFF645EAEF2514F0150977B"
+  },
+  {
+    "path": "scripts\\part3-run.ps1",
+    "sha256": "F6B240C7FD6D7C1DE393A4D4DAD3B1036363C35B2049404BFD226992D921ECD9"
+  },
+  {
+    "path": "src\\App.jsx",
+    "sha256": "ADCB02F68005D6717606A93BB077128B813C2FFCD7480F8E11DFC8DCB9FC033E"
+  },
+  {
+    "path": "src\\app\\demoSession.js",
+    "sha256": "853E246AB333FD81536E1B81BBE60504C0A02B345598C8A9612095604AF8FC6C"
+  },
+  {
+    "path": "src\\app\\routes.js",
+    "sha256": "E1E3103E792FA6FB5B7C2D912F5816A7EB2B4D17CF9355A2B387C67DCED73180"
+  },
+  {
+    "path": "src\\app\\useAppNavigation.js",
+    "sha256": "637BE5059B8E344C98B882D734D2E16D817C66C4A98B8D279A8DB592DE35482C"
+  },
+  {
+    "path": "src\\app\\useCommandForm.js",
+    "sha256": "FC4C6DB3935920ED8FF3A5F63C9873A4CD97A48F149B4D4DDF16DBC2BE3626D6"
+  },
+  {
+    "path": "src\\components\\navigation\\AppHeader.jsx",
+    "sha256": "269B09E32163B2775F406DE03ACE3DFD73EAF29F59F3BB8E3CAD8612FA5C7EE8"
+  },
+  {
+    "path": "src\\components\\navigation\\BottomNav.jsx",
+    "sha256": "9FFF40C45CEB6B706389DEB40B0B8F5C6FECB7B025C5525AB085F6507990CE2A"
+  },
+  {
+    "path": "src\\components\\ui\\Button.css",
+    "sha256": "C4B133B3C753BB0FF1E211D7BD00135726661DE298F0EB3A11E21001B396DD17"
+  },
+  {
+    "path": "src\\components\\ui\\Button.jsx",
+    "sha256": "086D4A0D0DFCCBE93288AC7055DCE8CA504281CBBE3100012603EC938D49F707"
+  },
+  {
+    "path": "src\\components\\ui\\DetailRow.jsx",
+    "sha256": "43DF7DD37C8D2AAA6CE3D7A5F7921E32FCB178F474C00B1110B3A41545E3414F"
+  },
+  {
+    "path": "src\\components\\ui\\Feedback.jsx",
+    "sha256": "EFEA784792FAF581A3051C4C66C53654F07C4D03998DF99E2F6CF13744841E1D"
+  },
+  {
+    "path": "src\\components\\ui\\FormField.jsx",
+    "sha256": "AC9C1F3702EAB63C2ACA8659513DEA67273C120AB4F22F08B060838CF99F50ED"
+  },
+  {
+    "path": "src\\components\\ui\\Icon.jsx",
+    "sha256": "2480AB5827766EE36CA6B735065DC4C12B3C038F60DAF29984887D131B2A1DF8"
+  },
+  {
+    "path": "src\\components\\ui\\Modal.jsx",
+    "sha256": "1522D51F6F9EDE196F26F8B3B235A8DDE5014B0910E75DF64A37B4D07854EC6E"
+  },
+  {
+    "path": "src\\components\\ui\\PasswordField.jsx",
+    "sha256": "C96F681CBD84DA267C5B63ACC95333648C6B3BDCAC46F0CEDAA397C5942CF66D"
+  },
+  {
+    "path": "src\\components\\ui\\photo-controls.css",
+    "sha256": "ED877903C0FA4F909A26B62D4E4A124C588B2F346B9B0601D26AE40BBD577BFF"
+  },
+  {
+    "path": "src\\components\\ui\\PhotoPicker.jsx",
+    "sha256": "8C67C3BAC615D8154AB5C1BBAB8ED3C9E9708FE98D33F01D81D0E3C0DA6D3D51"
+  },
+  {
+    "path": "src\\components\\ui\\PhotoPreview.jsx",
+    "sha256": "1D356CE753F9D85EEA844B6554AE259DAEA64712F6C0C11535619DC6DF84112C"
+  },
+  {
+    "path": "src\\components\\ui\\PixelFrame.css",
+    "sha256": "EDEBFD4CFCAFDF45E703B5109BAC71193067AE88518A7E9E3FB001A138E28AAF"
+  },
+  {
+    "path": "src\\components\\ui\\PixelFrame.jsx",
+    "sha256": "DE61CEC189F6C41350258A59AED19A04533E7558F97C6CAABF31546455745119"
+  },
+  {
+    "path": "src\\components\\ui\\Selection.jsx",
+    "sha256": "324CAB6CB05D4777F1EACD97F625C69EDC81C968FE4CA93482255C893657172D"
+  },
+  {
+    "path": "src\\components\\ui\\Timeline.jsx",
+    "sha256": "DCCDA8727F7F357B6223967B3E21B513C2CB8E7CFDFD5A962C08FEF6A1266480"
+  },
+  {
+    "path": "src\\content\\uiText.js",
+    "sha256": "509443FACD0DD23E5B18B1C46E72F0C54DE695C2659ECC1F379EAE050A16BE3C"
+  },
+  {
+    "path": "src\\dev\\DesignSystemPage.jsx",
+    "sha256": "5F759140C1850FA6E65F66799F227B975B4316C7249F77F344AE5668125F7DDA"
+  },
+  {
+    "path": "src\\dev\\specimen.css",
+    "sha256": "DD57CEEB843A4A4138A557630662690F281A0CE930DB256751AB48ADED41FE03"
+  },
+  {
+    "path": "src\\features\\account\\accountCommands.js",
+    "sha256": "11E6A9D2B5301A66577B9B5C743C861CE1257F5F357B98A1EA88D104FB2FF257"
+  },
+  {
+    "path": "src\\features\\account\\AccountPages.jsx",
+    "sha256": "5DC4F8BEE5B8F2225763D97E7054865F5335DE309173450AD733E6F6F62F292E"
+  },
+  {
+    "path": "src\\features\\account\\ProfilePage.jsx",
+    "sha256": "53010A1BB0B3B42B234EAB5C55418A31D2DBAEEE99804D55E6C6293F84947F47"
+  },
+  {
+    "path": "src\\features\\account\\SettingsPage.jsx",
+    "sha256": "C8D5668DD2EDCE27228EE5A2F90F4CE3F6151C31447DCEC68A3C79A8080FB6DB"
+  },
+  {
+    "path": "src\\features\\activities\\activities.css",
+    "sha256": "95AB520FD17623DD39896C0A1FD431DB05720C82AB00AA9BA2C549B639E8A89F"
+  },
+  {
+    "path": "src\\features\\activities\\ActivitiesPage.jsx",
+    "sha256": "9001637DCCD291517465BFA41EBCBA69DC133AA0835E273832810C029A2DACA1"
+  },
+  {
+    "path": "src\\features\\activities\\activityCommands.js",
+    "sha256": "8922AE6779DA99B1565D9B6A1F54AA116E636D675182B04B829A518EBCF98556"
+  },
+  {
+    "path": "src\\features\\activities\\ActivityDetail.jsx",
+    "sha256": "ABD125D804B152991EA89DB9656001B609FF1AC04EDBE7E5C9EAF5DAA0E9311C"
+  },
+  {
+    "path": "src\\features\\activities\\ActivityForm.jsx",
+    "sha256": "01A26B6E19F26BDF7BEA8A294CC64CFC6E0471076EAAB749FB79E543905EE6C9"
+  },
+  {
+    "path": "src\\features\\activities\\activitySelectors.js",
+    "sha256": "F2CDA7AC2B52EC903CA8543F7FE18C77FF9280A45659C186CDDD7ECC904B27D2"
+  },
+  {
+    "path": "src\\features\\activities\\dateTime.js",
+    "sha256": "49CB4192E22EE9DB4F5018F8E719AAECA94028B52C7B16D6C4314AE7E0B880D6"
+  },
+  {
+    "path": "src\\features\\activities\\ManageActivitiesPage.jsx",
+    "sha256": "678ED1B62468E90D4AB812E08F5F566EEA58CB4938AF670FA9C9234C6415F5A4"
+  },
+  {
+    "path": "src\\features\\complaints\\complaintCommands.js",
+    "sha256": "E06E8540B855277101604AC3CE7C4A2BE88753230BBA1A2EE3BDFD3FEF9EC666"
+  },
+  {
+    "path": "src\\features\\complaints\\complaintSelectors.js",
+    "sha256": "FCBC954DAA9C6913BEE9B07B89014FAE5AF0877C8579ADBF152ABDA659F884F8"
+  },
+  {
+    "path": "src\\features\\complaints\\ReportActionForm.jsx",
+    "sha256": "B12E02125F282B2DC650245A59E3B2390D146D46528D7250493F61D7EE111368"
+  },
+  {
+    "path": "src\\features\\complaints\\ReportDetail.jsx",
+    "sha256": "4788F8387C754328FA45F026E04E53ED1758144DF1CAB9045B1F47277BD73CFF"
+  },
+  {
+    "path": "src\\features\\complaints\\ReportForm.jsx",
+    "sha256": "2E8A6F77249EFF4E1814B4483C8325FEB5DDDC7BB4821EAB11738B18B8593AE4"
+  },
+  {
+    "path": "src\\features\\complaints\\ReportList.jsx",
+    "sha256": "D1117C29D37ECDDB2C7EF5D57916C201B1C0F428703E5F6D4CF7C09336953A9C"
+  },
+  {
+    "path": "src\\features\\complaints\\StaffReportsPage.jsx",
+    "sha256": "1B29F2B14BD8F2E2B1BF1BB1136359E4FB27AE092CDB3B8CE7ED81B3114B950F"
+  },
+  {
+    "path": "src\\features\\FoundationViews.jsx",
+    "sha256": "1558D2C46EB198A739E061929D80F5039D2A6FC99EFF2CE8A9687A1FE5A87833"
+  },
+  {
+    "path": "src\\features\\world-editor\\componentCatalog.js",
+    "sha256": "4FBE2237B73D008E77FE1D939EFEB6BC8D7C7916B3A59D92D26ED674F557D665"
+  },
+  {
+    "path": "src\\features\\world-editor\\ComponentCatalog.jsx",
+    "sha256": "706452B479DF584691933E3A1B01C2A12D2BD9534B4F9501B7B07BA688B6C190"
+  },
+  {
+    "path": "src\\features\\world-editor\\editor.css",
+    "sha256": "D9C6726AD657D7B7F736295542C3BC6EE94907D68A659FA3FDAA674F7E672D49"
+  },
+  {
+    "path": "src\\features\\world-editor\\layoutCommands.js",
+    "sha256": "6C0D37854537190ADA1C7AA77D2B8389E378291B0F4A33552724F370593BAD78"
+  },
+  {
+    "path": "src\\features\\world-editor\\layoutValidation.js",
+    "sha256": "68A6A026B5039999628DA2979312A15CF5E9AE26D3097BC52CA1D88C57A3A6FF"
+  },
+  {
+    "path": "src\\features\\world-editor\\ObjectPanel.jsx",
+    "sha256": "578A18F5DED77BA2EEED63D61F10C1BA80371989745D6F1933F1EC282AF446A4"
+  },
+  {
+    "path": "src\\features\\world-editor\\PlacementForm.jsx",
+    "sha256": "F26ADAD3335A81E3D4794B196A839EA973D52034B3366662E069A32A24325AF5"
+  },
+  {
+    "path": "src\\features\\world-editor\\WorldEditorPage.jsx",
+    "sha256": "E9E74B825275084A8F7E3341D448103935D668FBBEDCD294FD0A01B66DB29145"
+  },
+  {
+    "path": "src\\features\\world\\FacilitySheet.jsx",
+    "sha256": "BC314C8A9319CE145AF50A174F6801970022EAE05C661E1028C4263109BA82E6"
+  },
+  {
+    "path": "src\\features\\world\\TemporaryMap.jsx",
+    "sha256": "CFC1404856098498C182E5B05863E1E4797DFD76D8997C23903A97E8717A58EA"
+  },
+  {
+    "path": "src\\features\\world\\world.css",
+    "sha256": "ACF9CA85F6418F27A363779524EFD545949F5F4B80E3BB527C35402F5C2A5E46"
+  },
+  {
+    "path": "src\\features\\world\\worldSelectors.js",
+    "sha256": "E0BFF0E109E28558EA28BE99B6AC077BD4D5A5E2DE63C41FB0817F1E7B5F6AAF"
+  },
+  {
+    "path": "src\\lib\\demoCommands.js",
+    "sha256": "22F3F0E167CEC6FFFCC2E1D55EBDDD9F11474E664D519C1C0C361CD4A3D810A0"
+  },
+  {
+    "path": "src\\lib\\demoPhotos.js",
+    "sha256": "4E9927E2D7DE6D701E485C5E1DF52FB72D67360D7B8DA77908BE95FCF6964192"
+  },
+  {
+    "path": "src\\lib\\demoSamples.js",
+    "sha256": "0FD2E131030A15015414D882C700F6BF9630279CF7D6D55CE8883BAE261A3EE4"
+  },
+  {
+    "path": "src\\lib\\demoSchema.js",
+    "sha256": "A6B3468BDCB59DB51CE8BAE02C184F255FFDDDC0C28469038899E36AC52014DD"
+  },
+  {
+    "path": "src\\lib\\demoStore.js",
+    "sha256": "51182FB254CF4AD2CE7C255ED6328999F3781E36C2241D93928F087B8597FDDC"
+  },
+  {
+    "path": "src\\main.jsx",
+    "sha256": "EED2EA8BEACF19BCA02CF05ADC927E6D82BE507C3300D1D8AE9A7D127F4853D6"
+  },
+  {
+    "path": "src\\styles\\app.css",
+    "sha256": "91CC3BC4B35E1C86E4744F239D5F3B68489437A529BEBF7CAB061FBB4132019E"
+  },
+  {
+    "path": "src\\styles\\components.css",
+    "sha256": "ECEBF834BE76EC508DAD020463F2A8B536F4B1C2BF3EE1F0DB4498A678AFCE26"
+  },
+  {
+    "path": "src\\styles\\tokens.css",
+    "sha256": "F5554CE288C402586A7A2B2E0BA5E090755BC8805F257CC229B3B205720A3F85"
+  },
+  {
+    "path": "tests\\e2e\\accounts-profile.spec.js",
+    "sha256": "F1485305240BE883789D8DF97C28BBB4200D4679B94BDAA10A85642BFDFD73B3"
+  },
+  {
+    "path": "tests\\e2e\\activities.spec.js",
+    "sha256": "2E9F27D203A88B512AD8B1DABD82E5720E71FEBD09735F696EA617379EACD7B6"
+  },
+  {
+    "path": "tests\\e2e\\foundation.spec.js",
+    "sha256": "511B419579246E5B7F10B7FAFE00C9ADBA886376D28D17476ADFA016EA38A892"
+  },
+  {
+    "path": "tests\\e2e\\layout.spec.js",
+    "sha256": "B8DD9377F46F649C12D00F6D8EF1940278B72D6B0255B2AFB43F5FB22F7F96F7"
+  },
+  {
+    "path": "tests\\e2e\\part2-visual.spec.js",
+    "sha256": "7A95F62FF373FDF6DB8DAA38850AF5171D146C93C9FB02A5DB2C65D350A572D5"
+  },
+  {
+    "path": "tests\\e2e\\recovery-navigation.spec.js",
+    "sha256": "0216E4AAA06415574615661A8C2F93F82037E9E270B91BA8092402E1DE8C49B0"
+  },
+  {
+    "path": "tests\\e2e\\reports.spec.js",
+    "sha256": "0D7D34E5E7EAF22FD1F3E8D0D7EABA0EB59E060F7EFE81F632DE034CA5736C41"
+  },
+  {
+    "path": "tests\\e2e\\temporary-map.spec.js",
+    "sha256": "2167E43097A058582373879AE00898B0CD05EC53CD9AD9E1383AE8D6E43C4DB0"
+  },
+  {
+    "path": "tests\\e2e\\world-editor.spec.js",
+    "sha256": "970AD0D6D9ED6BD5B8F5B9461EE493515357048602C5AAE265B50E280BAD3E96"
+  },
+  {
+    "path": "tests\\helpers\\demoFixtures.js",
+    "sha256": "34A641C57ED18593B1DCAA6D93BD6838B3D21DE92610F828F8AC875BA70DADF7"
+  },
+  {
+    "path": "tests\\helpers\\part3.js",
+    "sha256": "38A485650D0F3B8A86D6EDBC7C001BAB9DD29A9A2413400D0AA2ADCEED9B1D7E"
+  },
+  {
+    "path": "tests\\production\\production.spec.js",
+    "sha256": "3319105FB7EC4BD2A41FC12678FFC2F9AE038150537CDBE4293C8EC9F3A49E0D"
+  },
+  {
+    "path": "tests\\unit\\accounts.test.js",
+    "sha256": "2454CE3D17FF9B78EDCF2260C114F7E0DA3DD8D480EA006C747C305D97FD0C1F"
+  },
+  {
+    "path": "tests\\unit\\activities.test.js",
+    "sha256": "249924F80E471B728FE738D45D908627B559A87915B6E5BBADFDDFAEFC4BD955"
+  },
+  {
+    "path": "tests\\unit\\complaints.test.js",
+    "sha256": "138E4E370828E90B2722BB90D6E97980AE6EDE578AAEFCAD50E692361645B405"
+  },
+  {
+    "path": "tests\\unit\\dateTime.test.js",
+    "sha256": "9C9035D397F43C0AB5EA39E2759E7774F329B769B8D8901FB8F198A1F89CEC0A"
+  },
+  {
+    "path": "tests\\unit\\demoCommands.test.js",
+    "sha256": "7A41D59DA9D42A7A028E8951653FF2D63B7B83447B73460F75D6DAA2CEC37DE8"
+  },
+  {
+    "path": "tests\\unit\\demoMigration.test.js",
+    "sha256": "F3234C66B056F25DB779902403AF92927FF9B2811EF3C547389F06D978F75A7B"
+  },
+  {
+    "path": "tests\\unit\\demoSession.test.js",
+    "sha256": "2B709D6B3600FCA877BD04E5532D25ADE43B767E604F4DEB01609747C3F53A84"
+  },
+  {
+    "path": "tests\\unit\\demoStore.test.js",
+    "sha256": "B7C1EF7360AF205050288F095619344B4C83A1ACD72967224907B387D8DEE69E"
+  },
+  {
+    "path": "tests\\unit\\photos.test.js",
+    "sha256": "F6F5827EF49BFD7CABE2801267D33B8C80DDF284614893401775F152B8AEBC37"
+  },
+  {
+    "path": "tests\\unit\\routes.test.js",
+    "sha256": "E51DCDE893DA249042C502FE6473FB050FEC07AAD753A048D84F29530D191184"
+  },
+  {
+    "path": "tests\\unit\\worldLayout.test.js",
+    "sha256": "1149BC53411CFFCB338F9D8D437ED8AC5B862B591FE155ABE9CDCB9B8BA52E7E"
+  },
+  {
+    "path": "tests\\unit\\worldSelectors.test.js",
+    "sha256": "74F798BFBA97FDC6D3B60DEA4A3490C720CCCED0AEF5CC886F59F8CD7BC6E86E"
+  },
+  {
+    "path": "vite.config.js",
+    "sha256": "AA58DEFCCBC6B515D5CA2CF45C8A41B0B5760059A02768A1301E44559603C55E"
+  }
+]

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+artifacts/
+graphify-out/
+.env
+.env.*
+!.env.example
+*.local
+test-results/
+playwright-report/
+coverage/
+.vite/
+tmp/
+*.log
+.superpowers/

@@ -1,0 +1,38 @@
+# Part Three coverage matrix
+
+All results below refer to the local desktop Chromium shell, including fixed phone-sized viewports and supplementary touch emulation. Final combined checks Passed: 137 unit, 92 development browser and 3 production tests, plus 24 selected repetition cases. Per-command logs and reports live under [automated](part-3/automated); old Part Two counts are historical. Test paths are relative to the project root.
+
+| Scenario / UI | Current result | Coverage and evidence |
+|---|---|---|
+| S01 / 01–02 | Passed | `accounts-profile.spec.js`: invalid-field focus, Resident/SDP choice, password show/hide, fixed registration identity, mismatch retention and no stored credentials. `accounts.test.js`: 1/2/60/61 name limits. Fresh sign-in/create-account captures at all five sizes. |
+| S02 / 10–11 | Passed | Account/profile and recovery specs: durable name/preferences, read-only fields, cancel/confirm sign-out. `shell-journeys`: distinct saved profile survives reload before reset; one-time seed cannot restore fixtures. Profile/settings captures. |
+| S03 / 03–05 | Passed | `temporary-map.spec.js`: six seeded types, house information-only, facility prefill, no public private-report data. New journey follows selected hall into actual report form. Facility sheet focus containment/return in Part Three accessibility spec. |
+| S04 / 05–07 | Passed | `reports.spec.js`, `shell-journeys`: committed ID/history/reference, status filters and byte-preserving reload; selected map object rectangle at moved `(560,360)` pixels for tile `(28,18)`. Report list/form/detail captures. |
+| S05 / 14–15 | Passed | Report work/resolution/evidence/reload browser flows, failed resolution retention and stale version; complaint unit transition/note/evidence rules and multi-report facility precedence. Fresh resolved-history state and actual resolution bottom viewports. |
+| S06 / 05,07,15 | Passed | Existing accepted-type real-browser decoding plus photo units, corrupt/invalid replacement/reselection/enlarge/reload tests. New race test holds decode A, commits B first, finishes A, asserts B survives and bytes unchanged; empty file selection preserves valid photo. This is browser input/decoder evidence, not physical gallery/camera observation. |
+| S07 / 08–09 | Passed | Activities complete workflow, category/Joined filters, duplicate activation and membership counts; Leave cancel bytes and safe focus, confirmed Leave. Production Join/reload/Leave/reload adds independent built-app evidence. No participant-name list exposed. |
+| S08 / 16–17 | Passed | Existing complete draft→unsaved preview→publish→edit→cancel journey, UTC assertions with America/Los_Angeles browser override. New hall activity uses committed new facility and exact Malaysia 25 Oct 09:30–11:00 → UTC 01:30–03:00. Cancellation preserves memberships. |
+| S09 / 09,17 | Passed | Activity/date-time units cover impossible dates/end order and exact start; existing browser open-page timer and read-only authoring. New failed Join at 09:00 retried at 09:01 commits no member, gives closed error and disables Join after focus/visibility refresh. Started/cancelled captures. |
+| S10 / 18–19 | Passed | Catalog count seven; existing add/cancel/failure/placement specs and world units. Added exact final 1×1 tile and empty/beyond-edge unit rows; 3×3 corners, negative/fractional, overlap and edge-touch reused. Decorative tree has no facility. Catalog/valid/invalid preview captures. |
+| S11 / 20 | Passed | Existing move/cancel/remove/retry/stale-selection specs; units block all historical activity/report references. New hall blocks removal after references; production tree retains ID through move/reload, Cancel preserves bytes, removal clears selection and only that object. |
+| S12 / 18–20,03–05,17 | Passed | `shell-journeys`: new hall at (27,18), move (28,18), activity/report pickers and committed references, Join, both location links focus current SVG object, blocked removal, exact envelope on reload. Desktop and touch versions. |
+| S13 / 12–13 | Passed | Existing clean and dirty Back/Forward regressions, sign-out follow-up modal and remembered SDP actor. New six missing/malformed/unknown deep links recover through KoBi home without mutation or page error. Dirty sheet/photo retention and single modal/focus checks. |
+| S14 / 13 | Passed | Existing read/write/future-schema/conflict/pending-block regressions and demo-store units preserve operation ID, actor, timestamp and baseline. New failed report save + newer external envelope + Retry leaves newer bytes exact and draft retained until discard. |
+| S15 / 11,13,18 | Passed | Existing failed-reset retry/cancel/no-replay/original-time units/browser flows retained. New cross-domain Reset: distinct profile, report+photo metadata, published activity/member, decorative tree and move preview; Cancel bytes/preview unchanged; reset restores all sample domains/reload, no ghost/pending, stable heading focus and unrelated key `keep`. |
+| S16 / all | Passed | New actual empty four lists and empty filters retain refresh/create recovery without writes. Missing-route/save errors exercised in app. Existing specimen shows labeled simulated initial/pending/access/session/artwork states; production excludes specimen and its functioning controls. English root/names and guarded loading text checked. |
+| S17 / all | Passed | Part Three accessibility + visual specs: 16 routes × five sizes, seven long surfaces × two sizes at 200%, ≥44 px hit regions, no page overflow, actual exposed form-action centers, seven modal types, keyboard/labels/status/contrast/fallback/reduced motion. P1 KOBI-3-01 reproduced and fixed with focused red→green. Contact-sheet/original inspection index recorded separately. Physical behavior not certified. |
+
+Fresh focused group evidence: `task2` (2), `task3-final` (35 browser / 137 units), `task4-final` (18 layout/accessibility + 2 touch), `production-corrected` (3 production). Final current-source command results will be indexed in [PART_3.md](PART_3.md).
+
+| Android row | Result in revised scope | Reason / coverage limit |
+|---|---|---|
+| A01 core flows | Not applicable | User explicitly excluded physical testing. Desktop/touch counterparts Passed in S01–S12. |
+| A02 keyboard/scroll | Not applicable | Only resized viewports/exposed actions checked; no Android IME observation. |
+| A03 gallery/camera | Not applicable | Browser File/decoder paths checked; no native Android picker/camera observation. Camera availability itself unobserved. |
+| A04 hardware Back | Not applicable | Browser Back/Forward and Escape checked; hardware Back unobserved. |
+| A05 background/resume | Not applicable | Timer/focus/visibility logic checked synthetically; actual Android lifecycle unobserved. |
+| A06 rotation/edges/scaling | Not applicable | Fixed portrait/landscape, root 200% and reduced-motion emulation checked. Hardware rotation, actual Chrome text scaling and nonzero device safe-area insets unobserved. |
+| A07 TalkBack | Not applicable | DOM/keyboard/native-dialog checks Passed; no TalkBack accessibility-focus or speech observation. |
+| A08 device reload/reset | Not applicable | Browser reload/reset/persistence checks Passed; no physical Chrome tab reopen observation. |
+
+These Not applicable results remove A rows from this execution by the user's later instruction; they do not pass the original physical gate. The [Android record](PART_3_ANDROID.md) retains inventory and a future human checklist. Final world artwork/Phaser, worker routes/performance, backend enforcement, release HTTPS and full-prototype acceptance are outside this shell gate.

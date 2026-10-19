@@ -1,0 +1,23 @@
+[
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "started": "2026-10-18T07:46:44.3083824+08:00",
+    "seconds": 1.67,
+    "log": "1.log"
+  },
+  {
+    "command": "npm run test:production",
+    "exit": 0,
+    "started": "2026-10-18T07:46:46.0345082+08:00",
+    "seconds": 23.34,
+    "log": "2.log"
+  },
+  {
+    "command": "node scripts/asset-manifest.mjs",
+    "exit": 0,
+    "started": "2026-10-18T07:47:10.8926970+08:00",
+    "seconds": 0.23,
+    "log": "3.log"
+  }
+]

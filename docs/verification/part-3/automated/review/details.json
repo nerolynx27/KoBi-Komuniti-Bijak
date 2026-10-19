@@ -1,0 +1,184 @@
+[
+  {
+    "sheet": "detail-01.png",
+    "source": "activity-detail-360x800-text200.png",
+    "dimensions": [
+      360,
+      14387
+    ],
+    "slice_y": [
+      0,
+      6793,
+      13587
+    ]
+  },
+  {
+    "sheet": "detail-02.png",
+    "source": "activity-detail-800x360-text200.png",
+    "dimensions": [
+      800,
+      12595
+    ],
+    "slice_y": [
+      0,
+      5897,
+      11795
+    ]
+  },
+  {
+    "sheet": "detail-03.png",
+    "source": "activity-form-360x800-text200.png",
+    "dimensions": [
+      360,
+      4789
+    ],
+    "slice_y": [
+      0,
+      1994,
+      3989
+    ]
+  },
+  {
+    "sheet": "detail-04.png",
+    "source": "activity-form-800x360-text200.png",
+    "dimensions": [
+      800,
+      3409
+    ],
+    "slice_y": [
+      0,
+      1304,
+      2609
+    ]
+  },
+  {
+    "sheet": "detail-05.png",
+    "source": "editor-360x800-text200.png",
+    "dimensions": [
+      360,
+      6020
+    ],
+    "slice_y": [
+      0,
+      2610,
+      5220
+    ]
+  },
+  {
+    "sheet": "detail-06.png",
+    "source": "editor-800x360-text200.png",
+    "dimensions": [
+      800,
+      3544
+    ],
+    "slice_y": [
+      0,
+      1372,
+      2744
+    ]
+  },
+  {
+    "sheet": "detail-07.png",
+    "source": "report-detail-360x800-text200.png",
+    "dimensions": [
+      360,
+      12957
+    ],
+    "slice_y": [
+      0,
+      6078,
+      12157
+    ]
+  },
+  {
+    "sheet": "detail-08.png",
+    "source": "report-detail-800x360-text200.png",
+    "dimensions": [
+      800,
+      8837
+    ],
+    "slice_y": [
+      0,
+      4018,
+      8037
+    ]
+  },
+  {
+    "sheet": "detail-09.png",
+    "source": "report-form-360x800-text200.png",
+    "dimensions": [
+      360,
+      3214
+    ],
+    "slice_y": [
+      0,
+      1207,
+      2414
+    ]
+  },
+  {
+    "sheet": "detail-10.png",
+    "source": "report-form-800x360-text200.png",
+    "dimensions": [
+      800,
+      2830
+    ],
+    "slice_y": [
+      0,
+      1015,
+      2030
+    ]
+  },
+  {
+    "sheet": "detail-11.png",
+    "source": "sdp-report-detail-360x800-text200.png",
+    "dimensions": [
+      360,
+      14255
+    ],
+    "slice_y": [
+      0,
+      6727,
+      13455
+    ]
+  },
+  {
+    "sheet": "detail-12.png",
+    "source": "sdp-report-detail-800x360-text200.png",
+    "dimensions": [
+      800,
+      10775
+    ],
+    "slice_y": [
+      0,
+      4987,
+      9975
+    ]
+  },
+  {
+    "sheet": "detail-13.png",
+    "source": "settings-360x800-text200.png",
+    "dimensions": [
+      360,
+      4577
+    ],
+    "slice_y": [
+      0,
+      1888,
+      3777
+    ]
+  },
+  {
+    "sheet": "detail-14.png",
+    "source": "settings-800x360-text200.png",
+    "dimensions": [
+      800,
+      3537
+    ],
+    "slice_y": [
+      0,
+      1368,
+      2737
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests/production',
+  outputDir: 'artifacts/test-results',
+  reporter: [['list'], ['html', { open: 'never', outputFolder: 'artifacts/playwright-production-report' }]],
+  use: { baseURL: 'http://127.0.0.1:4173', viewport: { width: 390, height: 844 }, trace: 'retain-on-failure', screenshot: 'only-on-failure' },
+  webServer: { command: 'npm run preview -- --port 4173 --strictPort', url: 'http://127.0.0.1:4173', reuseExistingServer: !process.env.CI },
+});

@@ -1,0 +1,23 @@
+.framed { --frame-fill: var(--action-secondary); --frame-rim: var(--surface-panel); --frame-ink: var(--border-strong); --frame-shadow: var(--shadow-hard); position: relative; border: 2px solid var(--frame-ink); background: var(--frame-fill); box-shadow: 4px 4px var(--frame-shadow); }
+.button { appearance: none; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; min-width: 120px; padding: 10px var(--space-5); color: var(--text-primary); font: 400 var(--type-action)/var(--line-action) var(--font-action); text-align: center; text-decoration: none; cursor: pointer; vertical-align: middle; max-width: 100%; }
+.button-primary { --frame-fill: var(--action-primary); }
+.button-quiet { --frame-fill: var(--action-quiet); }
+.button-strong { --frame-fill: var(--action-strong); color: var(--text-inverse); }
+.button-danger { --frame-fill: var(--action-danger); color: var(--text-inverse); }
+.button-sm { min-height: 44px; min-width: 80px; padding-inline: var(--space-4); }
+.button-lg { min-height: 56px; min-width: 160px; padding-inline: var(--space-6); }
+.button-icon { min-width: 44px; width: 44px; min-height: 44px; padding: 10px; }
+.button-full { width: 100%; }
+.button-full.button-primary { min-height: 56px; padding-inline: var(--space-6); }
+.button-text { border: 0; box-shadow: none; background: transparent; text-decoration: underline; text-underline-offset: 4px; min-height: 44px; }
+.control-content { position: relative; display: grid; min-width: 0; width: 100%; }
+.button-label, .button-pending { display: flex; align-items: center; justify-content: center; gap: var(--space-2); overflow-wrap: anywhere; }
+.button-label-hidden { visibility: hidden; grid-area: 1 / 1; }
+.button-pending { grid-area: 1 / 1; }
+.button-label .icon, .button-pending .icon { flex: none; }
+.button[aria-busy='true'] { cursor: progress; }
+.button:disabled, .button[aria-disabled='true']:not([aria-busy='true']) { --frame-fill: var(--surface-disabled); --frame-ink: var(--border-disabled); color: var(--text-disabled); cursor: not-allowed; box-shadow: none; }
+.progress-icon { width: 16px; height: 16px; animation: progress-step 1s steps(4) infinite; }
+@keyframes progress-step { to { transform: rotate(360deg); } }
+@media (hover: hover) and (pointer: fine) { .framed:hover:not(:disabled):not([aria-disabled='true']) .frame-fill { stroke: var(--frame-ink); stroke-width: 2px; } }
+@media (prefers-reduced-motion: reduce) { .progress-icon { animation: none; } }

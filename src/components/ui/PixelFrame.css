@@ -1,0 +1,16 @@
+.pixel-frame { position: absolute; top: -2px; left: -2px; pointer-events: none; overflow: visible; }
+.frame-shadow { fill: var(--frame-shadow); }
+.frame-ink { fill: var(--frame-ink); }
+.frame-rim { fill: var(--frame-rim); }
+.frame-fill { fill: var(--frame-fill); }
+.frame-fold { fill: var(--accent-decorative); }
+.frame-face, .control-content { transition: transform var(--motion-press); }
+.framed:has(> .pixel-frame) { background: transparent; border-color: transparent; box-shadow: none; }
+.framed:has(> .pixel-frame):focus-visible,
+.framed:has(> .pixel-frame)[data-simulated='focus'] { box-shadow: 0 0 0 6px var(--surface-panel); }
+.framed:active:not(:disabled):not([aria-disabled='true']) .frame-face,
+.framed:active:not(:disabled):not([aria-disabled='true']) .control-content,
+.framed[data-simulated='pressed'] .frame-face,
+.framed[data-simulated='pressed'] .control-content { transform: translate(2px, 2px); }
+.framed:disabled .frame-shadow { display: none; }
+@media (prefers-reduced-motion: reduce) { .frame-face, .control-content { transition: none; } }

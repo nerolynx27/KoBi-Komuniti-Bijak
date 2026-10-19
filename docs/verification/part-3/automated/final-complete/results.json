@@ -1,0 +1,44 @@
+[
+  {
+    "command": "npm run lint",
+    "exit": 0,
+    "started": "2026-10-18T08:03:19.3513891+08:00",
+    "seconds": 1.97,
+    "log": "1.log"
+  },
+  {
+    "command": "npm test",
+    "exit": 0,
+    "started": "2026-10-18T08:03:21.3549275+08:00",
+    "seconds": 1.41,
+    "log": "2.log"
+  },
+  {
+    "command": "npm run test:e2e",
+    "exit": 0,
+    "started": "2026-10-18T08:03:22.7822583+08:00",
+    "seconds": 99.34,
+    "log": "3.log"
+  },
+  {
+    "command": "node scripts/asset-manifest.mjs",
+    "exit": 0,
+    "started": "2026-10-18T08:05:02.6190102+08:00",
+    "seconds": 0.24,
+    "log": "4.log"
+  },
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "started": "2026-10-18T08:05:02.8862699+08:00",
+    "seconds": 1.9,
+    "log": "5.log"
+  },
+  {
+    "command": "npm run test:production",
+    "exit": 0,
+    "started": "2026-10-18T08:05:04.8036325+08:00",
+    "seconds": 11.6,
+    "log": "6.log"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "command": "npm run test:e2e -- tests/e2e/part3-accessibility.spec.js --grep \"fallback fonts|required actions\" --workers=1",
+  "exit": 0,
+  "started": "2026-10-18T07:56:06.1390952+08:00",
+  "seconds": 12.47,
+  "log": "1.log"
+}

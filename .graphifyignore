@@ -1,0 +1,11 @@
+# Generated files, archived test assets and assistant tooling are not app source.
+node_modules/
+dist/
+artifacts/
+tmp/
+graphify-out/
+.codex/
+.agents/
+docs/verification/
+docs/screenshots/
+package-lock.json
