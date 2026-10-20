@@ -22,6 +22,18 @@ export function WorldboxFacilitySheet({
 }) {
   if (!facility) return null;
 
+  function handleOverlayClick(e) {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  }
+
   const distanceMeters = userHome && location ? calculateDistanceMeters(userHome, location) : null;
   const distanceText = isUserHome
     ? 'Your registered home'
@@ -33,7 +45,15 @@ export function WorldboxFacilitySheet({
   const activities = getFacilityActivities(facility.id);
 
   return (
-    <div className="worldbox-sheet-overlay" role="dialog" aria-modal="true" aria-label={facility.name}>
+    <div
+      className="worldbox-sheet-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label={facility.name}
+      onClick={handleOverlayClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={-1}
+    >
       <div className="worldbox-sheet">
         <div className="sheet-header">
           <div className="sheet-title-group">

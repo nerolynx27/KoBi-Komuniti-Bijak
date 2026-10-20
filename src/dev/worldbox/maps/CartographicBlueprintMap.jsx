@@ -123,6 +123,18 @@ export function CartographicBlueprintMap({
               </g>
             )}
 
+            {/* Condition Dot */}
+            {facility?.state && (
+              <circle
+                cx="12"
+                cy="-12"
+                r="4"
+                fill={facility.state === 'reported' ? '#B92C2C' : facility.state === 'repairing' ? '#CEA257' : '#588157'}
+                stroke="#E5E0CD"
+                strokeWidth="1.5"
+              />
+            )}
+
             {/* "MY HOUSE" Banner */}
             {isHome && (
               <g transform="translate(0, -22)">

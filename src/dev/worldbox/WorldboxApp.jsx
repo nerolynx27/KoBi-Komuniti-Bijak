@@ -93,8 +93,17 @@ export function WorldboxApp() {
     const newZoom = Math.max(zoom, 1.75);
     setZoom(newZoom);
     const view = viewportRef.current;
-    const targetX = (userHomeObject.x + userHomeObject.width / 2) * 20;
-    const targetY = (userHomeObject.y + userHomeObject.height / 2) * 20;
+
+    let targetX, targetY;
+    if (activeApproach === 'isometric-25d') {
+      // Isometric projection coordinate
+      targetX = 320 + (userHomeObject.x - userHomeObject.y) * 18;
+      targetY = 80 + (userHomeObject.x + userHomeObject.y) * 9;
+    } else {
+      // Orthogonal grid coordinate
+      targetX = (userHomeObject.x + userHomeObject.width / 2) * 20;
+      targetY = (userHomeObject.y + userHomeObject.height / 2) * 20;
+    }
 
     setTimeout(() => {
       view.scrollTo({

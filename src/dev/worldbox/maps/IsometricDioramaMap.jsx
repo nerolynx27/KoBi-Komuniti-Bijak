@@ -187,6 +187,18 @@ export function IsometricDioramaMap({
               </g>
             )}
 
+            {/* Condition Dot */}
+            {facility?.state && (
+              <circle
+                cx={w / 2}
+                cy={-h - 2}
+                r="4"
+                fill={facility.state === 'reported' ? '#B92C2C' : facility.state === 'repairing' ? '#CEA257' : '#588157'}
+                stroke="#E5E0CD"
+                strokeWidth="1.5"
+              />
+            )}
+
             {/* "MY HOUSE" 2.5D Pin */}
             {isHome && (
               <g transform="translate(0, -42)" filter="url(#iso-shadow)">

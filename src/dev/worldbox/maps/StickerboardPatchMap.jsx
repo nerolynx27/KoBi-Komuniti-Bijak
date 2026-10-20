@@ -148,6 +148,18 @@ export function StickerboardPatchMap({
               </g>
             )}
 
+            {/* Condition Dot */}
+            {facility?.state && (
+              <circle
+                cx={pw - 2}
+                cy={2}
+                r="4.5"
+                fill={facility.state === 'reported' ? '#B92C2C' : facility.state === 'repairing' ? '#CEA257' : '#588157'}
+                stroke="#E5E0CD"
+                strokeWidth="1.5"
+              />
+            )}
+
             {/* "MY HOUSE" Die-cut Sticker Header */}
             {isHome && (
               <g transform={`translate(${pw / 2}, -14)`}>
