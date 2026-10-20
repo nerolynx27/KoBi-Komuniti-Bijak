@@ -14,7 +14,7 @@ function validV1Data(d) {
   if (!exactKeys(d.preferences, 'rememberWorkspace workspace') || typeof d.preferences.rememberWorkspace !== 'boolean' || !['resident', 'sdp'].includes(d.preferences.workspace)) return false;
   if (!rows(d.profiles, p => exactKeys(p, 'id township_id display_name role created_at') && text(p.id) && p.township_id === d.township.id && text(p.display_name, 2, 60) && ['resident', 'staff'].includes(p.role) && date(p.created_at)) || !d.profiles.some(p => p.role === 'resident')) return false;
   const profile = id => d.profiles.some(p => p.id === id);
-  if (!rows(d.facilities, f => exactKeys(f, 'id name type township_id reportable') && text(f.id) && text(f.name) && ['lamp', 'bench', 'park', 'hall', 'recycling'].includes(f.type) && typeof f.reportable === 'boolean' && f.township_id === d.township.id)) return false;
+  if (!rows(d.facilities, f => exactKeys(f, 'id name type township_id reportable') && text(f.id) && text(f.name) && ['lamp', 'bench', 'park', 'hall', 'recycling', 'house'].includes(f.type) && typeof f.reportable === 'boolean' && f.township_id === d.township.id)) return false;
   const facility = id => d.facilities.find(f => f.id === id);
   if (!rows(d.complaints, c => exactKeys(c, 'id facility_id resident_id description photo_path status version created_at updated_at') && text(c.id) && facility(c.facility_id)?.reportable && profile(c.resident_id) && text(c.description, 10, 1000) && c.photo_path === null && statuses.includes(c.status) && Number.isInteger(c.version) && c.version >= 1 && date(c.created_at) && date(c.updated_at))) return false;
   if (!rows(d.complaint_updates, u => exactKeys(u, 'id complaint_id actor_id status note evidence_path created_at') && text(u.id) && d.complaints.some(c => c.id === u.complaint_id) && profile(u.actor_id) && statuses.includes(u.status) && text(u.note, 5, 1000) && u.evidence_path === null && date(u.created_at))) return false;
@@ -30,9 +30,19 @@ const safeMetadataText = value => text(value, 1, 255) && !/^(?:blob:|data:)/i.te
 export function validateDemoData(data) {
   const issues = [];
   if (!exactKeys(data, rootKeys)) return { valid: false, issues: ['Demo data has missing or unsupported fields.'] };
-  if (!rows(data.profiles, p => exactKeys(p, 'id township_id display_name role email created_at') && email(p.email))) {
+
+  const validProfile = p => {
+    if (!p || typeof p !== 'object' || Array.isArray(p)) return false;
+    const requiredKeys = ['id', 'township_id', 'display_name', 'role', 'email', 'created_at'];
+    const allowedKeys = new Set([...requiredKeys, 'home_facility_id', 'home_object_id', 'address']);
+    const keys = Object.keys(p);
+    return requiredKeys.every(k => k in p) && keys.every(k => allowedKeys.has(k)) && email(p.email);
+  };
+
+  if (!rows(data.profiles, validProfile)) {
     return { valid: false, issues: ['Profiles must have valid email addresses and supported fields.'] };
   }
+
   if (!rows(data.attachments, a => exactKeys(a, 'id kind file_name mime_type size_bytes') && safeMetadataText(a.id) && ['report', 'resolution'].includes(a.kind) && safeMetadataText(a.file_name) && ['image/jpeg', 'image/png', 'image/webp'].includes(a.mime_type) && Number.isInteger(a.size_bytes) && a.size_bytes >= 1 && a.size_bytes <= 5000000)) {
     return { valid: false, issues: ['Attachments must contain supported image metadata only (1–5,000,000 bytes).'] };
   }
@@ -46,9 +56,19 @@ export function validateDemoData(data) {
   const { attachments: _attachments, ...shared } = data;
   const legacyShape = {
     ...shared,
-    profiles: data.profiles.map(({ email: _email, ...profile }) => profile),
-    complaints: data.complaints.map(c => ({ ...c, photo_path: null })),
-    complaint_updates: data.complaint_updates.map(u => ({ ...u, evidence_path: null })),
+    township: data.township ? { id: data.township.id, name: data.township.name, map_id: data.township.map_id } : null,
+    profiles: Array.isArray(data.profiles)
+      ? data.profiles.map(({ email: _email, home_facility_id: _hf, home_object_id: _ho, address: _addr, ...profile }) => profile)
+      : data.profiles,
+    layout: Array.isArray(data.layout)
+      ? data.layout.map(({ label: _label, ...obj }) => obj)
+      : data.layout,
+    complaints: Array.isArray(data.complaints)
+      ? data.complaints.map(c => (c && typeof c === 'object' ? { ...c, photo_path: null } : c))
+      : data.complaints,
+    complaint_updates: Array.isArray(data.complaint_updates)
+      ? data.complaint_updates.map(u => (u && typeof u === 'object' ? { ...u, evidence_path: null } : u))
+      : data.complaint_updates,
   };
   if (!validV1Data(legacyShape)) issues.push('Records contain invalid fields, duplicate IDs, out-of-bounds tiles or missing relationships.');
   return { valid: issues.length === 0, issues };
@@ -85,5 +105,3 @@ export function readDemoEnvelope(raw) {
   if (!validation.valid) return failure('INVALID_DATA', validation.issues.join(' '));
   return { data: { version: 2, revision: envelope.revision, data: envelope.data, migrated: false }, error: null };
 }
-
-

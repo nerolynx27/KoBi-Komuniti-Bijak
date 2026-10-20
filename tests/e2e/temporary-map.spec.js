@@ -4,16 +4,28 @@ const saved = page => page.evaluate(() => JSON.parse(localStorage.getItem('kobi.
 
 test('public sheets, report prefill and explicit colocated activity choice', async ({ page }) => {
   await page.goto('/#map');
-  for (const name of ['Walkway lamp', 'Garden bench', 'Community garden', 'Community hall', 'Recycling point', 'Neighbourhood house']) {
-    await page.getByRole('button', { name: new RegExp(`^${name}`) }).click();
+  const places = [
+    { name: 'Walkway lamp #01 (Jalan Frekuensi)', isHouse: false },
+    { name: 'Garden bench (Elmina Central Park)', isHouse: false },
+    { name: 'Community garden & park (Elmina Central Park)', isHouse: false },
+    { name: 'Community hall (Dewan Komuniti Elmina)', isHouse: false },
+    { name: 'Recycling point (Elmina Station)', isHouse: false },
+    { name: 'Neighbourhood house (Alex Tan Home - Lot 12)', isHouse: true },
+  ];
+
+  for (const { name, isHouse } of places) {
+    await page.getByRole('button', { name, exact: false }).click();
     const sheet = page.getByRole('dialog');
     await expect(sheet.getByRole('heading', { name, exact: true })).toBeVisible();
-    await expect(sheet).not.toContainText('Alex Tan');
+    if (!isHouse) {
+      await expect(sheet).not.toContainText('Alex Tan');
+    }
     await expect(sheet).not.toContainText('The walkway lamp is not lighting up');
-    await expect(sheet.getByRole('button', { name: 'Report a problem', exact: true })).toHaveCount(name === 'Neighbourhood house' ? 0 : 1);
+    await expect(sheet.getByRole('button', { name: 'Report a problem', exact: true })).toHaveCount(isHouse ? 0 : 1);
     await sheet.getByRole('button', { name: 'Close', exact: true }).click();
   }
-  await page.getByRole('button', { name: /^Walkway lamp/ }).click();
+
+  await page.getByRole('button', { name: /^Walkway lamp #01/ }).click();
   await page.getByRole('dialog').getByRole('button', { name: 'Report a problem', exact: true }).click();
   await expect(page.getByLabel(/^Facility/)).toHaveValue('lamp-01');
   await page.goto('/#map');
@@ -36,7 +48,7 @@ test('report and activity map links focus current objects; zoom scroll stays int
   await page.evaluate(envelope => localStorage.setItem('kobi.demo.v1', JSON.stringify(envelope)), envelope);
   await page.goto(`/#reports/${envelope.data.complaints[0].id}`); await page.reload();
   await page.getByRole('link', { name: 'View on map', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Walkway lamp/ })).toBeFocused();
+  await expect(page.getByRole('button', { name: /^Walkway lamp #01/ })).toBeFocused();
   await expect(page.locator('.schematic-object.is-selected rect')).toHaveAttribute('x', '580');
   await page.goto(`/#activities/${envelope.data.activities[0].id}`);
   await page.getByRole('button', { name: 'View on map', exact: true }).click();

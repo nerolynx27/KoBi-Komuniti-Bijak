@@ -66,7 +66,7 @@ test('required actions remain exposed in short resized viewports and bottom capt
 test('actual sheets photo dirty and reset dialogs contain focus and restore meaningful targets', async ({ page }) => {
   await openPart3(page);
   const place = page.getByRole('button', { name: /^Walkway lamp/ });
-  await place.click(); await modal(page, 'Walkway lamp', 'Close sheet');
+  await place.click(); await modal(page, /^Walkway lamp/, 'Close sheet');
   await page.keyboard.press('Escape'); await expect(place).toBeFocused();
   await page.goto('/#reports/new'); await page.getByLabel('Report photo (optional)').setInputFiles(image);
   await button(page, 'Preview photo').click(); await modal(page, /photo/i, 'Close');

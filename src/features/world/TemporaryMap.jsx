@@ -230,6 +230,11 @@ export function TemporaryMap({
               aria-label="Interactive Classic 2D Grid map of Elmina Seksyen U16"
             >
               <defs>
+                {/* Schematic Grid Definition for backward-compatibility */}
+                <pattern id="tile-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" className="schematic-grid" />
+                </pattern>
+
                 {/* Lively Pixel Meadow Grass Pattern */}
                 <pattern id="classic-grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
                   <rect width="20" height="20" fill="#569443" />
@@ -264,6 +269,7 @@ export function TemporaryMap({
 
               {/* 1. Lively Green Base Terrain Ground */}
               <rect width="640" height="480" fill="url(#classic-grid-pattern)" className="schematic-ground" />
+              <rect width="640" height="480" fill="url(#tile-grid)" pointerEvents="none" />
 
               {/* 2. Residential Precinct Lawn Plots */}
               <rect x="14" y="14" width="116" height="196" rx="4" fill="url(#classic-yard-lawn)" stroke="#437a34" strokeWidth="1.5" />
@@ -291,11 +297,11 @@ export function TemporaryMap({
               <rect x="400" y="297" width="240" height="26" fill="#D1BF9A" />
 
               {/* Persiaran Elmina */}
-              <rect x="0" y="220" width="640" height="40" fill="url(#classic-asphalt-pattern)" />
+              <rect x="0" y="220" width="640" height="40" fill="url(#classic-asphalt-pattern)" className="schematic-path" />
               <line x1="0" y1="240" x2="640" y2="240" stroke="#CEA257" strokeWidth="2" strokeDasharray="14,10" />
 
               {/* Jalan Frekuensi 1 */}
-              <rect x="140" y="0" width="40" height="480" fill="url(#classic-asphalt-pattern)" />
+              <rect x="140" y="0" width="40" height="480" fill="url(#classic-asphalt-pattern)" className="schematic-path" />
               <line x1="160" y1="0" x2="160" y2="220" stroke="#E5E0CD" strokeWidth="1.5" strokeDasharray="8,8" />
               <line x1="160" y1="260" x2="160" y2="480" stroke="#E5E0CD" strokeWidth="1.5" strokeDasharray="8,8" />
 

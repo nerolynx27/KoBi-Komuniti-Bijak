@@ -137,7 +137,7 @@ test('Back restores a remembered bare-URL workspace and its selected demo actor'
   await page.goBack();
   await expect(page.getByRole('heading', { name: 'SDP workspace', exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'Review reports', exact: true }).click();
-  await page.getByRole('link', { name: 'Walkway lamp', exact: true }).click();
+  await page.getByRole('link', { name: /^Walkway lamp/ }).click();
   await page.getByLabel(/^Action note/).fill('The restored SDP demo actor starts this inspection.');
   await page.getByRole('button', { name: 'Start work', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Mark resolved', exact: true })).toBeVisible();

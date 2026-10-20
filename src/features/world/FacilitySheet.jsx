@@ -52,7 +52,7 @@ export function FacilitySheet({ object, navigate, closeModal, onClose = closeMod
             </span>
           )}
           <span className={`badge-pill facility-condition state-${object.state}`}>
-            ● {stateLabels[object.state] || 'Normal'}
+            {stateLabels[object.state] || 'Normal'}
           </span>
           {object.distanceText && (
             <span className="badge-pill badge-distance">

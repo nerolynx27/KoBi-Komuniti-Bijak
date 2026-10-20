@@ -21,7 +21,7 @@ export function createSampleData(referenceTime) {
     { id: 'park-01', name: 'Community garden & park (Elmina Central Park)', type: 'park', township_id: TOWNSHIP_ID, reportable: true },
     { id: 'hall-01', name: 'Community hall (Dewan Komuniti Elmina)', type: 'hall', township_id: TOWNSHIP_ID, reportable: true },
     { id: 'recycling-01', name: 'Recycling point (Elmina Station)', type: 'recycling', township_id: TOWNSHIP_ID, reportable: true },
-    { id: 'lamp-02', name: 'Walkway lamp #02 (Jalan Frekuensi)', type: 'lamp', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'lamp-02', name: 'Streetlight #02 (Jalan Frekuensi)', type: 'lamp', township_id: TOWNSHIP_ID, reportable: true },
     { id: 'lamp-03', name: 'Streetlight #10 (Persiaran Elmina)', type: 'lamp', township_id: TOWNSHIP_ID, reportable: true },
     { id: 'surau-01', name: 'Surau Al-Falah (Elmina U16)', type: 'hall', township_id: TOWNSHIP_ID, reportable: true },
     { id: 'house-01', name: 'Neighbourhood house (Alex Tan Home - Lot 12)', type: 'house', township_id: TOWNSHIP_ID, reportable: false },
@@ -47,10 +47,10 @@ export function createSampleData(referenceTime) {
     { objectId: 'object-tree-01', facilityId: null, assetKey: 'tree', x: 3, y: 8, width: 1, height: 1, label: 'Garden tree' },
 
     // Precinct 1: North-West Frekuensi Residential Terrace (West of Jalan Frekuensi 1)
-    { objectId: 'object-house-08', facilityId: null, assetKey: 'house', x: 1, y: 1, width: 2, height: 2, label: 'Lot 08' },
+    { objectId: 'object-house-08', facilityId: null, assetKey: 'house', x: 1, y: 3, width: 2, height: 2, label: 'Lot 08' },
     { objectId: 'object-house-09', facilityId: null, assetKey: 'house', x: 4, y: 1, width: 2, height: 2, label: 'Lot 09' },
-    { objectId: 'object-house-10', facilityId: null, assetKey: 'house', x: 1, y: 4, width: 2, height: 2, label: 'Lot 10' },
-    { objectId: 'object-house-11', facilityId: null, assetKey: 'house', x: 4, y: 4, width: 2, height: 2, label: 'Lot 11' },
+    { objectId: 'object-house-10', facilityId: null, assetKey: 'house', x: 1, y: 5, width: 2, height: 2, label: 'Lot 10' },
+    { objectId: 'object-house-11', facilityId: null, assetKey: 'house', x: 4, y: 3, width: 2, height: 2, label: 'Lot 11' },
     // 2-tile clearance at y=6..7 for Lot 12 pinpoint banner
     { objectId: 'object-house-13', facilityId: null, assetKey: 'house', x: 1, y: 8, width: 2, height: 2, label: 'Lot 13' },
     { objectId: 'object-house-01', facilityId: 'house-01', assetKey: 'house', x: 4, y: 8, width: 2, height: 2, label: 'Alex Home (Lot 12)' },
@@ -76,7 +76,7 @@ export function createSampleData(referenceTime) {
     { objectId: 'object-house-27', facilityId: null, assetKey: 'house', x: 28, y: 2, width: 2, height: 2, label: 'Lot 27' },
     { objectId: 'object-house-28', facilityId: null, assetKey: 'house', x: 21, y: 21, width: 2, height: 2, label: 'Lot 28' },
     { objectId: 'object-house-29', facilityId: null, assetKey: 'house', x: 24, y: 21, width: 2, height: 2, label: 'Lot 29' },
-    { objectId: 'object-house-30', facilityId: null, assetKey: 'house', x: 27, y: 17, width: 2, height: 2, label: 'Lot 30' },
+    { objectId: 'object-house-30', facilityId: null, assetKey: 'house', x: 24, y: 17, width: 2, height: 2, label: 'Lot 30' },
   ];
 
   return {
