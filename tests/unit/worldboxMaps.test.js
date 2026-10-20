@@ -14,17 +14,24 @@ const commonProps = {
   layout: ELMINA_LAYOUT,
   facilities: ELMINA_FACILITIES,
   selectedObjectId: 'obj-hall',
+  hoveredObjectId: 'obj-park',
   userHomeObjectId: 'obj-house-12',
   onSelect: () => {},
+  onHover: () => {},
 };
 
 describe('Worldbox 4 Map Approaches', () => {
-  it('Approach 1: ClassicGridMap renders orthographic grid and street names', () => {
+  it('Approach 1: ClassicGridMap renders lively green grass, orthographic grid, street names, and hover highlight', () => {
     const html = renderToStaticMarkup(React.createElement(ClassicGridMap, commonProps));
     expect(html).toContain('classic-grid-map');
     expect(html).toMatch(/Persiaran Elmina/i);
     expect(html).toMatch(/Jalan Frekuensi/i);
     expect(html).toMatch(/My House/i);
+    // Verify lively green grass palette is used instead of brown #423024
+    expect(html).not.toContain('#423024');
+    expect(html).toContain('#569443');
+    // Verify hovered object gets hover class and tooltip
+    expect(html).toContain('is-hovered');
   });
 
   it('Approach 2: IsometricDioramaMap renders isometric diorama and 2.5D buildings', () => {

@@ -4,11 +4,12 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { WorldboxApp } from '../../src/dev/worldbox/WorldboxApp.jsx';
 
 describe('Worldbox Full App Integration', () => {
-  it('mounts the active map component directly inside the viewport', () => {
+  it('mounts the active map component directly inside the draggable viewport', () => {
     const html = renderToStaticMarkup(React.createElement(WorldboxApp));
     // Default active approach is classic-grid
     expect(html).toContain('classic-grid-map');
     expect(html).toContain('Find my house');
+    expect(html).toContain('data-draggable="true"');
     expect(html).not.toContain('Loading Renderers');
   });
 

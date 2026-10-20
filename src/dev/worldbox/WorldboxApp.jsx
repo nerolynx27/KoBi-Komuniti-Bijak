@@ -6,6 +6,9 @@ import {
   ELMINA_LAYOUT,
   ELMINA_PERSONAS,
   ELMINA_TOWNSHIP,
+  calculateDistanceMeters,
+  formatWalkingDistance,
+  resolveObjectFacility,
 } from './worldboxData.js';
 
 import { ClassicGridMap } from './maps/ClassicGridMap.jsx';
@@ -17,8 +20,8 @@ export const APPROACHES = [
   {
     id: 'classic-grid',
     name: 'Classic 2D Grid',
-    subtitle: 'Retro RPG GameBoy style',
-    description: 'Flat top-down orthogonal pixel grid with high-contrast road tiles, pixel tree clusters, and crisp parcel outlines.',
+    subtitle: 'Selected · Retro RPG style',
+    description: 'Lively green top-down pixel grid with roadside streetlights, 20+ terrace houses, hover tooltips, and click-and-drag panning.',
   },
   {
     id: 'isometric-25d',
@@ -50,9 +53,21 @@ const MAP_COMPONENTS = {
 export function WorldboxApp() {
   const [activeApproach, setActiveApproach] = useState('classic-grid');
   const [activePersonaId, setActivePersonaId] = useState('resident-alex');
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(1.25);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
   const [selectedObjectId, setSelectedObjectId] = useState(null);
+  const [hoveredObjectId, setHoveredObjectId] = useState(null);
+
   const viewportRef = useRef(null);
+  const dragStateRef = useRef({
+    active: false,
+    startX: 0,
+    startY: 0,
+    originPanX: 0,
+    originPanY: 0,
+    moved: false,
+  });
 
   const activePersona = ELMINA_PERSONAS.find(p => p.id === activePersonaId) || ELMINA_PERSONAS[0];
   const isResident = activePersona.role === 'resident';
@@ -62,11 +77,19 @@ export function WorldboxApp() {
     ? ELMINA_LAYOUT.find(o => o.objectId === activePersona.homeObjectId)
     : null;
 
-  // Selected item and facility
+  // Selected item and facility (supports both public amenities and residential houses)
   const selectedObject = ELMINA_LAYOUT.find(o => o.objectId === selectedObjectId);
-  const selectedFacility = selectedObject?.facilityId
-    ? ELMINA_FACILITIES.find(f => f.id === selectedObject.facilityId)
-    : null;
+  const selectedFacility = resolveObjectFacility(selectedObject, ELMINA_FACILITIES);
+
+  // Hovered item for floating HUD preview
+  const hoveredObject = ELMINA_LAYOUT.find(o => o.objectId === hoveredObjectId);
+  const hoveredFacility = resolveObjectFacility(hoveredObject, ELMINA_FACILITIES);
+  const hoveredDistance =
+    isResident && userHomeObject && hoveredObject
+      ? hoveredObject.objectId === userHomeObject.objectId
+        ? 'Your registered home'
+        : formatWalkingDistance(calculateDistanceMeters(userHomeObject, hoveredObject))
+      : null;
 
   const isUserHome = Boolean(
     isResident && selectedObject && userHomeObject && selectedObject.objectId === userHomeObject.objectId
@@ -82,6 +105,7 @@ export function WorldboxApp() {
 
   function handleResetView() {
     setZoom(1);
+    setPan({ x: 0, y: 0 });
     if (viewportRef.current) {
       viewportRef.current.scrollLeft = 0;
       viewportRef.current.scrollTop = 0;
@@ -89,30 +113,66 @@ export function WorldboxApp() {
   }
 
   function handleFindMyHouse() {
-    if (!userHomeObject || !viewportRef.current) return;
-    const newZoom = Math.max(zoom, 1.75);
-    setZoom(newZoom);
-    const view = viewportRef.current;
+    if (!userHomeObject) return;
+    const targetZoom = Math.max(zoom, 1.75);
+    setZoom(targetZoom);
 
     let targetX, targetY;
     if (activeApproach === 'isometric-25d') {
-      // Isometric projection coordinate
       targetX = 320 + (userHomeObject.x - userHomeObject.y) * 18;
       targetY = 80 + (userHomeObject.x + userHomeObject.y) * 9;
     } else {
-      // Orthogonal grid coordinate
       targetX = (userHomeObject.x + userHomeObject.width / 2) * 20;
       targetY = (userHomeObject.y + userHomeObject.height / 2) * 20;
     }
 
-    setTimeout(() => {
-      view.scrollTo({
-        left: targetX * newZoom - view.clientWidth / 2,
-        top: targetY * newZoom - view.clientHeight / 2,
-        behavior: 'smooth',
-      });
-      setSelectedObjectId(userHomeObject.objectId);
-    }, 50);
+    // Center the house relative to the 640x480 map center (320, 240)
+    const offsetX = (320 - targetX) * targetZoom;
+    const offsetY = (240 - targetY) * targetZoom;
+    setPan({ x: offsetX, y: offsetY });
+    setSelectedObjectId(userHomeObject.objectId);
+  }
+
+  // Pointer drag-to-pan handlers
+  function handlePointerDown(e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    dragStateRef.current = {
+      active: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      originPanX: pan.x,
+      originPanY: pan.y,
+      moved: false,
+    };
+    setIsDragging(true);
+  }
+
+  function handlePointerMove(e) {
+    if (!dragStateRef.current.active) return;
+    const dx = e.clientX - dragStateRef.current.startX;
+    const dy = e.clientY - dragStateRef.current.startY;
+    if (Math.hypot(dx, dy) > 4) {
+      dragStateRef.current.moved = true;
+    }
+    setPan({
+      x: dragStateRef.current.originPanX + dx,
+      y: dragStateRef.current.originPanY + dy,
+    });
+  }
+
+  function handlePointerUp() {
+    if (!dragStateRef.current.active) return;
+    dragStateRef.current.active = false;
+    setIsDragging(false);
+  }
+
+  function handleObjectSelect(obj) {
+    // Do not trigger click selection if the user was dragging the map
+    if (dragStateRef.current.moved) {
+      dragStateRef.current.moved = false;
+      return;
+    }
+    setSelectedObjectId(obj.objectId);
   }
 
   const currentApproachMeta = APPROACHES.find(a => a.id === activeApproach) || APPROACHES[0];
@@ -200,23 +260,49 @@ export function WorldboxApp() {
           </div>
         </div>
 
-        {/* Viewport Canvas Area */}
-        <div className="worldbox-viewport" ref={viewportRef}>
+        {/* Interactive Drag-to-Pan Viewport Canvas Area */}
+        <div
+          className={`worldbox-viewport ${isDragging ? 'is-dragging' : ''}`}
+          ref={viewportRef}
+          data-draggable="true"
+          onMouseDown={handlePointerDown}
+          onMouseMove={handlePointerMove}
+          onMouseUp={handlePointerUp}
+          onMouseLeave={handlePointerUp}
+        >
+          {/* Floating Hover HUD Readout */}
+          <div className="worldbox-hover-hud" aria-live="polite">
+            {hoveredFacility ? (
+              <>
+                <strong>{hoveredFacility.name}</strong>
+                <span>
+                  {hoveredFacility.category}
+                  {hoveredDistance ? ` · ${hoveredDistance}` : ''} · Click to inspect
+                </span>
+              </>
+            ) : (
+              <span>✋ Drag anywhere to pan · Hover over any house or amenity · Click to inspect</span>
+            )}
+          </div>
+
           <div
             id="map-canvas-container"
             style={{
               width: `${640 * zoom}px`,
               height: `${480 * zoom}px`,
+              transform: `translate(${pan.x}px, ${pan.y}px)`,
               position: 'relative',
-              transition: 'width 0.15s ease-out, height 0.15s ease-out',
+              transition: isDragging ? 'none' : 'width 0.15s ease-out, height 0.15s ease-out, transform 0.2s ease-out',
             }}
           >
             <ActiveMapComponent
               layout={ELMINA_LAYOUT}
               facilities={ELMINA_FACILITIES}
               selectedObjectId={selectedObjectId}
+              hoveredObjectId={hoveredObjectId}
               userHomeObjectId={userHomeObject?.objectId}
-              onSelect={obj => setSelectedObjectId(obj.objectId)}
+              onSelect={handleObjectSelect}
+              onHover={obj => setHoveredObjectId(obj ? obj.objectId : null)}
             />
           </div>
         </div>
