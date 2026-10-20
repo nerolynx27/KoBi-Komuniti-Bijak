@@ -26,6 +26,30 @@
 .place-button.is-selected .helper { color: var(--text-primary); }
 .place-button strong { font-weight: 400; font-family: var(--font-heading); }
 
+/* Interactive Panning & Hover HUD */
+.schematic-viewport[data-draggable="true"] { cursor: grab; user-select: none; }
+.schematic-viewport.is-dragging { cursor: grabbing; }
+.schematic-canvas-container { will-change: transform; }
+.schematic-hover-hud {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 12px;
+  background: var(--color-wine, #6C1A21);
+  color: var(--color-vanilla, #E5E0CD);
+  border: 2px solid var(--color-gold, #CEA257);
+  border-radius: 4px;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-body);
+  font-size: 14px;
+  box-shadow: 2px 2px var(--shadow-hard);
+}
+.schematic-hover-hud strong {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  color: var(--color-gold, #CEA257);
+}
+
 /* FacilitySheet Upgrades */
 .facility-sheet { outline: none; }
 .facility-sheet-content { display: flex; flex-direction: column; gap: var(--space-3); }
