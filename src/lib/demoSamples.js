@@ -3,19 +3,112 @@ export const RESIDENT_ID = '00000000-0000-4000-8000-000000000002';
 export const STAFF_ID = '00000000-0000-4000-8000-000000000003';
 const stamp = '2026-10-16T00:00:00Z';
 
+export const ELMINA_ROADS = [
+  { id: 'road-persiaran', name: 'PERSIARAN ELMINA', x: 0, y: 11, width: 32, height: 2, orientation: 'horizontal', primary: true },
+  { id: 'road-frekuensi-1', name: 'JALAN FREKUENSI 1', x: 7, y: 0, width: 2, height: 24, orientation: 'vertical', primary: false },
+  { id: 'road-frekuensi-2', name: 'JALAN FREKUENSI 2', x: 18, y: 0, width: 2, height: 24, orientation: 'vertical', primary: false },
+  { id: 'road-frekuensi-3', name: 'JALAN FREKUENSI 3', x: 9, y: 5, width: 9, height: 1, orientation: 'horizontal', primary: false },
+  { id: 'road-frekuensi-4', name: 'JALAN FREKUENSI 4', x: 20, y: 15, width: 12, height: 1, orientation: 'horizontal', primary: false },
+];
+
 export function createSampleData(referenceTime) {
   const start = referenceTime === undefined ? '2026-11-07T01:00:00Z' : new Date(new Date(referenceTime).getTime() + 7 * 86400000).toISOString();
   const end = referenceTime === undefined ? '2026-11-07T03:00:00Z' : new Date(Date.parse(start) + 7200000).toISOString();
+
   const facilities = [
-    ['lamp-01', 'Walkway lamp', 'lamp'], ['bench-01', 'Garden bench', 'bench'],
-    ['park-01', 'Community garden', 'park'], ['hall-01', 'Community hall', 'hall'],
-    ['recycling-01', 'Recycling point', 'recycling'],
-  ].map(([id, name, type]) => ({ id, name, type, township_id: TOWNSHIP_ID, reportable: true }));
+    { id: 'lamp-01', name: 'Walkway lamp #01 (Jalan Frekuensi)', type: 'lamp', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'bench-01', name: 'Garden bench (Elmina Central Park)', type: 'bench', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'park-01', name: 'Community garden & park (Elmina Central Park)', type: 'park', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'hall-01', name: 'Community hall (Dewan Komuniti Elmina)', type: 'hall', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'recycling-01', name: 'Recycling point (Elmina Station)', type: 'recycling', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'lamp-02', name: 'Walkway lamp #02 (Jalan Frekuensi)', type: 'lamp', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'lamp-03', name: 'Streetlight #10 (Persiaran Elmina)', type: 'lamp', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'surau-01', name: 'Surau Al-Falah (Elmina U16)', type: 'hall', township_id: TOWNSHIP_ID, reportable: true },
+    { id: 'house-01', name: 'Neighbourhood house (Alex Tan Home - Lot 12)', type: 'house', township_id: TOWNSHIP_ID, reportable: false },
+  ];
+
+  const layout = [
+    // Primary streetlights on roadside verges
+    { objectId: 'object-lamp-01', facilityId: 'lamp-01', assetKey: 'lamp', x: 6, y: 3, width: 1, height: 1, label: 'Lamp #01' },
+    { objectId: 'object-lamp-02', facilityId: 'lamp-02', assetKey: 'lamp', x: 6, y: 10, width: 1, height: 1, label: 'Lamp #02' },
+    { objectId: 'object-lamp-03', facilityId: 'lamp-03', assetKey: 'lamp', x: 13, y: 10, width: 1, height: 1, label: 'Streetlight #10' },
+    { objectId: 'object-lamp-04', facilityId: null, assetKey: 'lamp', x: 9, y: 14, width: 1, height: 1, label: 'Lamp #03' },
+    { objectId: 'object-lamp-05', facilityId: null, assetKey: 'lamp', x: 23, y: 10, width: 1, height: 1, label: 'Streetlight #11' },
+    { objectId: 'object-lamp-06', facilityId: null, assetKey: 'lamp', x: 16, y: 13, width: 1, height: 1, label: 'Streetlight #12' },
+
+    // Primary Community Amenities
+    { objectId: 'object-bench-01', facilityId: 'bench-01', assetKey: 'bench', x: 17, y: 14, width: 1, height: 1, label: 'Garden bench' },
+    { objectId: 'object-park-01', facilityId: 'park-01', assetKey: 'park', x: 10, y: 15, width: 7, height: 6, label: 'Elmina Central Park' },
+    { objectId: 'object-hall-01', facilityId: 'hall-01', assetKey: 'hall', x: 21, y: 6, width: 4, height: 3, label: 'Dewan Komuniti' },
+    { objectId: 'object-surau-01', facilityId: 'surau-01', assetKey: 'hall', x: 22, y: 16, width: 4, height: 3, label: 'Surau Al-Falah' },
+    { objectId: 'object-recycling-01', facilityId: 'recycling-01', assetKey: 'recycling', x: 27, y: 7, width: 2, height: 2, label: 'Recycling Point' },
+
+    // Residential Garden Tree at (3, 8) to preserve worldLayout collision contract
+    { objectId: 'object-tree-01', facilityId: null, assetKey: 'tree', x: 3, y: 8, width: 1, height: 1, label: 'Garden tree' },
+
+    // Precinct 1: North-West Frekuensi Residential Terrace (West of Jalan Frekuensi 1)
+    { objectId: 'object-house-08', facilityId: null, assetKey: 'house', x: 1, y: 1, width: 2, height: 2, label: 'Lot 08' },
+    { objectId: 'object-house-09', facilityId: null, assetKey: 'house', x: 4, y: 1, width: 2, height: 2, label: 'Lot 09' },
+    { objectId: 'object-house-10', facilityId: null, assetKey: 'house', x: 1, y: 4, width: 2, height: 2, label: 'Lot 10' },
+    { objectId: 'object-house-11', facilityId: null, assetKey: 'house', x: 4, y: 4, width: 2, height: 2, label: 'Lot 11' },
+    // 2-tile clearance at y=6..7 for Lot 12 pinpoint banner
+    { objectId: 'object-house-13', facilityId: null, assetKey: 'house', x: 1, y: 8, width: 2, height: 2, label: 'Lot 13' },
+    { objectId: 'object-house-01', facilityId: 'house-01', assetKey: 'house', x: 4, y: 8, width: 2, height: 2, label: 'Alex Home (Lot 12)' },
+
+    // Precinct 2: South-West Frekuensi Residential Terrace
+    { objectId: 'object-house-14', facilityId: null, assetKey: 'house', x: 1, y: 14, width: 2, height: 2, label: 'Lot 14' },
+    { objectId: 'object-house-15', facilityId: null, assetKey: 'house', x: 4, y: 14, width: 2, height: 2, label: 'Lot 15' },
+    { objectId: 'object-house-16', facilityId: null, assetKey: 'house', x: 1, y: 17, width: 2, height: 2, label: 'Lot 16' },
+    { objectId: 'object-house-17', facilityId: null, assetKey: 'house', x: 4, y: 17, width: 2, height: 2, label: 'Lot 17' },
+    { objectId: 'object-house-18', facilityId: null, assetKey: 'house', x: 1, y: 20, width: 2, height: 2, label: 'Lot 18' },
+    { objectId: 'object-house-19', facilityId: null, assetKey: 'house', x: 4, y: 20, width: 2, height: 2, label: 'Lot 19' },
+
+    // Precinct 3: Central Frekuensi Residential Terrace (Between Jalan Frekuensi 1 & 2)
+    { objectId: 'object-house-20', facilityId: null, assetKey: 'house', x: 10, y: 2, width: 2, height: 2, label: 'Lot 20' },
+    { objectId: 'object-house-21', facilityId: null, assetKey: 'house', x: 13, y: 2, width: 2, height: 2, label: 'Lot 21' },
+    { objectId: 'object-house-22', facilityId: null, assetKey: 'house', x: 16, y: 2, width: 2, height: 2, label: 'Lot 22' },
+    { objectId: 'object-house-23', facilityId: null, assetKey: 'house', x: 10, y: 7, width: 2, height: 2, label: 'Lot 23' },
+    { objectId: 'object-house-24', facilityId: null, assetKey: 'house', x: 15, y: 7, width: 2, height: 2, label: 'Lot 24' },
+
+    // Precinct 4: East Elmina Residential Terrace (East of Jalan Frekuensi 2)
+    { objectId: 'object-house-25', facilityId: null, assetKey: 'house', x: 21, y: 2, width: 2, height: 2, label: 'Lot 25' },
+    { objectId: 'object-house-26', facilityId: null, assetKey: 'house', x: 25, y: 2, width: 2, height: 2, label: 'Lot 26' },
+    { objectId: 'object-house-27', facilityId: null, assetKey: 'house', x: 28, y: 2, width: 2, height: 2, label: 'Lot 27' },
+    { objectId: 'object-house-28', facilityId: null, assetKey: 'house', x: 21, y: 21, width: 2, height: 2, label: 'Lot 28' },
+    { objectId: 'object-house-29', facilityId: null, assetKey: 'house', x: 24, y: 21, width: 2, height: 2, label: 'Lot 29' },
+    { objectId: 'object-house-30', facilityId: null, assetKey: 'house', x: 27, y: 17, width: 2, height: 2, label: 'Lot 30' },
+  ];
+
   return {
-    township: { id: TOWNSHIP_ID, name: 'KoBi pilot neighbourhood', map_id: 'pilot-map' },
+    township: {
+      id: TOWNSHIP_ID,
+      name: 'Elmina West (Seksyen U16)',
+      address: 'Persiaran Elmina / Jalan Frekuensi, Seksyen U16, 40160 Shah Alam, Selangor',
+      map_id: 'pilot-map',
+      bounds: { width: 32, height: 24, tileSize: 20 },
+    },
     profiles: [
-      { id: RESIDENT_ID, township_id: TOWNSHIP_ID, display_name: 'Alex Tan', role: 'resident', email: 'alex.tan@example.com', created_at: stamp },
-      { id: STAFF_ID, township_id: TOWNSHIP_ID, display_name: 'SDP demo team', role: 'staff', email: 'sdp.team@example.com', created_at: stamp },
+      {
+        id: RESIDENT_ID,
+        township_id: TOWNSHIP_ID,
+        display_name: 'Alex Tan',
+        role: 'resident',
+        email: 'alex.tan@example.com',
+        home_facility_id: 'house-01',
+        home_object_id: 'object-house-01',
+        address: 'Lot 12, Jalan Frekuensi U16, Elmina',
+        created_at: stamp,
+      },
+      {
+        id: STAFF_ID,
+        township_id: TOWNSHIP_ID,
+        display_name: 'SDP demo team',
+        role: 'staff',
+        email: 'sdp.team@example.com',
+        home_facility_id: null,
+        home_object_id: null,
+        created_at: stamp,
+      },
     ],
     preferences: { rememberWorkspace: true, workspace: 'resident' },
     facilities,
@@ -31,12 +124,6 @@ export function createSampleData(referenceTime) {
     activities: [{ id: '00000000-0000-4000-8000-000000000031', township_id: TOWNSHIP_ID, facility_id: 'park-01', title: 'A greener Saturday', description: 'Meet your neighbours for a community garden morning.', category: 'community', instructions: 'Bring a water bottle and comfortable shoes.', starts_at: start, ends_at: end, status: 'published', created_by: STAFF_ID, version: 1, created_at: stamp, updated_at: stamp }],
     activity_participants: [],
     attachments: [],
-    layout: [
-      ...facilities.map((f, index) => ({ objectId: `object-${f.id}`, facilityId: f.id, assetKey: f.type, x: 3 + index * 4, y: 8, width: 1, height: 1 })),
-      { objectId: 'object-house-01', facilityId: null, assetKey: 'house', x: 4, y: 3, width: 3, height: 3 },
-    ],
+    layout,
   };
 }
-
-
-
