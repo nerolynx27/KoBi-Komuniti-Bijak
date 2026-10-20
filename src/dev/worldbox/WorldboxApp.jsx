@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import { Button, IconButton } from '../../components/ui/Button.jsx';
-import { Icon } from '../../components/ui/Icon.jsx';
 import { WorldboxFacilitySheet } from './WorldboxFacilitySheet.jsx';
 import {
   ELMINA_FACILITIES,
@@ -9,32 +8,44 @@ import {
   ELMINA_TOWNSHIP,
 } from './worldboxData.js';
 
+import { ClassicGridMap } from './maps/ClassicGridMap.jsx';
+import { IsometricDioramaMap } from './maps/IsometricDioramaMap.jsx';
+import { CartographicBlueprintMap } from './maps/CartographicBlueprintMap.jsx';
+import { StickerboardPatchMap } from './maps/StickerboardPatchMap.jsx';
+
 export const APPROACHES = [
   {
     id: 'classic-grid',
     name: 'Classic 2D Grid',
     subtitle: 'Retro RPG GameBoy style',
-    description: 'Flat top-down orthogonal pixel grid with high-contrast road tiles and precise parcel outlines.',
+    description: 'Flat top-down orthogonal pixel grid with high-contrast road tiles, pixel tree clusters, and crisp parcel outlines.',
   },
   {
     id: 'isometric-25d',
     name: 'Isometric 2.5D',
     subtitle: 'SimCity / Habbo style',
-    description: 'Angled diorama projection showcasing architectural height, facade details, and dynamic pixel shadows.',
+    description: 'Angled diorama projection showcasing architectural volume, building facades, and dynamic pixel depth cues.',
   },
   {
     id: 'cartographic',
     name: 'Cartographic',
     subtitle: 'Civic Blueprint style',
-    description: 'Chunky pixel transit/blueprint map emphasizing arterial road hierarchy and prominent landmark badges.',
+    description: 'Chunky pixel transit/blueprint map emphasizing arterial road hierarchy and high-visibility landmark nodes.',
   },
   {
     id: 'pixel-stickers',
     name: 'Pixel Stickers',
     subtitle: 'Tactile Patch style',
-    description: 'Tactile community pinboard featuring chunky die-cut badge amenities and organic neighborhood greenery.',
+    description: 'Tactile community pinboard featuring chunky die-cut badge amenities and organic stitched neighborhood greenery.',
   },
 ];
+
+const MAP_COMPONENTS = {
+  'classic-grid': ClassicGridMap,
+  'isometric-25d': IsometricDioramaMap,
+  'cartographic': CartographicBlueprintMap,
+  'pixel-stickers': StickerboardPatchMap,
+};
 
 export function WorldboxApp() {
   const [activeApproach, setActiveApproach] = useState('classic-grid');
@@ -79,17 +90,16 @@ export function WorldboxApp() {
 
   function handleFindMyHouse() {
     if (!userHomeObject || !viewportRef.current) return;
-    setZoom(z => Math.max(z, 1.75));
+    const newZoom = Math.max(zoom, 1.75);
+    setZoom(newZoom);
     const view = viewportRef.current;
-    // Map is 640x480 width/height
     const targetX = (userHomeObject.x + userHomeObject.width / 2) * 20;
     const targetY = (userHomeObject.y + userHomeObject.height / 2) * 20;
-    const scale = Math.max(zoom, 1.75);
 
     setTimeout(() => {
       view.scrollTo({
-        left: targetX * scale - view.clientWidth / 2,
-        top: targetY * scale - view.clientHeight / 2,
+        left: targetX * newZoom - view.clientWidth / 2,
+        top: targetY * newZoom - view.clientHeight / 2,
         behavior: 'smooth',
       });
       setSelectedObjectId(userHomeObject.objectId);
@@ -97,6 +107,7 @@ export function WorldboxApp() {
   }
 
   const currentApproachMeta = APPROACHES.find(a => a.id === activeApproach) || APPROACHES[0];
+  const ActiveMapComponent = MAP_COMPONENTS[activeApproach] || ClassicGridMap;
 
   return (
     <div className="worldbox-container">
@@ -106,20 +117,23 @@ export function WorldboxApp() {
           <div className="worldbox-brand">
             <span className="worldbox-badge">SANDBOX</span>
             <div>
-              <h1 className="worldbox-title">Worldbox · Elmina Prototype</h1>
+              <h1 className="worldbox-title">Worldbox · Elmina 4-Map Prototype</h1>
               <p className="worldbox-subtitle">{ELMINA_TOWNSHIP.address}</p>
             </div>
           </div>
 
           {/* Persona Switcher */}
           <div className="worldbox-persona-toggle">
-            <span className="persona-label">Testing as:</span>
+            <span className="persona-label">Persona:</span>
             {ELMINA_PERSONAS.map(p => (
               <button
                 key={p.id}
                 type="button"
                 className={`persona-btn ${p.id === activePersonaId ? 'is-active' : ''}`}
-                onClick={() => setActivePersonaId(p.id)}
+                onClick={() => {
+                  setActivePersonaId(p.id);
+                  setSelectedObjectId(null);
+                }}
               >
                 {p.name} ({p.role === 'resident' ? 'Resident' : 'Staff'})
               </button>
@@ -148,7 +162,7 @@ export function WorldboxApp() {
       <main className="worldbox-main">
         <div className="worldbox-toolbar">
           <div className="approach-info">
-            <h3>Approach: {currentApproachMeta.name}</h3>
+            <h3>{currentApproachMeta.name}</h3>
             <p>{currentApproachMeta.description}</p>
           </div>
 
@@ -185,26 +199,16 @@ export function WorldboxApp() {
               width: `${640 * zoom}px`,
               height: `${480 * zoom}px`,
               position: 'relative',
+              transition: 'width 0.15s ease-out, height 0.15s ease-out',
             }}
           >
-            {/* The active map renderer will be mounted here in Task 3 */}
-            <div
-              className="map-placeholder"
-              style={{
-                width: '100%',
-                height: '100%',
-                background: '#4a3b32',
-                border: '3px solid #CEA257',
-                borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#E5E0CD',
-                fontFamily: 'Bungee',
-              }}
-            >
-              Active Map: {currentApproachMeta.name} (Loading Renderers...)
-            </div>
+            <ActiveMapComponent
+              layout={ELMINA_LAYOUT}
+              facilities={ELMINA_FACILITIES}
+              selectedObjectId={selectedObjectId}
+              userHomeObjectId={userHomeObject?.objectId}
+              onSelect={obj => setSelectedObjectId(obj.objectId)}
+            />
           </div>
         </div>
       </main>
