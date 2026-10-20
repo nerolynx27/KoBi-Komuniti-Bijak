@@ -1,15 +1,49 @@
 .schematic-card { padding: var(--space-4); border: 2px solid var(--border-strong); background: var(--surface-context); box-shadow: 2px 2px var(--shadow-hard); min-width: 0; }
 .schematic-card h2 { margin-top: var(--space-1); }
-.schematic-scale { font-size: var(--type-helper); font-weight: 700; }
+.schematic-scale { font-size: var(--type-helper); font-weight: 700; font-family: var(--font-heading); }
 .schematic-controls { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); margin-block: var(--space-4); }
-.schematic-viewport { width: 100%; overflow: auto; border: 2px solid var(--border-strong); max-height: 360px; background: var(--surface-page); }
+.schematic-viewport { width: 100%; overflow: auto; border: 2px solid var(--border-strong); max-height: 360px; background: var(--surface-page); position: relative; }
 .schematic { display: block; min-width: 100%; height: auto; }
-.schematic-ground { fill: var(--surface-context); }.schematic-path { fill: var(--surface-page); }.schematic-grid { stroke: var(--surface-selected); stroke-width: 1; fill: none; }
-.schematic-object rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 2; }.schematic-object text, .schematic-ghost text { fill: var(--text-primary); font: 400 24px var(--font-action); }
-.schematic-object.is-selected rect { fill: var(--surface-selected); stroke-width: 4; }.schematic-ghost rect { fill: var(--surface-selected); stroke: var(--border-strong); stroke-width: 3; stroke-dasharray: 5 3; }.schematic-ghost.is-invalid rect { fill: var(--surface-panel); stroke: var(--text-error); }
-.place-list { display: grid; gap: var(--space-3); }.place-button { display: flex; text-align: left; align-items: center; justify-content: space-between; gap: var(--space-3); width: 100%; padding: var(--space-4); min-height: 72px; color: var(--text-primary); background: var(--surface-panel); border: 2px solid var(--border-strong); cursor: pointer; }.place-button > span:nth-child(2) { flex: 1; min-width: 0; }.place-button strong, .place-button .helper { display: block; }.place-button .helper { margin-top: var(--space-1); }.place-button.is-selected { background: var(--surface-selected); }.place-symbol { display: grid; place-items: center; flex: none; width: 40px; height: 40px; background: var(--surface-context); border: 2px solid var(--border-strong); }.facility-condition { font-weight: 700; display: inline-block; padding: var(--space-2) var(--space-3); border: 2px solid var(--border-strong); background: var(--surface-context); }.facility-condition.state-reported { background: var(--surface-subtle); }.facility-condition.state-repairing { background: var(--surface-selected); }
-@media(min-width:768px) { .place-list { grid-template-columns: repeat(2,minmax(0,1fr)); }.schematic-viewport { max-height: 440px; } }
+.schematic-ground { fill: var(--surface-context); }
+.schematic-path { fill: var(--surface-page); }
+.schematic-grid { stroke: var(--surface-selected); stroke-width: 1; fill: none; }
+.schematic-object rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 2; }
+.schematic-object text, .schematic-ghost text { fill: var(--text-primary); font: 400 24px var(--font-action); }
+.schematic-object.is-selected rect { fill: var(--surface-selected); stroke-width: 4; }
+.schematic-ghost rect { fill: var(--surface-selected); stroke: var(--border-strong); stroke-width: 3; stroke-dasharray: 5 3; }
+.schematic-ghost.is-invalid rect { fill: var(--surface-panel); stroke: var(--text-error); }
+.place-list { display: grid; gap: var(--space-3); }
+.place-button { display: flex; text-align: left; align-items: center; justify-content: space-between; gap: var(--space-3); width: 100%; padding: var(--space-4); min-height: 72px; color: var(--text-primary); background: var(--surface-panel); border: 2px solid var(--border-strong); cursor: pointer; }
+.place-button > span:nth-child(2) { flex: 1; min-width: 0; }
+.place-button strong, .place-button .helper { display: block; }
+.place-button .helper { margin-top: var(--space-1); font-family: var(--font-body); font-weight: 400; }
+.place-button.is-selected { background: var(--surface-selected); }
+.place-symbol { display: grid; place-items: center; flex: none; width: 40px; height: 40px; background: var(--surface-context); border: 2px solid var(--border-strong); }
+.facility-condition { font-weight: 700; display: inline-block; padding: var(--space-2) var(--space-3); border: 2px solid var(--border-strong); background: var(--surface-context); }
+.facility-condition.state-reported { background: var(--surface-subtle); }
+.facility-condition.state-repairing { background: var(--surface-selected); }
+@media(min-width:768px) { .place-list { grid-template-columns: repeat(2,minmax(0,1fr)); } .schematic-viewport { max-height: 440px; } }
 .place-button.is-selected .helper { color: var(--text-primary); }
+.place-button strong { font-weight: 400; font-family: var(--font-heading); }
 
-.place-button strong { font-weight: 400; }
-.place-button .helper { font-family: var(--font-body); font-weight: 400; }
+/* FacilitySheet Upgrades */
+.facility-sheet { outline: none; }
+.facility-sheet-content { display: flex; flex-direction: column; gap: var(--space-3); }
+.sheet-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.badge-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-family: var(--font-heading); font-size: 11px; border: 2px solid var(--border-strong); border-radius: 4px; background: var(--surface-context); color: var(--text-primary); letter-spacing: 0.03em; }
+.badge-home { background: var(--color-wine, #6C1A21); color: var(--color-vanilla, #E5E0CD); border-color: var(--color-gold, #CEA257); }
+.badge-distance { background: var(--surface-panel); color: var(--text-primary); border-color: var(--border-strong); }
+.facility-description { font-family: var(--font-body); font-size: 16px; line-height: 1.4; color: var(--text-primary); margin: 0; }
+.sheet-section { margin-top: var(--space-3); border-top: 2px dashed var(--border-subtle, var(--color-sand, #D1BF9A)); padding-top: var(--space-3); }
+.section-title { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-heading); font-size: 13px; color: var(--color-wine, #6C1A21); margin: 0 0 var(--space-2) 0; }
+.history-timeline { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-2); }
+.history-entry { padding: var(--space-2) var(--space-3); background: var(--surface-panel); border: 1.5px solid var(--border-strong); border-radius: 4px; }
+.history-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+.history-status { font-family: var(--font-heading); font-size: 9.5px; padding: 2px 6px; border-radius: 2px; border: 1px solid var(--border-strong); }
+.history-status.state-received { background: var(--color-sand, #D1BF9A); color: var(--color-wine, #6C1A21); }
+.history-status.state-in_progress, .history-status.state-repairing { background: var(--color-gold, #CEA257); color: var(--color-wine, #6C1A21); }
+.history-status.state-completed, .history-status.state-resolved { background: var(--color-wine, #6C1A21); color: var(--color-vanilla, #E5E0CD); }
+.history-date { font-family: var(--font-body); font-size: 13px; color: var(--text-secondary); }
+.history-note { font-family: var(--font-body); font-size: 14px; margin: 0; color: var(--text-primary); }
+.action-hint { font-family: var(--font-body); font-size: 14px; color: var(--text-secondary); font-style: italic; margin: 0; }
+.activity-cards { display: flex; flex-direction: column; gap: var(--space-2); }
