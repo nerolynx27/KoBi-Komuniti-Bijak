@@ -400,47 +400,102 @@ export function TemporaryMap({
                       width={pw}
                       height={ph}
                       rx={object.assetKey === 'lamp' ? 1 : object.assetKey === 'tree' ? 4 : 2}
-                      className={object.assetKey === 'lamp' ? 'object-lamp-rect' : undefined}
+                      className={`${object.assetKey === 'lamp' ? 'object-lamp-rect' : ''} ${object.assetKey === 'hall' ? 'civic-hall-facade' : ''}`.trim() || undefined}
+                      fill={
+                        isSelected
+                          ? 'var(--surface-selected)'
+                          : object.assetKey === 'hall'
+                            ? '#6C1A21'
+                            : object.assetKey === 'recycling'
+                              ? '#2d6a4f'
+                              : object.assetKey === 'park'
+                                ? 'rgba(63, 130, 51, 0.15)'
+                                : object.assetKey === 'house'
+                                  ? isHome ? '#B92C2C' : '#9E473B'
+                                  : object.assetKey === 'bench'
+                                    ? '#D1BF9A'
+                                    : 'var(--surface-panel)'
+                      }
+                      stroke={
+                        isSelected
+                          ? 'var(--color-gold, #CEA257)'
+                          : object.assetKey === 'hall'
+                            ? '#CEA257'
+                            : object.assetKey === 'recycling'
+                              ? '#CEA257'
+                              : object.assetKey === 'park'
+                                ? '#6ab054'
+                                : object.assetKey === 'house'
+                                  ? '#3b1d19'
+                                  : 'var(--border-strong)'
+                      }
+                      strokeWidth={isSelected ? 3 : object.assetKey === 'hall' ? 2 : 1.5}
                     />
 
                     {/* Architectural & Amenity Glyphs */}
                     {object.assetKey === 'house' && (
                       <g pointerEvents="none">
+                        {/* Pitched Roof */}
                         <polygon
                           points={`${px - 1},${py + 10} ${px + pw / 2},${py} ${px + pw + 1},${py + 10}`}
                           fill={isHome ? '#CEA257' : '#D1BF9A'}
                           stroke="#3b1d19"
                           strokeWidth="1.5"
                         />
+                        {/* Chimney */}
+                        <path d={`M ${px + pw - 9} ${py + 1} h 4 v 6 h -4 Z`} fill="#6C1A21" />
+                        {/* Front Door */}
                         <path d={`M ${px + pw / 2 - 3} ${py + ph - 8} h 6 v 8 h -6 Z`} fill="#4a1d17" />
-                        {!isHome && object.label && (
-                          <text
-                            x={px + pw / 2}
-                            y={py + ph - 2}
-                            fill="#E5E0CD"
-                            fontSize="6.5"
-                            fontFamily="Bungee"
-                            textAnchor="middle"
-                          >
-                            {object.label}
-                          </text>
-                        )}
+                        {/* Windows */}
+                        <path d={`M ${px + 4} ${py + 14} h 6 v 5 h -6 Z M ${px + pw - 10} ${py + 14} h 6 v 5 h -6 Z`} fill="#E5E0CD" stroke="#6C1A21" strokeWidth="0.75" />
+                        {/* Lot badge tucked into bottom porch apron */}
+                        <path d={`M ${px + 2} ${py + ph - 9} h ${pw - 4} v 8 h -${pw - 4} Z`} fill="rgba(108, 26, 33, 0.9)" />
+                        <text
+                          x={px + pw / 2}
+                          y={py + ph - 3}
+                          fill="#E5E0CD"
+                          fontSize="6.5"
+                          style={{ fontSize: '6.5px', fontFamily: 'var(--font-heading)' }}
+                          textAnchor="middle"
+                        >
+                          {object.label}
+                        </text>
                       </g>
                     )}
 
                     {object.assetKey === 'hall' && (
                       <g pointerEvents="none">
-                        <polygon
-                          points={`${px},${py + 14} ${px + pw / 2},${py + 2} ${px + pw},${py + 14}`}
-                          fill="#CEA257"
-                        />
+                        {/* Forecourt plaza */}
+                        <path d={`M ${px + 6} ${py + ph - 10} h ${pw - 12} v 8 h -${pw - 12} Z`} fill="#D1BF9A" />
+                        {/* Columns */}
                         <line x1={px + 8} y1={py + 14} x2={px + 8} y2={py + ph - 2} stroke="#E5E0CD" strokeWidth="2.5" />
                         <line x1={px + pw - 8} y1={py + 14} x2={px + pw - 8} y2={py + ph - 2} stroke="#E5E0CD" strokeWidth="2.5" />
+                        {/* Surau Dome vs Dewan Pitched Roof */}
+                        {(object.facilityId === 'surau-01' || object.facilityId === 'surau-elmina' || object.objectId?.includes('surau') || (object.label || '').toLowerCase().includes('surau')) ? (
+                          <g>
+                            <ellipse className="surau-dome" cx={px + pw / 2} cy={py + 14} rx={pw * 0.35} ry="10" fill="#CEA257" stroke="#6C1A21" strokeWidth="1.5" />
+                            <circle cx={px + pw / 2} cy={py + 3} r="2.5" fill="#E5E0CD" />
+                          </g>
+                        ) : (
+                          <polygon
+                            points={`${px},${py + 14} ${px + pw / 2},${py + 2} ${px + pw},${py + 14}`}
+                            fill="#CEA257"
+                          />
+                        )}
                       </g>
                     )}
 
                     {object.assetKey === 'park' && (
                       <g pointerEvents="none">
+                        {/* Park Gazebo / Pavilion Body */}
+                        <path
+                          className="park-gazebo"
+                          d={`M ${px + pw - 42} ${py + 14} h 28 v 24 h -28 Z`}
+                          fill="#6C1A21"
+                          stroke="#CEA257"
+                          strokeWidth="2"
+                        />
+                        {/* Gazebo Roof */}
                         <polygon
                           points={`${px + pw - 44},${py + 20} ${px + pw - 28},${py + 10} ${px + pw - 12},${py + 20}`}
                           fill="#CEA257"
@@ -451,7 +506,14 @@ export function TemporaryMap({
                     {object.assetKey === 'recycling' && (
                       <g pointerEvents="none">
                         <circle cx={px + pw / 2} cy={py + ph / 2} r="11" fill="#95d5b2" />
-                        <text x={px + pw / 2} y={py + ph / 2 + 4} fill="#1b4332" fontSize="11" fontFamily="Bungee" textAnchor="middle">
+                        <text
+                          x={px + pw / 2}
+                          y={py + ph / 2 + 4}
+                          fill="#1b4332"
+                          fontSize="11"
+                          style={{ fontSize: '11px', fontFamily: 'var(--font-heading)' }}
+                          textAnchor="middle"
+                        >
                           ♻
                         </text>
                       </g>
@@ -459,16 +521,40 @@ export function TemporaryMap({
 
                     {object.assetKey === 'lamp' && (
                       <g pointerEvents="none">
+                        {/* Warm illumination halo */}
                         <circle cx={px + pw / 2} cy={py + ph / 2} r="14" fill="rgba(206, 162, 87, 0.28)" />
-                        <line x1={px + pw / 2} y1={py + 4} x2={px + pw / 2} y2={py + ph - 2} stroke="#6C1A21" strokeWidth="2" />
-                        <circle cx={px + pw / 2} cy={py + 4} r="4" fill="#CEA257" stroke="#6C1A21" strokeWidth="1.2" />
+                        {/* Verge concrete pad */}
+                        <path d={`M ${px + 6} ${py + 14} h 8 v 4 h -8 Z`} fill="#D1BF9A" stroke="#6C1A21" strokeWidth="1" />
+                        {/* Lamppost vertical mast */}
+                        <line x1={px + pw / 2} y1={py + 4} x2={px + pw / 2} y2={py + ph - 2} stroke="#6C1A21" strokeWidth="2.5" />
+                        {/* Luminaire lantern head */}
+                        <circle cx={px + pw / 2} cy={py + 4} r="4.5" fill="#CEA257" stroke="#6C1A21" strokeWidth="1.5" />
                       </g>
                     )}
 
-                    {/* Object Label */}
-                    <text x={px + pw / 2} y={py - 6} textAnchor="middle">
-                      {object.label || labels[object.assetKey]}
-                    </text>
+                    {object.assetKey === 'bench' && (
+                      <g pointerEvents="none">
+                        <line x1={px + 2} y1={py + 4} x2={px + pw - 2} y2={py + 4} stroke="#6C1A21" strokeWidth="2" />
+                      </g>
+                    )}
+
+                    {/* Miniature Object Label for non-house amenities */}
+                    {object.assetKey !== 'house' && (
+                      <text
+                        x={px + pw / 2}
+                        y={py - (object.assetKey === 'lamp' ? 3 : 5)}
+                        fill="#E5E0CD"
+                        fontSize={object.assetKey === 'lamp' ? '6.5' : object.assetKey === 'park' ? '9' : '8.5'}
+                        style={{
+                          fontSize: object.assetKey === 'lamp' ? '6.5px' : object.assetKey === 'park' ? '9px' : '8.5px',
+                          fontFamily: 'var(--font-heading)',
+                          textShadow: '1px 1px 0 #1f1612, -1px -1px 0 #1f1612',
+                        }}
+                        textAnchor="middle"
+                      >
+                        {object.label || labels[object.assetKey]}
+                      </text>
+                    )}
 
                     {/* Dedicated clearance "★ MY HOUSE" pinpoint banner */}
                     {isHome && (
@@ -480,7 +566,14 @@ export function TemporaryMap({
                           strokeWidth="2"
                         />
                         <polygon points="-5,-3 5,-3 0,4" fill="#CEA257" />
-                        <text x="0" y="-8" fill="#E5E0CD" fontSize="8" fontFamily="Bungee" textAnchor="middle">
+                        <text
+                          x="0"
+                          y="-8"
+                          fill="#E5E0CD"
+                          fontSize="8"
+                          style={{ fontSize: '8px', fontFamily: 'var(--font-heading)' }}
+                          textAnchor="middle"
+                        >
                           ★ MY HOUSE
                         </text>
                       </g>
