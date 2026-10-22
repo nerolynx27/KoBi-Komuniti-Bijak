@@ -13,3 +13,7 @@ coverage/
 tmp/
 *.log
 .superpowers/
+fabric/
+*-debug.png
+capture-*.cjs
+take-*.cjs

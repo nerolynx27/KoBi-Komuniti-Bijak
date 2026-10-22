@@ -115,16 +115,15 @@ export default function App({ store, session }) {
       notify={notify}
     />
     <main id="main-content" className="main-content">
-      <div className={`page-heading ${route.name === 'reports' ? 'reports-page-heading' : ''}`}>
+      <div className={`page-heading ${route.name === 'reports' ? 'reports-page-heading' : route.name === 'activities' ? 'activities-page-heading' : ''}`}>
         <div>
-          {route.name !== 'reports' && <span className="eyebrow">{staff ? 'SDP demo workspace' : account ? 'Welcome to KoBi' : data.township.name}</span>}
-          <h1 ref={heading} tabIndex={-1} className={route.name === 'reports' ? 'reports-page-title-banner' : ''}>{route.title}</h1>
+          {route.name !== 'reports' && route.name !== 'activities' && <span className="eyebrow">{staff ? 'SDP demo workspace' : account ? 'Welcome to KoBi' : data.township.name}</span>}
+          <h1 ref={heading} tabIndex={-1} className={route.name === 'reports' ? 'reports-page-title-banner' : route.name === 'activities' ? 'activities-page-title-banner' : ''}>{route.title}</h1>
         </div>
       </div>
       {(error || persistence === 'recovery') && <div className="storage-recovery"><FeedbackState error title={uiText.storageTitle}>{error?.message || 'Reload the saved demo records before continuing.'}</FeedbackState><div className="form-actions"><Button onClick={() => { if (store.retry()) notify('Pending data saved on this browser.'); }}>{uiText.retry}</Button>{snapshot.pendingOperation && <Button variant="quiet" onClick={() => store.discardPending(snapshot.pendingOperation.operationId)}>Discard pending change</Button>}<Button disabled={Boolean(snapshot.pendingOperation)} onClick={() => store.refresh()}>Reload saved data</Button><Button onClick={openReset} icon="reset-demo">{uiText.reset}</Button></div></div>}
       {staff && route.name !== 'sdp' && <nav className="staff-nav" aria-label="SDP navigation"><ActionLink href="#sdp" variant="text" icon="back">Workspace</ActionLink><ActionLink href="#sdp/reports" variant="text">Reports</ActionLink><ActionLink href="#sdp/activities" variant="text">Activities</ActionLink><ActionLink href="#sdp/world" variant="text">World editor</ActionLink><Button variant="quiet" size="sm" onClick={exitStaff}>Exit SDP workspace</Button></nav>}
       <div className="view-stack" key={resetEpoch}>{view}</div>
-      {!staff && !devPage && !account && route.name !== 'profile' && <div className="workspace-entry paint-space"><Button icon="catalog" fullWidth onClick={enterStaff}>Enter SDP demo workspace</Button><p className="helper">Open demo navigation. No staff authorization.</p></div>}
       <footer className="local-footer"><p className="icon-line"><span className="save-indicator" aria-hidden="true" />{persistence === 'saved' ? uiText.saved : 'Not saved · recovery required'}</p><p>Local demo only. No real submissions.</p>{import.meta.env.DEV && <ActionLink href="#design-system" variant="text" size="sm">Development specimen</ActionLink>}</footer>
     </main>
     {!staff && !devPage && !account && <BottomNav active={route.nav} />}

@@ -9,8 +9,10 @@
 .schematic-grid { stroke: var(--surface-selected); stroke-width: 1; fill: none; }
 .schematic-object rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 2; }
 .schematic-object text, .schematic-ghost text { fill: var(--text-primary); font: 400 24px var(--font-action); }
-.classic-grid-map .schematic-object text { font-size: inherit; font-family: var(--font-heading); }
-.classic-grid-map .schematic-object rect { fill: unset; }
+.classic-grid-map .schematic-object text { font-size: inherit; font-family: var(--font-heading); fill: var(--color-vanilla, #E5E0CD); text-shadow: 1px 1px 0 #1b120c; }
+.classic-grid-map .schematic-object rect { fill: transparent; stroke: none; stroke-width: 0; }
+.classic-grid-map .schematic-object.is-selected rect { fill: var(--surface-selected); stroke: var(--color-gold, #CEA257); stroke-width: 3; }
+.classic-grid-map .schematic-object:hover rect { stroke: var(--color-sand, #D1BF9A); stroke-width: 1.5; }
 .schematic-object.is-selected rect { fill: var(--surface-selected); stroke-width: 4; }
 .schematic-ghost rect { fill: var(--surface-selected); stroke: var(--border-strong); stroke-width: 3; stroke-dasharray: 5 3; }
 .schematic-ghost.is-invalid rect { fill: var(--surface-panel); stroke: var(--text-error); }

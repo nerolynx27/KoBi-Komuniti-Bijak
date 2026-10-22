@@ -124,6 +124,7 @@ export function SandboxHeader({ onMenuClick, menuOpen = false }) {
         onClick={event => event.preventDefault()}
       >
         <span>KoBi</span>
+        <span className="brand-fold" aria-hidden="true" />
       </a>
 
       <button
