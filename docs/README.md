@@ -14,7 +14,6 @@ Other material:
 - [Design system reference](product/DESIGN_SYSTEM.md) — selected direction and production notes.
 - [Hackathon guidelines](competition/SIMEHACK_GUIDELINE.md) — competition context.
 - [Historical 3D research](archive/3D_WORLD_REFERENCES.md) — archived research; the selected world is 2D.
-- `superpowers/` — design and implementation plans.
 - `verification/` — reports, matrices, issues and retained test evidence.
 - `screenshots/` — feature captures.
 

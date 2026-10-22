@@ -36,3 +36,21 @@ Desktop.ini
 *.key
 *.p12
 *.pfx
+
+# Local development instructions, plans and optional research records.
+/.codex/
+/AGENTS.md
+/.graphifyignore
+/docs/superpowers/
+/videos/report-to-repair/BRIEF.md
+/videos/report-to-repair/REVIEW.md
+/videos/report-to-repair/STORYBOARD.md
+/videos/report-to-repair/AGENTS.md
+/videos/report-to-repair/CLAUDE.md
+/art/sdp-asset-pilot/generation-record.json
+/art/sdp-card-set-01/generation-record.json
+/art/sdp-dashboard-explorations/generation-record.json
+/art/ui-button-explorations/generation-record.json
+/art/ui-report-folder-explorations/generation-record.json
+/art/ui-report-folder-explorations/revision-2-generation-record.json
+/docs/reports/kobi-report/firecrawl-search.json

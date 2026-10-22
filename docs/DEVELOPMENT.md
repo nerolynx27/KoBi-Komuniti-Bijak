@@ -1,6 +1,6 @@
 # KoBi developer guide
 
-Run commands from the repository root. The [root README](../README.md) introduces the product, resident tour and basic setup; [AGENTS.md](../AGENTS.md) records contributor instructions. The [product specification](product/product.md) owns current design and language decisions.
+Run commands from the repository root. The [root README](../README.md) introduces the product, resident tour and basic setup. The [product specification](product/product.md) owns current design and language decisions.
 
 ## Local entry points
 
@@ -48,18 +48,6 @@ The app uses semantic HTML, plain CSS and measured SVG PixelFrame geometry. The 
 Headers, navigation, buttons and world views have smooth surfaces. Paper masks remain on ordinary page/panel surfaces. Original artwork, generation records and font provenance live under `art/`; runtime copies live under `public/assets/`. The selected design reference sheet is not a runtime UI import.
 
 Run `node scripts/asset-manifest.mjs` to verify asset hashes. Keep original asset provenance and supplied font licences when changing runtime assets. Phaser 3.90.0 remains a historical later-phase baseline and is not installed; Supabase is also not connected.
-
-## Graphify
-
-Graphify is separate development tooling, not an npm app dependency. Project guidance lives under `.codex/skills/graphify/` and in `AGENTS.md`. Install the official `graphifyy` Python package separately, then register it with `graphify install --project --platform codex`.
-
-```sh
-graphify extract . --code-only --max-workers 2
-graphify query "How does demoStore work?"
-graphify cluster-only . --no-label
-```
-
-Open the generated `graphify-out/graph.html` for navigation. The graph is local, code-only and ignored; semantic document/media indexing is not configured. CSS is outside this AST index, so use the product specification for design decisions. Follow `AGENTS.md` for query-before-source exploration and graph updates after code changes.
 
 ## Repository ownership
 
