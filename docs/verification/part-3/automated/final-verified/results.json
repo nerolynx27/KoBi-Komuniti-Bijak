@@ -1,7 +1,0 @@
-{
-  "command": "npm run lint",
-  "exit": 1,
-  "started": "2026-10-18T08:03:08.6188726+08:00",
-  "seconds": 2.49,
-  "log": "1.log"
-}

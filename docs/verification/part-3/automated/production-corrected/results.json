@@ -1,7 +1,0 @@
-{
-  "command": "npm run test:production",
-  "exit": 0,
-  "started": "2026-10-18T08:01:12.5910940+08:00",
-  "seconds": 9.32,
-  "log": "1.log"
-}

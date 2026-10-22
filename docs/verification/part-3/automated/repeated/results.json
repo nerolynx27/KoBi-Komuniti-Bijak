@@ -1,7 +1,0 @@
-{
-  "command": "npm run test:e2e -- tests/e2e/shell-journeys.spec.js tests/e2e/recovery-navigation.spec.js --grep \"new facility connects|cross-domain reset|failed join retried|external write between|clean Back and Forward|dirty Back cancellation\" --repeat-each=3 --workers=1",
-  "exit": 0,
-  "started": "2026-10-18T08:05:34.2992006+08:00",
-  "seconds": 74.86,
-  "log": "1.log"
-}

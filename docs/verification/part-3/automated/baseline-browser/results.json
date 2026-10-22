@@ -1,7 +1,0 @@
-{
-  "command": "npm run test:e2e -- --grep-invert \"new facility connects|cross-domain reset\"",
-  "exit": 1,
-  "started": "2026-10-18T07:39:49.5517743+08:00",
-  "seconds": 2.33,
-  "log": "1.log"
-}

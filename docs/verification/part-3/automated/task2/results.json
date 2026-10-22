@@ -1,7 +1,0 @@
-{
-  "command": "npm run test:e2e -- tests/e2e/shell-journeys.spec.js --workers=1",
-  "exit": 0,
-  "started": "2026-10-18T07:44:54.3019104+08:00",
-  "seconds": 22.75,
-  "log": "1.log"
-}

@@ -1,7 +1,0 @@
-{
-  "command": "npm run test:e2e -- tests/e2e/part3-accessibility.spec.js tests/e2e/part3-visual.spec.js --workers=1",
-  "exit": 1,
-  "started": "2026-10-18T07:52:24.3415841+08:00",
-  "seconds": 65.06,
-  "log": "1.log"
-}

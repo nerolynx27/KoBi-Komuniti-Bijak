@@ -1,7 +1,0 @@
-{
-  "command": "npm run test:e2e -- tests/e2e/reports.spec.js --grep \"local retry\" --workers=1",
-  "exit": 0,
-  "started": "2026-10-18T07:44:02.4487896+08:00",
-  "seconds": 40.26,
-  "log": "1.log"
-}
