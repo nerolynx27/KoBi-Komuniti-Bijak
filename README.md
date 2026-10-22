@@ -1,106 +1,138 @@
+<p align="center">
+  <img src="public/assets/brand/kobi-logo.png" width="200" alt="KoBi logo">
+</p>
+
 # KoBi — Komuniti Bijak
 
-KoBi is a local frontend demo of the Pixel Stickers system. Residents use the Home bulletin, facility reports, activity board, profile and approved pixel-world map. The separate SDP workspace manages reports, activities and the world layout. Demo switching is not authentication; records persist in this browser.
+**Your neighbourhood. One shared place.**
 
-Historical Part 3 desktop and phone-size verification (18 October 2026): 137 unit tests, 92 browser tests, 3 production tests and 24 selected repeat checks passed, along with lint, assets and a fresh build. One shared focus/scroll-clearance defect was repaired. Physical testing was explicitly excluded by the user's later instruction; the original physical Android gate remains unverified.
+KoBi is a mobile-first community prototype that connects residents with their neighbourhood. Explore a pixel-art world, report facility problems, follow maintenance updates, and discover community and recycling activities. A separate SDP staff demo supports report handling, activity management and neighbourhood layout editing.
 
-Current folder ownership and commit policy: [repository layout](docs/REPOSITORY_LAYOUT.md). Latest UI/asset decisions: [product specification](docs/product/product.md).
+**Current status:** a local frontend demo with sample records saved in your browser. Real authentication, a shared backend and server uploads are not connected. Use invented profile details when trying it.
 
-## Folder guide
+[What you can try](#what-you-can-try) · [Run locally](#run-locally) · [Resident screenshots](#resident-screenshots) · [Project documents](#project-documents)
 
-- `src/` — React app, shared controls, styles and browser demo data.
-- `public/` — runtime assets served by the app.
-- `art/` — artwork sources, font originals, licenses and asset provenance.
-- `references/` — visual references, palette and the archived map snapshot.
-- `docs/reports/kobi-report/` — report sources, final reports, evidence and authoring utilities.
-- `docs/presentations/` — the shareable presentation PDF.
-- `output/` — local generated builds/review exports; ignored.
-- `videos/` — video source/assets; renders and caches are ignored.
-- [docs/](docs/README.md) — product specifications, competition guidance, plans and verification evidence.
-- `scripts/` — asset preparation and evidence utilities.
-- `tests/` — unit, browser and production checks.
-- `artifacts/` — generated browser reports, test results and logs; ignored by version control.
-- `graphify-out/` — generated local code knowledge graph; ignored by version control.
-- `dist/` — generated production build; `node_modules/` — installed dependencies.
-- `tmp/` — scratch work and the folder-organization recovery record.
+## What you can try
 
-Keep app entry points, package files and tool configuration at the project root. Root files include `index.html` (main app entry), `reports-sandbox.html` (isolated reports UI preview), package manifests (`package.json`, `package-lock.json`), and tool configs (`vite.config.js`, `eslint.config.js`, `playwright*.config.js`). Run all commands from this folder. Browser reports are written to `artifacts/playwright-report/` and `artifacts/playwright-production-report/`; transient browser results go to `artifacts/test-results/`. Saved verification evidence stays under `docs/verification/`.
+| As a resident | As sample SDP staff |
+| --- | --- |
+| Explore facilities in the pixel neighbourhood. | Add, move and remove components from the demo layout. |
+| Create a facility report and follow its action history. | Review reports, update their status and record action notes. |
+| Discover community and recycling activities, join or leave. | Create, preview, publish, edit and cancel activities. |
+| View your profile and manage browser demo preferences. | Review the same local demo records from the staff view. |
 
-## Graphify
-
-Graphify 0.9.90 is registered for this project in `.codex/skills/graphify/`, with query guidance in `AGENTS.md`. In Codex, invoke `$graphify .` after the skill becomes available on the next turn. The development tool is installed separately from the app's npm dependencies; on another machine, install the official `graphifyy` Python package and run `graphify install --project --platform codex` from this folder.
-
-The initial graph covers code only and runs locally without an API key. Rebuild it with `graphify extract . --code-only --max-workers 2`, then use `graphify query "How does demoStore work?"` to retrieve related code. Open `graphify-out/graph.html` for the interactive map. `.graphifyignore` excludes generated files, retained verification assets and assistant tooling. Document/media semantic indexing is not configured.
-
-Run `graphify cluster-only . --no-label` after extraction to refresh the report and interactive map without model calls. CSS is not part of this AST index; Graphify also flags `tokens.css` as potentially sensitive because of its filename. The design specification remains authoritative for styling.
+The resident Home bulletin brings together personal reports, maintenance notes and upcoming activities. Reports follow **Received → In progress → Resolved**, with action history available in the demo.
 
 ## Run locally
 
-For the separate SDP workspace rework preview, run `npm run dev:sdp` and open
-`http://127.0.0.1:5177/sdp-workspace.html`. It starts in the SDP demo workspace.
-The sandbox now opens the Dispatch Desk dashboard, with live township report/activity
-counts and shared staff bottom navigation. [Phase 2 evidence](docs/verification/SDP_DASHBOARD_PHASE_2.md) records the checks and visual differences.
-The editable shell copy is `src/dev/sdp-workspace/SdpWorkspaceApp.jsx`; shared
-components and styles retain the current UI. Demo records use the separate
-`kobi.sdp-workspace.v1` browser storage key. Changes to shared components/styles
-still affect both previews.
-
-The separate [SDP cards & buttons specimen](http://127.0.0.1:5177/sdp-workspace.html?specimen=cards-buttons)
-shows the opt-in Dispatch Desk component family. It is development-only, reads/writes
-no demo records, and is also linked from the existing Development specimen.
-See [Phase 1 verification](docs/verification/SDP_DASHBOARD_PHASE_1.md).
-
-Use Node **22.13+ in the 22.x line, or 24+**, and npm. Verified runtime: Node 24.15.0 / npm 11.12.1. Dependencies remain pinned in the existing lockfile; Part 2 added no packages.
+Install Node.js **22.13+ in the 22.x line, or 24+**, and npm. From a terminal:
 
 ```sh
+git clone https://github.com/nerolynx27/KoBi-Komuniti-Bijak.git
+cd KoBi-Komuniti-Bijak
 npm ci
 npm run dev
 ```
 
-Open [KoBi](http://127.0.0.1:5173/#home). Explicit demo account forms are at [Sign in](http://127.0.0.1:5173/#sign-in) and [Create account](http://127.0.0.1:5173/#create-account). The bare home URL opens resident mode or the remembered SDP workspace. The [development specimen](http://127.0.0.1:5173/#design-system) includes shared controls and explicitly simulated loading, session/access and artwork-failure states; it is excluded from production. The isolated reports design sandbox is at [Reports Sandbox](http://127.0.0.1:5173/reports-sandbox.html).
+Open the local address printed by Vite, normally **http://localhost:5173**, and start at **Home** (`/#home`). Keep the terminal running while trying the app. Stop it with **Ctrl+C** when finished.
+
+The initial setup needs an internet connection to install dependencies. There is currently no one-click launcher or hosted app link in this repository.
+
+### A quick resident tour
+
+1. Open **Home** to see the neighbourhood bulletin and sample updates. If a previous session remembered the staff workspace, use the app menu to select the resident view, or open `/#home` directly.
+2. Select **Enter World**, explore the facilities and open one to view its details and report options.
+3. Create a sample facility report with a description and an optional photo preview. Open **Reports** to explore the report folders and action history.
+4. Open **Activities**, explore the community and recycling events, and try joining an activity. Review its details and leave when finished.
+5. Visit **Profile** for your demo details and preferences. To restore the sample records, open **Settings → Reset demo** and confirm.
+
+Each browser and local address has its own saved records. Returning to the same address restores those records; photo previews last only for the current page session.
+
+## Resident screenshots
+
+<table>
+  <tr>
+    <th>Home bulletin</th>
+    <th>Facility reports</th>
+  </tr>
+  <tr>
+    <td><a href="docs/readme/resident-home-mobile.png"><img src="docs/readme/resident-home-mobile.png" width="270" alt="Resident Home bulletin with neighbourhood updates and shared bottom navigation."></a></td>
+    <td><a href="docs/readme/resident-reports-mobile.png"><img src="docs/readme/resident-reports-mobile.png" width="270" alt="Resident Reports page with facility choices and report folders."></a></td>
+  </tr>
+  <tr>
+    <th>Activity board</th>
+    <th>Pixel neighbourhood</th>
+  </tr>
+  <tr>
+    <td><a href="docs/readme/resident-activities-mobile.png"><img src="docs/readme/resident-activities-mobile.png" width="270" alt="Resident activity board with illustrated community event notices."></a></td>
+    <td><a href="docs/readme/resident-world-mobile.png"><img src="docs/readme/resident-world-mobile.png" width="270" alt="Resident pixel neighbourhood map with facilities and world controls."></a></td>
+  </tr>
+</table>
+
+Actual resident app captures at **390 × 844**, taken on 22 October 2026. All displayed records are samples. Click an image to view it at full size.
+
+## Development and checks
+
+<details>
+<summary>Stack, developer setup and automated checks</summary>
+
+The current app uses **React 19, JavaScript/JSX, plain CSS and Vite 8**, with Vitest, ESLint and Playwright for checks. Phaser and Supabase are not installed in the current app; earlier specifications discuss them as later options.
+
+Run these commands from the repository root:
 
 ```sh
 npm run lint
 npm test
+npx playwright install chromium
 npm run test:e2e
 npm run build
 npm run test:production
-npm run preview
 ```
 
-The regular Playwright suite uses port 5177; production checks use their configured preview server. Build before the production check. Browser checks require local socket/process access; in a restricted Codex sandbox they were run with approved process permissions. Do not leave an inaccessible sandbox server occupying those ports. Use `npm run dev -- --host 0.0.0.0` for later LAN/device testing when the host firewall allows it.
+Build before running the production checks. The regular browser suite uses port **5177**; production checks use their own configured preview server. For a local production preview, run `npm run build`, then `npm run preview` and use the printed address.
 
-## Workflows
+The full browser suite contains a known legacy palette assertion against the old map markup. Historical test counts do not establish a fresh full-suite pass. See the [cleanup verification record](docs/verification/REPOSITORY_CLEANUP.md) for the recorded checks and limitation.
 
-- Demo sign-in with Resident/SDP selection and show/hide password; registration prepares the existing resident profile. Profile name editing, read-only email/township/role, remember-workspace settings, help and confirmed sign-out.
-- Accessible facility buttons and a zoomable 32×24 schematic. Public sheets show facility condition and activity choices. Location links resolve current object IDs and keyboard focus.
-- Reports with a prefilled facility or picker, validated description, optional session photo, filters and shared action history. SDP follows Received → In progress → Resolved, with a required action note and resolution evidence.
-- Community/Recycling/Joined activity lists, Malaysia date/time display, idempotent membership and confirmed leave. SDP creates complete drafts, previews unsaved values, publishes, edits before start and cancels while retaining participants.
-- Seven-component catalog, integer placement preview, bounds/overlap validation, stable IDs on moves and confirmed removal. Historical report/activity references block facility removal. New facilities appear in report/activity pickers.
-- Dirty navigation and browser history guards, one app modal host, local storage failures with retry/discard, conflict recovery and a coherent confirmed Reset demo.
+The [developer guide](docs/DEVELOPMENT.md) covers the separate SDP development preview, browser storage, recovery behavior, assets and Graphify. Generated test reports and builds remain outside Git.
 
-## One durable browser demo
+</details>
 
-`src/lib/demoStore.js` owns the source of truth. The existing **`kobi.demo.v1`** key now stores **`{ version: 2, revision, data }`**. The key name remains stable; its envelope version identifies the schema. Supported Part 1 saves migrate in place, preserving edited records, IDs, dates, preferences and provisional layout. Malformed or future versions remain untouched until explicit reset.
+## Project documents
 
-Commands validate the transient demo actor, current records, expected versions and relationships. They persist the entire candidate before publishing success. A failed prepared command retains its original IDs, actor, timestamp and baseline; unrelated writes are blocked until retry/discard. Retry detects external changes and rechecks time eligibility. A cancelled failed reset cannot execute through a later Retry. This is a one-editing-tab demo, with conservative external-change detection rather than multi-tab collaboration.
+| Document | What it explains |
+| --- | --- |
+| [Product and design specification](docs/product/product.md) | Current Pixel Stickers design, approved colours, typography and UI requirements. |
+| [Technical documentation](docs/product/TECHNICAL_DOCUMENTATION.md) | Product scope, workflows and data contracts; historical plans include future work. |
+| [Project report PDF](docs/reports/kobi-report/KoBi-report-technologies.pdf) | Latest retained report, including the technologies section. |
+| [Presentation PDF](docs/presentations/presentation.pdf) | Shareable project presentation. |
+| [Documentation index](docs/README.md) | Product references, competition guidance, plans and verification records. |
+| [Repository layout](docs/REPOSITORY_LAYOUT.md) | Folder ownership, retained sources and generated-file policy. |
 
-Sign-in does not verify credentials. Registration prepares one fixed resident persona; it creates no real account. Passwords and confirmation fields are never persisted. Persona switching is open demo navigation, not authentication, privacy enforcement or protected staff access. Sign-out clears transient inputs/media while retaining saved records.
+## Repository map
 
-Photos accept decodable JPEG/PNG/WebP up to **5,000,000 bytes**. Validated Files and object URLs remain in memory; localStorage contains only attachment metadata and `demo-attachment:` references. Photos are labeled **Preview only**. Reload preserves records/history but shows that their image previews are unavailable. No upload or durable evidence storage is claimed.
+```text
+src/         App, resident/staff features, shared controls and styles
+public/      Runtime artwork, fonts and static assets
+art/         Original artwork, asset ledger, licences and provenance
+references/  Design references, palette and archived map snapshot
+docs/        Product documents, report, presentation and verification
+scripts/     Asset preparation, export and verification utilities
+tests/       Unit, browser and production checks
+videos/      Video project sources and assets
+```
 
-Reset replaces only KoBi's storage key and restores profiles, reports/history, activities/memberships, facilities, layout and preferences. It clears transient drafts, selections and photo previews only after persistence succeeds. It does not clear other browser data.
+Installed dependencies, production builds, local exports, test output and video renders/caches are ignored. Keep original artwork provenance and font notices with their assets.
 
-## Design, assets and evidence
+## Current boundaries
 
-The **current build** uses semantic HTML, plain CSS and measured SVG PixelFrame geometry, with the approved wine/cherry/gold/sand/vanilla palette and locally hosted Bungee 400 and Yanone Kaffeesatz variable fonts. Bungee supplies headings/buttons/branding; Yanone Kaffeesatz supplies body and supporting text. The selected reference sheet is not a runtime import. Recent approved work includes PNG-backed SDP cards, static paper masks, and generated activity artwork with provenance. Headers/navigation/buttons and both world views are smooth; paper texture remains on ordinary page/panel surfaces elsewhere.
+Demo sign-in and resident/staff switching are local controls, not authentication or protected access. Records stay in editable browser storage and are not shared across devices. No report is submitted to a real service. Uploaded-photo previews are temporary; reload retains attachment metadata but cannot restore the image preview.
 
-The **approved specification, revised 19 October 2026**, limits all UI to `#6C1A21`, `#B92C2C`, `#CEA257`, `#D1BF9A` and `#E5E0CD` from the [user's palette reference](https://i.pinimg.com/736x/78/71/af/7871af2062e7b91f2a7d4672865e71fa.jpg). Future pixel-world artwork is exempt; UI/editor overlays are included. Only Bungee is selected for titles, headers, wordmark and all buttons, and Yanone Kaffeesatz for descriptions, long text, supporting copy and form text across the whole project, including future world text. See [the authoritative design system](docs/product/product.md). The user subsequently authorized both font replacement and execution of the colour plan; both are now implemented. See [colour-migration verification](docs/verification/UI_COLOUR_MIGRATION.md) for current evidence. Old Play/Press Start 2P source/runtime fonts and their licenses have been removed from active asset directories. Existing Part 1–3 verification reports describe the earlier build.
+Production use requires real authentication, server-side permissions, a shared database, durable uploads and privacy controls. Backend integration, deployment and an APK remain outside the current local demo. Phone-size browser checks do not establish physical Android camera, keyboard, TalkBack or hardware Back behavior; those remain unverified.
 
-Font originals/provenance remain under `art/source/fonts/`; runtime copies/licenses and the local SVG icon sprite remain under `public/assets/ui/`. `node scripts/asset-manifest.mjs` verifies their hashes. The schematic/editor uses provisional footprints: house 3×3 tiles, other catalog components 1×1. Final art dimensions/pivots, hit areas and worker routes remain deferred. Phaser **3.90.0** remains the later world-phase baseline and is not installed.
+## Credits and asset notices
 
-See [Part 2 verification](docs/verification/PART_2.md), [execution progress](docs/verification/PART_2_PROGRESS.md), [review findings and resolutions](docs/verification/PART_2_REVIEW.md), and [captures](docs/verification/part-2). [Part 1 evidence](docs/verification/PART_1.md) is retained.
+KoBi was developed with Codex assistance and Higgsfield-generated artwork. Asset sources and generation records are retained in [art/](art/) and the [asset ledger](art/ASSET_LEDGER.csv), including the activity-board generation record in [art/activity-board-refresh-2026-10-22/](art/activity-board-refresh-2026-10-22/).
 
-See [Part 3 report](docs/verification/PART_3.md), [S01–S17 coverage](docs/verification/PART_3_MATRIX.md), [defects and retests](docs/verification/PART_3_ISSUES.md), [physical scope record/future checklist](docs/verification/PART_3_ANDROID.md), and [fresh captures](docs/verification/part-3/automated/captures). The report discloses that legacy capture paths were refreshed by their existing suites; original historical image bytes were not frozen before the baseline.
+The locally hosted **Bungee** and **Yanone Kaffeesatz** fonts retain their [Bungee](public/assets/ui/licenses/bungee-OFL.txt) and [Yanone Kaffeesatz](public/assets/ui/licenses/yanone-kaffeesatz-OFL.txt) SIL Open Font License notices.
 
-Physical Android keyboard/gallery/camera, TalkBack, hardware Back, nonzero safe areas and background/resume remain unobserved by explicit user choice. Phone-size Chromium inspection and touch emulation do not prove them. The original overall Part 3 physical gate remains unchecked; no phone access is currently requested. The approved pixel world and recent artwork are now integrated. Backend, APK and deployment remain outside the current local frontend scope.
+No repository-wide code licence has been selected. Third-party assets retain their own terms; project and township references do not imply official endorsement.
