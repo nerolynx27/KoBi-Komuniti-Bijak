@@ -1,0 +1,809 @@
+/* ==========================================================================
+   KoBi — Activities Board & Gallery Production Stylesheet
+   Strictly governed by the 5-colour palette:
+   - --color-wine:    #6C1A21
+   - --color-cherry:  #B92C2C
+   - --color-gold:    #CEA257
+   - --color-sand:    #D1BF9A
+   - --color-vanilla: #E5E0CD
+   Typography: Bungee (headers/buttons/badges) & Yanone Kaffeesatz (body/meta)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Page Heading & Bleed Container
+   -------------------------------------------------------------------------- */
+.activities-page-heading {
+  margin-bottom: var(--space-2, 8px);
+}
+
+.activities-page-title-banner {
+  font: 400 1.5rem / 1.75rem var(--font-heading);
+  color: var(--color-wine);
+  text-align: center;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+}
+
+.activities-page-bleed {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. 2026 Notice Board Section (Reports Folder Colour Scheme)
+   -------------------------------------------------------------------------- */
+.act-notice-board-section {
+  position: relative;
+  margin-top: 14px;
+}
+
+.act-board-clips-row {
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.act-binder-clip {
+  display: block;
+}
+
+/* Outer frame rim in Warm Gold (--color-gold) */
+.act-notice-board-frame {
+  background-color: var(--color-gold);
+  border: 3px solid var(--color-wine);
+  box-shadow: 4px 4px 0 var(--color-wine);
+  padding: 6px;
+}
+
+/* Main interior section background in Green Felt (--color-leaf) */
+.act-notice-board-surface {
+  background-color: var(--color-leaf);
+  border: 3px solid var(--color-wine);
+  padding: 0 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Top context strip in Warm Sand (--color-sand) */
+.act-board-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  flex-wrap: nowrap;
+  margin: 0 -8px;
+  padding: 6px 8px;
+  background-color: var(--color-sand);
+  border-bottom: 2px solid var(--color-wine);
+}
+
+.act-board-filters {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+.act-filter-chip {
+  min-height: 32px;
+  padding: 2px 8px;
+  background-color: var(--color-vanilla);
+  color: var(--color-wine);
+  border: 2px solid var(--color-wine);
+  box-shadow: 2px 2px 0 var(--color-wine);
+  font-family: var(--font-action);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.act-filter-chip.is-selected {
+  background-color: var(--color-wine);
+  color: var(--color-vanilla);
+}
+
+.act-filter-chip[data-filter='recycling'].is-selected {
+  background-color: var(--color-leaf);
+  color: var(--color-wine);
+}
+
+.act-filter-chip[data-filter='joined'].is-selected {
+  background-color: var(--color-gold);
+  color: var(--color-wine);
+}
+
+.act-filter-chip:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--color-wine);
+}
+
+.act-board-year-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  background-color: var(--color-gold);
+  border: 2px solid var(--color-wine);
+  box-shadow: 2px 2px 0 var(--color-wine);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  line-height: 1;
+  color: var(--color-wine);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.act-board-empty {
+  padding: 20px 12px;
+  background-color: var(--color-sand);
+  border: 3px solid var(--color-wine);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.act-board-empty-title {
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--color-wine);
+}
+
+.act-board-empty-copy {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-wine);
+}
+
+/* --------------------------------------------------------------------------
+   3. Staggered Pinned Mini-Poster Notes Grid
+   -------------------------------------------------------------------------- */
+.act-pinned-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 10px;
+  padding-top: 10px;
+}
+
+.act-pinned-note-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.act-note-direct-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  background: transparent;
+  color: transparent;
+  z-index: 2;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.act-pinned-note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px 6px 8px;
+  border: 3px solid var(--color-wine);
+  box-shadow: 3px 3px 0 var(--color-wine);
+  color: var(--color-wine);
+  cursor: pointer;
+  transform: rotate(var(--note-tilt, 0deg));
+  transition: box-shadow 120ms ease;
+  width: 100%;
+}
+
+/* Colour-classified note themes */
+.act-pinned-note.note-theme-gold {
+  background-color: var(--color-gold);
+}
+
+.act-pinned-note.note-theme-sand-cherry {
+  background-color: var(--color-sand);
+  padding-top: 16px;
+}
+
+.act-pinned-note.note-theme-vanilla-cherry {
+  background-color: var(--color-vanilla);
+  padding-top: 16px;
+}
+
+.act-pinned-note:hover {
+  box-shadow: 4px 4px 0 var(--color-wine);
+}
+
+.act-pinned-note:active {
+  transform: rotate(0deg) translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-wine);
+}
+
+/* Pushpin centered above each note */
+.act-note-pin-anchor {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.act-pushpin-svg {
+  display: block;
+}
+
+/* Recycling Green Top Header Band */
+.act-note-cherry-cap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-color: var(--color-leaf);
+  border-bottom: 2px solid var(--color-wine);
+}
+
+/* Community Folded Corner Accent */
+.act-note-folded-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-cherry);
+  border-left: 2px solid var(--color-wine);
+  border-bottom: 2px solid var(--color-wine);
+}
+
+.act-note-illustration-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.act-illustration-frame {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--color-wine);
+  background-color: var(--color-vanilla);
+  overflow: hidden;
+}
+
+.act-illustration-frame.is-mini {
+  max-width: 120px;
+  height: 56px;
+}
+
+.act-illustration-frame.is-large {
+  max-width: 280px;
+  height: 164px;
+  border-width: 3px;
+  box-shadow: 3px 3px 0 var(--color-wine);
+}
+
+.act-illustration-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.act-note-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  line-height: 1.15;
+  color: var(--color-wine);
+  margin-bottom: 2px;
+  word-break: break-word;
+}
+
+.act-note-date {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-wine);
+  margin-bottom: 6px;
+}
+
+.act-note-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 2px solid var(--color-wine);
+}
+
+.act-note-category-badge {
+  display: inline-block;
+  padding: 1px 4px;
+  font-family: var(--font-action);
+  font-size: 0.54rem;
+  line-height: 1.1;
+  border: 2px solid var(--color-wine);
+}
+
+.act-note-category-badge.is-community {
+  background-color: var(--color-vanilla);
+  color: var(--color-wine);
+}
+
+.act-note-category-badge.is-recycling {
+  background-color: var(--color-leaf);
+  color: var(--color-wine);
+}
+
+.act-note-participants {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-wine);
+}
+
+.act-note-joined-stamp {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  padding: 1px 5px;
+  background-color: var(--color-leaf);
+  color: var(--color-wine);
+  border: 2px solid var(--color-wine);
+  font-family: var(--font-action);
+  font-size: 0.52rem;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   4. Hanging Polaroid Gallery Carousel
+   -------------------------------------------------------------------------- */
+.act-gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 6px;
+  margin-top: 8px;
+}
+
+.act-gallery-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.act-gallery-heading {
+  margin: 0;
+  padding: 4px 14px;
+  background-color: var(--color-sand);
+  border: 3px solid var(--color-wine);
+  box-shadow: 3px 3px 0 var(--color-wine);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--color-wine);
+}
+
+.act-gallery-arrow-btn {
+  min-width: 44px;
+  min-height: 40px;
+  padding: 4px 8px;
+  background-color: var(--color-gold);
+  color: var(--color-wine);
+  border: 3px solid var(--color-wine);
+  box-shadow: 3px 3px 0 var(--color-wine);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.act-gallery-arrow-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--color-wine);
+}
+
+.act-polaroid-line-stage {
+  position: relative;
+  width: 100%;
+  min-height: 168px;
+  padding-top: 4px;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.act-catenary-string-svg {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: 48px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.act-polaroid-hanging-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: start;
+  padding: 0 4px;
+  transition: transform 160ms ease-out;
+}
+
+.act-polaroid-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: transparent;
+  color: var(--color-wine);
+  border: none;
+  cursor: pointer;
+  margin-top: var(--polaroid-drop, 8px);
+  transform-origin: 50% 0%;
+  transform: rotate(var(--polaroid-tilt, 0deg));
+  transition: transform 160ms ease-out;
+}
+
+.act-polaroid-clip-wrap {
+  margin-bottom: -5px;
+  z-index: 3;
+}
+
+.act-polaroid-clip-svg {
+  display: block;
+}
+
+.act-polaroid-frame {
+  width: 100%;
+  background-color: var(--color-vanilla);
+  border: 3px solid var(--color-wine);
+  box-shadow: 3px 3px 0 var(--color-wine);
+  padding: 5px 5px 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Selected Polaroid receives Warm Gold highlight rim */
+.act-polaroid-card.is-selected .act-polaroid-frame {
+  background-color: var(--color-gold);
+  box-shadow: 4px 4px 0 var(--color-wine);
+}
+
+.act-polaroid-photo-window {
+  width: 100%;
+  background-color: var(--color-vanilla);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.act-polaroid-photo-window .act-illustration-frame.is-mini {
+  max-width: 100%;
+  height: 64px;
+}
+
+.act-polaroid-caption-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 2px 2px 0;
+  text-align: center;
+}
+
+.act-polaroid-caption {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--color-wine);
+}
+
+/* --------------------------------------------------------------------------
+   5. Modals (Detail Pop-Out & Set 1 Gallery Modal)
+   -------------------------------------------------------------------------- */
+.act-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background-color: rgba(108, 26, 33, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.act-modal-card {
+  width: min(100%, 400px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  background-color: var(--color-vanilla);
+  color: var(--color-wine);
+  border: 4px solid var(--color-wine);
+  box-shadow: 6px 6px 0 var(--color-wine);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.act-modal-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.act-modal-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.act-sticker-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 2px solid var(--color-wine);
+  font-family: var(--font-action);
+  font-size: 0.72rem;
+}
+
+.act-sticker-pill.is-community {
+  background-color: var(--color-gold);
+  color: var(--color-wine);
+}
+
+.act-sticker-pill.is-recycling {
+  background-color: var(--color-leaf);
+  color: var(--color-wine);
+}
+
+.act-sticker-pill.is-joined-pill {
+  background-color: var(--color-leaf);
+  color: var(--color-wine);
+}
+
+.act-modal-icon-close {
+  min-width: 44px;
+  min-height: 44px;
+  background-color: var(--color-sand);
+  color: var(--color-wine);
+  border: 3px solid var(--color-wine);
+  box-shadow: 3px 3px 0 var(--color-wine);
+  font-family: var(--font-action);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.act-modal-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--color-wine);
+}
+
+.act-modal-illustration-frame {
+  width: 100%;
+  background-color: var(--color-sand);
+  border: 3px solid var(--color-wine);
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.act-detail-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  background-color: var(--color-sand);
+  border: 2px solid var(--color-wine);
+  padding: 8px 10px;
+}
+
+.act-detail-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.act-detail-meta-label {
+  font-family: var(--font-action);
+  font-size: 0.64rem;
+  color: var(--color-wine);
+}
+
+.act-detail-meta-value {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-wine);
+}
+
+.act-modal-summary {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--color-wine);
+}
+
+.act-modal-action-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.act-modal-action-row {
+  display: flex;
+  gap: 8px;
+}
+
+.act-modal-action-row > * {
+  flex: 1;
+}
+
+.act-sticker-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 8px 14px;
+  border: 3px solid var(--color-wine);
+  box-shadow: 3px 3px 0 var(--color-wine);
+  font-family: var(--font-action);
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.act-sticker-btn.is-primary-gold {
+  background-color: var(--color-gold);
+  color: var(--color-wine);
+  width: 100%;
+}
+
+.act-sticker-btn.is-quiet-sand {
+  background-color: var(--color-sand);
+  color: var(--color-wine);
+}
+
+.act-sticker-btn.is-danger-cherry {
+  background-color: var(--color-cherry);
+  color: var(--color-vanilla);
+}
+
+.act-sticker-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--color-wine);
+}
+
+.act-leave-confirm-box {
+  padding: 10px;
+  background-color: var(--color-sand);
+  border: 3px solid var(--color-wine);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.act-leave-confirm-copy {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-wine);
+}
+
+/* Set 1 Gallery Preview Modal Specifics */
+.act-gallery-preview-top,
+.act-gallery-modal-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
+.act-gallery-preview-date,
+.act-gallery-modal-date {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-wine);
+}
+
+.act-gallery-preview-title,
+.act-gallery-modal-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--color-wine);
+  margin: 0;
+}
+
+.act-gallery-preview-photo-frame,
+.act-gallery-modal-photo-frame {
+  width: 100%;
+  background-color: var(--color-sand);
+  border: 3px solid var(--color-wine);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.act-gallery-preview-summary,
+.act-gallery-modal-summary {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-wine);
+}
+
+.act-close-preview-btn,
+.is-close-preview-cherry,
+.act-sticker-btn.is-close-preview-cherry {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  background-color: var(--color-cherry);
+  color: var(--color-vanilla);
+  border: 3px solid var(--color-wine);
+  box-shadow: 4px 4px 0 var(--color-wine);
+  font-family: var(--font-action);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: block;
+}
+
+.act-close-preview-btn:hover,
+.is-close-preview-cherry:hover {
+  filter: brightness(1.05);
+}
+
+.act-close-preview-btn:active,
+.is-close-preview-cherry:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-wine);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .act-pinned-note,
+  .act-polaroid-card,
+  .act-polaroid-hanging-row {
+    transition: none !important;
+  }
+}
