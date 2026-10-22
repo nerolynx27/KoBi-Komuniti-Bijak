@@ -1,0 +1,337 @@
+{
+  "date": "2026-10-22",
+  "scope": "Ten reference-faithful card backings and live review previews; no automatic dashboard replacement",
+  "source_job_id": "cf2f2407-8d7f-41b3-9622-052b49ec2ba0",
+  "items": [
+    {
+      "index": 0,
+      "id": "01-welcome",
+      "name": "Welcome card",
+      "kind": "welcome",
+      "reference_bounds_390": [
+        22,
+        56,
+        371,
+        149
+      ],
+      "reference_crop_full_resolution": [
+        87,
+        221,
+        1461,
+        587
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\01-welcome.png",
+      "native_size": [
+        349,
+        93
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "21:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Welcome card. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the wine title band, vanilla body, clipped lower-right corner and original outer border. Remove the Elmina illustration because the already approved separate illustration will be overlaid live. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 1,
+      "id": "02-open-reports",
+      "name": "Open reports ticket",
+      "kind": "metric",
+      "reference_bounds_390": [
+        22,
+        161,
+        134,
+        226
+      ],
+      "reference_crop_full_resolution": [
+        87,
+        634,
+        528,
+        890
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\02-open-reports.png",
+      "native_size": [
+        112,
+        65
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Open reports ticket. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the cherry red face, stepped corners, gold inset rim, wine outlines and narrow footer divider. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 2,
+      "id": "03-in-progress",
+      "name": "In progress ticket",
+      "kind": "metric",
+      "reference_bounds_390": [
+        139,
+        161,
+        253,
+        226
+      ],
+      "reference_crop_full_resolution": [
+        547,
+        634,
+        996,
+        890
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\03-in-progress.png",
+      "native_size": [
+        114,
+        65
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 In progress ticket. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the gold face, stepped corners, vanilla inset rim, wine outlines and narrow footer divider. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 3,
+      "id": "04-upcoming-activities",
+      "name": "Upcoming activities ticket",
+      "kind": "metric",
+      "reference_bounds_390": [
+        258,
+        161,
+        371,
+        226
+      ],
+      "reference_crop_full_resolution": [
+        1016,
+        634,
+        1461,
+        890
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\04-upcoming-activities.png",
+      "native_size": [
+        113,
+        65
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "16:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Upcoming activities ticket. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the vanilla face, stepped corners, sand inset rim, wine outlines and narrow footer divider. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 4,
+      "id": "05-attention-panel",
+      "name": "Needs attention outer panel",
+      "kind": "panel",
+      "reference_bounds_390": [
+        22,
+        236,
+        371,
+        460
+      ],
+      "reference_crop_full_resolution": [
+        87,
+        929,
+        1461,
+        1812
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\05-attention-panel.png",
+      "native_size": [
+        349,
+        224
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "3:2",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Needs attention outer panel. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Keep ONLY the outer vanilla panel with its wine outline and folded top-right/lower-right corners. Remove both nested report cards entirely; the interior must be empty vanilla. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 5,
+      "id": "06-priority-report",
+      "name": "Priority report ticket",
+      "kind": "report",
+      "reference_bounds_390": [
+        35,
+        263,
+        358,
+        376
+      ],
+      "reference_crop_full_resolution": [
+        138,
+        1036,
+        1410,
+        1481
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\06-priority-report.png",
+      "native_size": [
+        323,
+        113
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "21:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Priority report ticket. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the thick cherry ticket frame, stepped/scalloped corners, hanging cherry bookmark at upper left, small blank Priority ribbon above the top-right edge and integrated GOLD bottom action strip. Remove the lettering inside the ribbon and action strip. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 6,
+      "id": "07-secondary-report",
+      "name": "Secondary report ticket",
+      "kind": "report",
+      "reference_bounds_390": [
+        35,
+        377,
+        358,
+        451
+      ],
+      "reference_crop_full_resolution": [
+        138,
+        1485,
+        1410,
+        1776
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\07-secondary-report.png",
+      "native_size": [
+        323,
+        74
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "21:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Secondary report ticket. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the vanilla face, layered wine keylines, bracket-like corners, two hanging cherry bookmarks at the upper left/right and the slim vertical divider at left. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 7,
+      "id": "08-upcoming-event",
+      "name": "Upcoming event ticket",
+      "kind": "event",
+      "reference_bounds_390": [
+        22,
+        464,
+        371,
+        540
+      ],
+      "reference_crop_full_resolution": [
+        87,
+        1827,
+        1461,
+        2127
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\08-upcoming-event.png",
+      "native_size": [
+        349,
+        76
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "21:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Upcoming event ticket. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the elongated vanilla event ticket, semicircular/stepped side notches, gold outer rim and narrow gold heading strip across its top. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 8,
+      "id": "09-manage-activities",
+      "name": "Manage activities card",
+      "kind": "shortcut",
+      "reference_bounds_390": [
+        22,
+        541,
+        226,
+        635
+      ],
+      "reference_crop_full_resolution": [
+        87,
+        2131,
+        890,
+        2501
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\09-manage-activities.png",
+      "native_size": [
+        204,
+        94
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "21:9",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 Manage activities card. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the gold face, double wine outlines, vanilla/sand inset rim and folded/clipped lower-right corner. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    },
+    {
+      "index": 9,
+      "id": "10-world-editor",
+      "name": "World editor card",
+      "kind": "shortcut",
+      "reference_bounds_390": [
+        234,
+        541,
+        371,
+        635
+      ],
+      "reference_crop_full_resolution": [
+        922,
+        2131,
+        1461,
+        2501
+      ],
+      "reference_path": "C:\\Users\\user\\Desktop\\hackathon\\art\\sdp-card-set-01\\references\\10-world-editor.png",
+      "native_size": [
+        137,
+        94
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "variant": "flare",
+        "quality": "high",
+        "resolution": "1k",
+        "background": "transparent",
+        "aspect_ratio": "3:2",
+        "count": 1,
+        "prompt": "REFERENCE-FAITHFUL UI FRAME EXTRACTION \u2014 World editor card. The supplied crop is the exact master for this ONE card. Produce ONE isolated BLANK decorative card backing, preserving its original silhouette, width-to-height proportions, border thicknesses, corner steps, folds, divider placement, colours and hard offset shadow. Preserve the vanilla face, double wine outlines, gold/sand inset rim and folded/clipped lower-right corner. Remove ALL text, numbers, letters, icons, photographs and illustrations, including tiny Sample data text. Reconstruct clean surface underneath removed content. Do not create a dashboard, a collage, a second card, a caption, a label, a logo or any new ornament. The retained frame is decorative; real text, numbers, illustrations and controls will be overlaid in code. Use only wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Flat crisp pixel-sticker edges; no blur, no glow, no gradients, no perspective. Preserve this crop's card proportions independently of the output canvas: center the whole card with transparent padding wherever needed, never stretch it to fill the canvas. True alpha transparency outside its silhouette. Keep the entire border, shadow, folds and bookmarks inside the output without clipping."
+      }
+    }
+  ]
+}

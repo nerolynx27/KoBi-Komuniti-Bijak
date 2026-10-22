@@ -1,0 +1,40 @@
+{
+  "job_id": "4be45171-bcb4-439d-8cd8-4e27fc61a0d8",
+  "source_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_011914_4be45171-bcb4-439d-8cd8-4e27fc61a0d8.png",
+  "requested_model": "nano_banana_pro",
+  "returned_model": "nano_banana_2",
+  "requested_resolution": "2k",
+  "requested_aspect_ratio": "9:16",
+  "original": "art/dashboard-bulletin/selected-reference.png",
+  "width": 1536,
+  "height": 2752,
+  "sha256": "58cd2c97667c4b817de55ce52c4cd3787c32656fdef7c755d42d88e3e82e9da2",
+  "license_note": "User-selected generated design reference; no additional licensing verification claimed.",
+  "processing": "Lossless integer-coordinate crops only; no resampling, recolouring, text or frame pixels. Runtime preserves aspect ratio with pixelated rendering.",
+  "outputs": [
+    {
+      "output": "public/assets/dashboard/bulletin-cleanup.png",
+      "crop": [
+        82,
+        588,
+        716,
+        1192
+      ],
+      "width": 634,
+      "height": 604,
+      "sha256": "cdb03dd036b01ee226148910c44747aa294dc303723fb13d0dc9289235c85b4f"
+    },
+    {
+      "output": "public/assets/dashboard/bulletin-neighbourhood-panorama.png",
+      "crop": [
+        128,
+        1880,
+        1408,
+        2032
+      ],
+      "width": 1280,
+      "height": 152,
+      "sha256": "bfe301e6f5d8df7848225ec33138adee00bea2945388a116071e384fbd98f0a2"
+    }
+  ]
+}

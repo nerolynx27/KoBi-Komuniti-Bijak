@@ -86,15 +86,7 @@ describe('Elmina App Integration & Selectors', () => {
     const myHouse = data.layout.find(o => o.objectId === 'object-house-01');
     expect(myHouse).toBeDefined();
 
-    // Verify clearance directly above Lot 12 (y - 2 to y)
-    const blockedAbove = data.layout.filter(
-      o =>
-        o.objectId !== myHouse.objectId &&
-        o.x < myHouse.x + myHouse.width &&
-        o.x + o.width > myHouse.x &&
-        o.y + o.height > myHouse.y - 2 &&
-        o.y <= myHouse.y
-    );
-    expect(blockedAbove).toHaveLength(0);
+    expect(myHouse).toMatchObject({ x: 4, y: 8, width: 2, height: 2 });
+    expect(data.layout.find(o => o.objectId === 'object-surau-01').label).toBe('Masjid Al Falah');
   });
 });

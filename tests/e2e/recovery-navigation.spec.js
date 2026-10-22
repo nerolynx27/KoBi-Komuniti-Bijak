@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { createSampleData } from '../../src/lib/demoSamples.js';
 import { openPart3, PART3_NOW, readPart3Bytes, readPart3Envelope } from '../helpers/part3.js';
-import { button, link, commit, coordinates, fillActivity } from '../helpers/shellActions.js';
+import { button, link, commit, coordinates, fillActivity, enterStaffWorkspace, openResetDemo } from '../helpers/shellActions.js';
 
 const key = 'kobi.demo.v1';
 
@@ -94,7 +94,7 @@ test('missing and malformed deep links recover without mutation', async ({ page 
     await expect(page.getByText(/not found|no longer available|unavailable/i).first()).toBeVisible();
     expect(await readPart3Bytes(page)).toBe(before);
     await page.locator('.brand').click();
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Map');
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('The neighbourhood bulletin');
   }
   expect(errors).toEqual([]);
 });
@@ -130,7 +130,7 @@ test('empty status and Joined filters recover without a write', async ({ page })
 
 test('Back restores a remembered bare-URL workspace and its selected demo actor', async ({ page }) => {
   await page.goto('/#map');
-  await page.getByRole('button', { name: 'Enter SDP demo workspace', exact: true }).click();
+  await enterStaffWorkspace(page);
   await page.goto('/'); await page.reload();
   await expect(page.getByRole('heading', { name: 'SDP workspace', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Exit SDP demo workspace', exact: true }).click();
@@ -214,7 +214,7 @@ test('cancelling a failed reset discards that operation before a later global re
   await page.getByRole('button', { name: 'Save changes', exact: true }).click();
   const saved = await page.evaluate(key => localStorage.getItem(key), key);
   await page.evaluate(() => { window.reviewSetItem = Storage.prototype.setItem; Storage.prototype.setItem = () => { throw new DOMException('Full', 'QuotaExceededError'); }; });
-  await page.getByRole('button', { name: 'Reset demo', exact: true }).click();
+  await openResetDemo(page);
   const dialog = page.getByRole('dialog');
   await dialog.getByRole('button', { name: 'Reset demo', exact: true }).click();
   await expect(dialog.getByRole('alert')).toContainText('Changes were not saved');
@@ -243,7 +243,7 @@ test('a failed profile command retains fields and global retry completes the ori
   await expect(page.getByRole('heading', { name: 'Global retry name', exact: true })).toBeVisible();
   await expect(page.getByRole('alert')).toHaveCount(0);
   const revision = await page.evaluate(key => JSON.parse(localStorage.getItem(key)).revision, key);
-  await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Map', exact: true }).click();
+  await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Home', exact: true }).click();
   await expect(page.getByRole('dialog')).not.toBeVisible();
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).revision, key)).toBe(revision);
 });
@@ -268,7 +268,7 @@ test('a failed Leave confirmation retries its original operation without closing
 test('failed activity cancellation retries inside its confirmation and keeps participants', async ({ page }) => {
   await page.goto('/#activities/00000000-0000-4000-8000-000000000031');
   await page.getByRole('button', { name: 'Join activity', exact: true }).click();
-  await page.getByRole('button', { name: 'Enter SDP demo workspace', exact: true }).click();
+  await enterStaffWorkspace(page);
   await page.goto('/#sdp/activities');
   await page.getByRole('button', { name: 'Cancel activity', exact: true }).click();
   const dialog = page.getByRole('dialog');
@@ -287,7 +287,7 @@ test('a failed reset retry retains the original operation time', async ({ page }
   await page.goto('/#profile');
   const operationTime = Date.parse('2035-02-01T00:00:00Z');
   await page.evaluate(now => { Date.now = () => now; window.reviewSetItem = Storage.prototype.setItem; Storage.prototype.setItem = () => { throw new DOMException('Full', 'QuotaExceededError'); }; }, operationTime);
-  await page.getByRole('button', { name: 'Reset demo', exact: true }).click();
+  await openResetDemo(page);
   const dialog = page.getByRole('dialog');
   await dialog.getByRole('button', { name: 'Reset demo', exact: true }).click();
   await expect(dialog.getByRole('alert')).toContainText('Changes were not saved');
@@ -309,7 +309,7 @@ test('confirmed reset restores every domain and clears an active editor preview 
   await page.getByLabel(/^Description/).fill('A local report created to verify coherent reset across domains.');
   await page.getByRole('button', { name: 'Send report', exact: true }).click();
   const reportId = await page.evaluate(key => JSON.parse(localStorage.getItem(key)).data.complaints.at(-1).id, key);
-  await page.getByRole('button', { name: 'Enter SDP demo workspace', exact: true }).click();
+  await enterStaffWorkspace(page);
   await page.goto(`/#sdp/reports/${reportId}`);
   await page.getByLabel(/^Action note/).fill('Maintenance assigned in this browser demo.');
   await page.getByRole('button', { name: 'Start work', exact: true }).click();
@@ -326,7 +326,7 @@ test('confirmed reset restores every domain and clears an active editor preview 
   await page.getByRole('button', { name: 'Exit SDP workspace', exact: true }).click();
   await page.goto(`/#activities/${activityId}`);
   await page.getByRole('button', { name: 'Join activity', exact: true }).click();
-  await page.getByRole('button', { name: 'Enter SDP demo workspace', exact: true }).click();
+  await enterStaffWorkspace(page);
   await page.goto('/#sdp/world');
   await page.getByRole('button', { name: 'Enter editor', exact: true }).click();
   await page.getByRole('button', { name: 'Add component', exact: true }).click();
@@ -334,7 +334,7 @@ test('confirmed reset restores every domain and clears an active editor preview 
   await page.getByRole('button', { name: 'Place component', exact: true }).click();
   await page.getByRole('button', { name: 'Move', exact: true }).click();
   await page.getByLabel(/^X tile/).fill('1');
-  await page.getByRole('button', { name: 'Reset demo', exact: true }).click();
+  await openResetDemo(page);
   await page.getByRole('dialog').getByRole('button', { name: 'Reset demo', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Enter editor', exact: true })).toBeVisible();
   await expect(page.locator('.schematic-ghost')).toHaveCount(0);

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "01-welcome",
+    "job_id": "7339cb77-9f63-44b9-92ca-4ad494044533",
+    "raw_size": [
+      1344,
+      576
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      45,
+      112,
+      1309,
+      441
+    ],
+    "prepared_size": [
+      349,
+      91
+    ],
+    "aspect_difference_percent": 2.4,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Compare border and corner details",
+    "raw_sha256": "78e307e9d298c9188db8896df9a1ee5d48a96d680bb5ee682bc4426db852e8e7",
+    "source_study_sha256": "2a0890816b731a37b0236ec61c6aa0742d78b63745c67cb4b5b4b3be9f1176a6",
+    "prepared_sha256": "dfd42e00bb566774dc25d729add518997f188c81aa73c28659bc2c09a6f5d029"
+  },
+  {
+    "id": "02-open-reports",
+    "job_id": "499100ad-16a9-48b0-9de7-613f45b1b429",
+    "raw_size": [
+      1344,
+      752
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      63,
+      68,
+      1283,
+      704
+    ],
+    "prepared_size": [
+      112,
+      58
+    ],
+    "aspect_difference_percent": 11.3,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Check proportions against original",
+    "raw_sha256": "c757f31d382966c2d1f1ec74aef476be0ed7c7a68154ad6743e18ea67d980919",
+    "source_study_sha256": "f6caf3b6e4879515f110604b96107f14bb42362bcc6d59eb01dc88eb998b9e29",
+    "prepared_sha256": "133c006a804a6be0cdd295d88b2f16ef2cb1626aac276719ea822b5b75275ee9"
+  },
+  {
+    "id": "03-in-progress",
+    "job_id": "f95f9d5a-0baf-47cf-88e5-ab323626a9bf",
+    "raw_size": [
+      1344,
+      752
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      72,
+      57,
+      1292,
+      709
+    ],
+    "prepared_size": [
+      114,
+      61
+    ],
+    "aspect_difference_percent": 6.7,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Compare border and corner details",
+    "raw_sha256": "c2dd481309cd88f333318b2d795b5e0c18d6aa53904e1e96134d22a8cbd12be1",
+    "source_study_sha256": "da23407b6641b4a85705341269639fbd8444fabc7c0e172398335855e3e3c1f7",
+    "prepared_sha256": "6acb6debc3da65fefb88d0c59a44794f04998fbb76f0794961fc9ef9c794df76"
+  },
+  {
+    "id": "04-upcoming-activities",
+    "job_id": "c5160bf2-fa33-4cef-8231-08e1101f3267",
+    "raw_size": [
+      1344,
+      752
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      74,
+      66,
+      1295,
+      679
+    ],
+    "prepared_size": [
+      113,
+      57
+    ],
+    "aspect_difference_percent": 14.6,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Check proportions against original",
+    "raw_sha256": "c49215bd6493754e49fcfa7fd4c97f0d63187ecf7d0b5b0becc6b85f4d34179b",
+    "source_study_sha256": "d7c62cca90961f58f614cf433de1e448f7ef662db4077367752897959a795e38",
+    "prepared_sha256": "1af77a9a8dc43f22836ba83f82643fc8ee823ef7b7daeba29f0dd991644b2d5b"
+  },
+  {
+    "id": "05-attention-panel",
+    "job_id": "de065736-b32e-4c36-964d-bdc087bbbfda",
+    "raw_size": [
+      1024,
+      688
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      48,
+      71,
+      976,
+      609
+    ],
+    "prepared_size": [
+      349,
+      202
+    ],
+    "aspect_difference_percent": 10.7,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Check proportions against original",
+    "raw_sha256": "98e4d06f8808517a701497cb538e5c00c64cefba60d2514bc0fda4b659908a88",
+    "source_study_sha256": "db1b0479979dacac34cf40bfc8bfbdb6ea71a368cfcc17fcce6223203bf1e073",
+    "prepared_sha256": "de1b29ac0e245578b6222853b0d75a8042e176cfad4c9868615c838c7ad7b823"
+  },
+  {
+    "id": "06-priority-report",
+    "job_id": "895fc751-db31-43a7-8e8a-5e4cf9214a9f",
+    "raw_size": [
+      1344,
+      576
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      29,
+      49,
+      1300,
+      499
+    ],
+    "prepared_size": [
+      323,
+      114
+    ],
+    "aspect_difference_percent": 1.2,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Compare border and corner details",
+    "raw_sha256": "66125fd9c273855f31aaee648472eda0711841f97280d1c61eb74c45d9b62ea7",
+    "source_study_sha256": "977bf2d9b0c85354e8f311c725fb6af5333e4562e0a4f801c8c08cd8a7ee86e7",
+    "prepared_sha256": "078022d1e8b654aef0742dc3bd19c1e83aac0fac45472e117ff109e68f5f6f37"
+  },
+  {
+    "id": "07-secondary-report",
+    "job_id": "d11e2fa4-5d20-495a-9729-ba73a5c1a47a",
+    "raw_size": [
+      1344,
+      576
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      40,
+      124,
+      1317,
+      430
+    ],
+    "prepared_size": [
+      323,
+      77
+    ],
+    "aspect_difference_percent": 4.4,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Compare border and corner details",
+    "raw_sha256": "18a4a993c8b1803b0ba88238c249dfa0064a79bb45c061f05786f088722f1840",
+    "source_study_sha256": "14a3fb6f4532da71ab240d6564fb6ece1de0dabade3befe472b46b7a10398b18",
+    "prepared_sha256": "a5295a6f93c1221b286c70b4d62a5b93c17196e3cde1720ea1f0b76845df9287"
+  },
+  {
+    "id": "08-upcoming-event",
+    "job_id": "c8a092dd-4b8a-4866-98f3-3b682af3dff6",
+    "raw_size": [
+      1344,
+      576
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      32,
+      138,
+      1320,
+      419
+    ],
+    "prepared_size": [
+      349,
+      76
+    ],
+    "aspect_difference_percent": 0.2,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Compare border and corner details",
+    "raw_sha256": "0a467239fb13c5d57d537f52a707e06673e3ac4797b5e3176a5eb2ad8f668afa",
+    "source_study_sha256": "78c8d96fc120866359957221c0c6a65c22d29b6f102a079e596cc82f5de3af34",
+    "prepared_sha256": "4fa1608b82fcee119a50af31c556fe74f4292da0aeb6c2e32c51b89093a9618c"
+  },
+  {
+    "id": "09-manage-activities",
+    "job_id": "68743824-df14-4cc8-8694-cc9d0dedfe26",
+    "raw_size": [
+      1344,
+      576
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      88,
+      64,
+      1267,
+      518
+    ],
+    "prepared_size": [
+      204,
+      79
+    ],
+    "aspect_difference_percent": 19.7,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Check proportions against original",
+    "raw_sha256": "ae7de21c6fcb88f00e9f099178ef533a93a0a640fe5553b4789ae70687d376eb",
+    "source_study_sha256": "21d30150c7f59065baf2506e3be6b4da274747ea4e2a926fe1143e84a64ddd8f",
+    "prepared_sha256": "412648cd70fbfea2c67e9598c563de9e3159b9f17925d190fc272dc09a8ad389"
+  },
+  {
+    "id": "10-world-editor",
+    "job_id": "f8cff7dd-db86-45b9-b27b-99c844abebb2",
+    "raw_size": [
+      1024,
+      688
+    ],
+    "raw_alpha_range": [
+      0,
+      254
+    ],
+    "alpha_bounds_128": [
+      66,
+      52,
+      978,
+      640
+    ],
+    "prepared_size": [
+      137,
+      88
+    ],
+    "aspect_difference_percent": 6.4,
+    "preparation": "Binary alpha at 128; palette normalization; reconstructed blank interior/dividers; original raw output retained",
+    "review_note": "Compare border and corner details",
+    "raw_sha256": "fe3c2b58e6fb67af2ceceb49bbdfb3530a861c42fe884f9845eb934f694e477c",
+    "source_study_sha256": "b2813046bba3fe5884359329c0b1f5af0ff0743d3c971582d7e0d987fd511241",
+    "prepared_sha256": "8fb7c058e990592a8a264dc698b06d4c1ed2e4d77e6a5086697e2c2e179d0411"
+  }
+]

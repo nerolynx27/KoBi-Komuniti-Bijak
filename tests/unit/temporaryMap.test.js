@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { TemporaryMap } from '../../src/features/world/TemporaryMap.jsx';
 import { createSampleData } from '../../src/lib/demoSamples.js';
 
-describe('TemporaryMap Classic 2D Grid Integration', () => {
+describe('Approved neighbourhood map integration', () => {
   it('renders lively green grass, lake, sidewalks, and crosswalks', () => {
     const data = createSampleData();
     const html = renderToStaticMarkup(
@@ -12,11 +12,11 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
     );
 
     // Grass pattern and colors
-    expect(html).toContain('classic-grid-pattern');
+    expect(html).toContain('assem-grass-pattern');
     expect(html).toContain('#569443');
 
     // Elmina Lake
-    expect(html).toContain('ELMINA LAKE');
+    expect(html).toContain('TASIK EKOLOGI');
     expect(html).toContain('#347CA1');
 
     // Sidewalks & Crosswalks
@@ -24,13 +24,13 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
     expect(html).toContain('street-labels');
   });
 
-  it('renders Persiaran Elmina and Jalan Frekuensi street name banners', () => {
+  it('keeps approved Frekuensi signs without the removed boulevard banners', () => {
     const data = createSampleData();
     const html = renderToStaticMarkup(
       React.createElement(TemporaryMap, { data })
     );
 
-    expect(html).toContain('PERSIARAN ELMINA');
+    expect(html).not.toContain('>PERSIARAN ELMINA<');
     expect(html).toContain('JALAN FREKUENSI 1');
     expect(html).toContain('JALAN FREKUENSI 2');
   });
@@ -41,7 +41,7 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
       React.createElement(TemporaryMap, { data })
     );
 
-    expect(html).toContain('Lamp #01');
+    expect(html).toContain('Walkway lamp #01');
     expect(html).toContain('Streetlight #10');
   });
 
@@ -51,8 +51,8 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
       React.createElement(TemporaryMap, { data })
     );
 
-    expect(html).toContain('★ MY HOUSE');
-    expect(html).toContain('Alex Home (Lot 12)');
+    expect(html).toMatch(/(?:★|&#9733;) MY HOUSE/);
+    expect(html).toContain('Neighbourhood house (Alex Tan Home - Lot 12)');
     expect(html).toContain('Lot 08');
     expect(html).toContain('Lot 19');
     expect(html).toContain('Lot 25');
@@ -65,8 +65,8 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
     );
 
     expect(html).toContain('data-draggable="true"');
-    expect(html).toContain('schematic-hover-hud');
-    expect(html).toContain('Drag anywhere to pan');
+    expect(html).toContain('schematic-scale sr-only');
+    expect(html).toContain('Sample neighbourhood');
   });
 
   it('renders controls with Zoom in, Zoom out, Reset view, and Find my house', () => {
@@ -104,21 +104,11 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
     expect(html).toContain('is-selected');
   });
 
-  it('enforces strict-mode compliance with exactly 1 rect per schematic-object', () => {
+  it('gives every placed object its own keyboard-accessible tap target', () => {
     const data = createSampleData();
-    const html = renderToStaticMarkup(
-      React.createElement(TemporaryMap, { data })
-    );
-
-    // Extract all schematic-object groups and ensure each has exactly 1 <rect>
-    const objectGroups = html.match(/<g[^>]*class="[^"]*schematic-object[^"]*"[\s\S]*?<\/g>/g) || [];
-    expect(objectGroups.length).toBeGreaterThan(20);
-
-    for (const group of objectGroups) {
-      // Primary rects only - child rect count must be exactly 1
-      const rectCount = (group.match(/<rect[\s>]/g) || []).length;
-      expect(rectCount).toBe(1);
-    }
+    const html = renderToStaticMarkup(React.createElement(TemporaryMap, { data }));
+    expect((html.match(/class="approved-map-hit"/g) || []).length).toBe(data.layout.length);
+    expect((html.match(/role="button" tabindex="0"/g) || []).length).toBe(data.layout.length);
   });
 
   it('renders miniature pixel typography and distinct architectural shapes', () => {
@@ -127,17 +117,10 @@ describe('TemporaryMap Classic 2D Grid Integration', () => {
       React.createElement(TemporaryMap, { data })
     );
 
-    // Explicit font sizes in SVG
-    expect(html).toContain('font-size="8.5"');
     expect(html).toContain('font-size="6.5"');
-
-    // Surau Al-Falah dome
-    expect(html).toContain('surau-dome');
-
-    // Park pavilion gazebo
-    expect(html).toContain('park-gazebo');
-
-    // Civic wine body fill for Dewan Komuniti and Surau
-    expect(html).toContain('civic-hall-facade');
+    expect(html).toContain('sym-surau');
+    expect(html).toContain('MASJID AL FALAH');
+    expect(html).toContain('sym-lake');
+    expect(html).toContain('sym-dewan');
   });
 });

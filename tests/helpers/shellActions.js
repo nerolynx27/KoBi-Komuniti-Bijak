@@ -4,6 +4,16 @@ import { readPart3Envelope } from './part3.js';
 export const button = (page, name) => page.getByRole('button', { name, exact: true });
 export const link = (page, name) => page.getByRole('link', { name, exact: true });
 export const nav = (page, name) => page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name, exact: true });
+export async function enterStaffWorkspace(page) {
+  await button(page, 'Open app menu').click();
+  await page.getByRole('button', { name: /^SDP WORKSPACE/ }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace');
+}
+export async function openResetDemo(page) {
+  const reset = button(page, 'Reset demo');
+  if (await reset.isVisible()) await reset.click();
+  else { await button(page, 'Open app menu').click(); await button(page, 'Reset demo data').click(); }
+}
 export async function commit(page, action) {
   const before = await readPart3Envelope(page);
   await action();

@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { enterStaffWorkspace } from '../helpers/shellActions.js';
 test('account forms are simulations and profile preferences survive reload', async ({ page }) => {
   await page.goto('/#create-account');
   await page.getByLabel('Display name').fill('Jamie Lee');
@@ -37,9 +38,9 @@ test('account validation focuses fields and selected SDP sign-in uses the same d
   await page.goto('/#profile');
   // Hash navigation within this page retains the selected transient persona on common screens.
   await expect(page.getByLabel('Demo role')).toHaveValue('SDP');
-  await page.getByRole('button', { name: 'Enter SDP demo workspace', exact: true }).click();
+  await enterStaffWorkspace(page);
   await page.getByRole('button', { name: 'Exit SDP demo workspace', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Map', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'The neighbourhood bulletin', exact: true })).toBeVisible();
   await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Profile', exact: true }).click();
   await expect(page.getByLabel('Demo role')).toHaveValue('Resident');
 });

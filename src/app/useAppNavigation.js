@@ -31,7 +31,7 @@ export function useAppNavigation({ initialHash, confirmDiscard }) {
   useEffect(() => {
     window.history.replaceState({ ...window.history.state, kobiIndex: index.current }, '', accepted.current);
     const changed = () => {
-      const requested = window.location.hash || '#map';
+      const requested = window.location.hash || '#home';
       let targetIndex = window.history.state?.kobiIndex;
       if (!Number.isInteger(targetIndex) || (targetIndex === index.current && requested !== accepted.current)) {
         targetIndex = index.current + 1;

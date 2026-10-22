@@ -1,0 +1,259 @@
+{
+  "requested": [
+    {
+      "index": 1,
+      "params": {
+        "model": "nano_banana_pro",
+        "resolution": "2k",
+        "aspect_ratio": "4:3",
+        "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. Neighbours harvesting vegetables together in a Malaysian community garden, baskets of aubergines tomatoes and leafy greens, cheerful diverse adult residents. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image."
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "nano_banana_pro",
+        "resolution": "2k",
+        "aspect_ratio": "4:3",
+        "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. Malaysian residents safely bringing old electronics to a neighbourhood e-waste collection point, clearly recognisable laptops phones and recycling bins, no lettering. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image."
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "nano_banana_pro",
+        "resolution": "2k",
+        "aspect_ratio": "4:3",
+        "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. Neighbours at a community workshop making useful plant pots from recycled bottles and cardboard, craft tools and colourful reused materials. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image."
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "nano_banana_pro",
+        "resolution": "2k",
+        "aspect_ratio": "4:3",
+        "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. A small group of diverse Malaysian adults doing gentle tai chi together in a neighbourhood park at sunrise, balanced poses and trees. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image."
+      }
+    }
+  ],
+  "submission": {
+    "jobs": [
+      {
+        "index": 1,
+        "job_id": "cfbb3df2-a18d-4d4b-8510-9c6cf58fa452",
+        "status": "pending"
+      },
+      {
+        "index": 2,
+        "job_id": "8019b86d-d170-4e81-b015-73bababf88c6",
+        "status": "pending"
+      },
+      {
+        "index": 3,
+        "job_id": "5e7ceb61-c227-4a6f-b78d-5ce9659856e3",
+        "status": "pending"
+      },
+      {
+        "index": 4,
+        "job_id": "35ce1e29-1cc3-46bd-bc33-9d808a61897a",
+        "status": "pending"
+      }
+    ],
+    "submitted_count": 4,
+    "failed_count": 0
+  },
+  "actual": {
+    "items": [
+      {
+        "id": "cfbb3df2-a18d-4d4b-8510-9c6cf58fa452",
+        "type": "image",
+        "status": "completed",
+        "model": "nano_banana_2",
+        "params": {
+          "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. Neighbours harvesting vegetables together in a Malaysian community garden, baskets of aubergines tomatoes and leafy greens, cheerful diverse adult residents. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image.",
+          "aspect_ratio": "4:3",
+          "input_images": [],
+          "width": 2400,
+          "height": 1792,
+          "resolution": "2k",
+          "batch_size": 1,
+          "input_image": null,
+          "application": null,
+          "surface": null
+        },
+        "results": {
+          "rawUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_cfbb3df2-a18d-4d4b-8510-9c6cf58fa452.png",
+          "minUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_cfbb3df2-a18d-4d4b-8510-9c6cf58fa452_min.webp"
+        },
+        "createdAt": 1792679786.67696,
+        "liked": false,
+        "local": {
+          "path": "art/activity-board-refresh-2026-10-22/poster-garden-20261022.png",
+          "width": 2400,
+          "height": 1792,
+          "bytes": 5413811,
+          "sha256": "6c45b58d73bcff3a717edbd4047c0143b6acd1a18c260e36291ca78eab61b26f"
+        },
+        "runtime": {
+          "path": "public/assets/activities/poster-garden-20261022.webp",
+          "bytes": 244404,
+          "width": 2400,
+          "height": 1792,
+          "sha256": "7ebecefa0f6f08f946300dc40825e71deccbf087bc86cb600cf4dbef101318e8"
+        }
+      },
+      {
+        "id": "8019b86d-d170-4e81-b015-73bababf88c6",
+        "type": "image",
+        "status": "completed",
+        "model": "nano_banana_2",
+        "params": {
+          "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. Malaysian residents safely bringing old electronics to a neighbourhood e-waste collection point, clearly recognisable laptops phones and recycling bins, no lettering. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image.",
+          "aspect_ratio": "4:3",
+          "input_images": [],
+          "width": 2400,
+          "height": 1792,
+          "resolution": "2k",
+          "batch_size": 1,
+          "input_image": null,
+          "application": null,
+          "surface": null
+        },
+        "results": {
+          "rawUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_8019b86d-d170-4e81-b015-73bababf88c6.png",
+          "minUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_8019b86d-d170-4e81-b015-73bababf88c6_min.webp"
+        },
+        "createdAt": 1792679786.644743,
+        "liked": false,
+        "local": {
+          "path": "art/activity-board-refresh-2026-10-22/poster-ewaste-20261022.png",
+          "width": 2400,
+          "height": 1792,
+          "bytes": 4458782,
+          "sha256": "1e116c5f2ad852467209ffe9d7fa8587786fa981e8a5deb605649afef91633ef"
+        },
+        "runtime": {
+          "path": "public/assets/activities/poster-ewaste-20261022.webp",
+          "bytes": 181438,
+          "width": 2400,
+          "height": 1792,
+          "sha256": "cca5435da6a7259c10c2005865760924601e40d2d2fe808412bd3b7f14321b03"
+        }
+      },
+      {
+        "id": "5e7ceb61-c227-4a6f-b78d-5ce9659856e3",
+        "type": "image",
+        "status": "completed",
+        "model": "nano_banana_2",
+        "params": {
+          "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. Neighbours at a community workshop making useful plant pots from recycled bottles and cardboard, craft tools and colourful reused materials. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image.",
+          "aspect_ratio": "4:3",
+          "input_images": [],
+          "width": 2400,
+          "height": 1792,
+          "resolution": "2k",
+          "batch_size": 1,
+          "input_image": null,
+          "application": null,
+          "surface": null
+        },
+        "results": {
+          "rawUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_5e7ceb61-c227-4a6f-b78d-5ce9659856e3.png",
+          "minUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_5e7ceb61-c227-4a6f-b78d-5ce9659856e3_min.webp"
+        },
+        "createdAt": 1792679786.640748,
+        "liked": false,
+        "local": {
+          "path": "art/activity-board-refresh-2026-10-22/poster-craft-20261022.png",
+          "width": 2400,
+          "height": 1792,
+          "bytes": 4982837,
+          "sha256": "9569909c2c6426a8531231731768c559f157567559d787be011f48ce813f8f0a"
+        },
+        "runtime": {
+          "path": "public/assets/activities/poster-craft-20261022.webp",
+          "bytes": 212178,
+          "width": 2400,
+          "height": 1792,
+          "sha256": "240338dd8bee5a47c0d211d55f1b4a8f963df8492cc9a4eb2ccc3fb16cc23408"
+        }
+      },
+      {
+        "id": "35ce1e29-1cc3-46bd-bc33-9d808a61897a",
+        "type": "image",
+        "status": "completed",
+        "model": "nano_banana_2",
+        "params": {
+          "prompt": "Create a polished 16-bit pixel-art illustration for a friendly civic community app activity board. A small group of diverse Malaysian adults doing gentle tai chi together in a neighbourhood park at sunrise, balanced poses and trees. One unified scene, bold readable silhouettes, warm welcoming composition legible as a small thumbnail. Restrict colours to wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A, vanilla #E5E0CD. Crisp stepped pixel edges, flat colours, no gradients, no paper texture, no text, no logos, no UI, no border or poster frame. Landscape 4:3 artwork filling the image.",
+          "aspect_ratio": "4:3",
+          "input_images": [],
+          "width": 2400,
+          "height": 1792,
+          "resolution": "2k",
+          "batch_size": 1,
+          "input_image": null,
+          "application": null,
+          "surface": null
+        },
+        "results": {
+          "rawUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_35ce1e29-1cc3-46bd-bc33-9d808a61897a.png",
+          "minUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_35ce1e29-1cc3-46bd-bc33-9d808a61897a_min.webp"
+        },
+        "createdAt": 1792679786.498113,
+        "liked": false,
+        "local": {
+          "path": "art/activity-board-refresh-2026-10-22/poster-taichi-20261022.png",
+          "width": 2400,
+          "height": 1792,
+          "bytes": 4185944,
+          "sha256": "dda4c724fb16c504df6c2bc718dd00e89e90f0aff6ed0c8d44a7d355d8e0a20d"
+        },
+        "runtime": {
+          "path": "public/assets/activities/poster-taichi-20261022.webp",
+          "bytes": 123530,
+          "width": 2400,
+          "height": 1792,
+          "sha256": "e4222d375bf80d0fe31738f98c20032255b6a22c7ca0ee9334888d7cf4583f43"
+        }
+      }
+    ],
+    "jobs": [
+      {
+        "index": 1,
+        "job_id": "cfbb3df2-a18d-4d4b-8510-9c6cf58fa452",
+        "status": "completed",
+        "type": "image",
+        "model": "nano_banana_2",
+        "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_cfbb3df2-a18d-4d4b-8510-9c6cf58fa452.png"
+      },
+      {
+        "index": 2,
+        "job_id": "8019b86d-d170-4e81-b015-73bababf88c6",
+        "status": "completed",
+        "type": "image",
+        "model": "nano_banana_2",
+        "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_8019b86d-d170-4e81-b015-73bababf88c6.png"
+      },
+      {
+        "index": 3,
+        "job_id": "5e7ceb61-c227-4a6f-b78d-5ce9659856e3",
+        "status": "completed",
+        "type": "image",
+        "model": "nano_banana_2",
+        "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_5e7ceb61-c227-4a6f-b78d-5ce9659856e3.png"
+      },
+      {
+        "index": 4,
+        "job_id": "35ce1e29-1cc3-46bd-bc33-9d808a61897a",
+        "status": "completed",
+        "type": "image",
+        "model": "nano_banana_2",
+        "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_35ce1e29-1cc3-46bd-bc33-9d808a61897a.png"
+      }
+    ],
+    "all_found": true
+  },
+  "installed": true,
+  "reason": "User explicitly approved installing the generated Nano Banana 2 images after model mismatch was disclosed."
+}

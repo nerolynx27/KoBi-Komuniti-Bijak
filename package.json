@@ -8,12 +8,14 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:sdp": "vite --host 127.0.0.1 --port 5177 --strictPort --open /sdp-workspace.html",
     "lint": "eslint .",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "test:production": "playwright test --config playwright.production.config.js",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "export:slides": "node scripts/export-slides.mjs"
   },
   "dependencies": {
     "react": "19.3.1",

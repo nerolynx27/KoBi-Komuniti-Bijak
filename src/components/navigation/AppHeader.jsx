@@ -35,6 +35,7 @@ function BurgerNavIcon({ name, active = false, size = 26 }) {
 }
 
 export function AppHeader({
+  variant = 'current',
   staff = false,
   actor,
   session,
@@ -45,7 +46,6 @@ export function AppHeader({
   notify,
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [residentIndex, setResidentIndex] = useState(0);
 
   // Close on Escape key press
   useEffect(() => {
@@ -59,14 +59,8 @@ export function AppHeader({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [menuOpen]);
 
-  const residents = [
-    { name: 'Resident — Aina', roleLabel: 'RESIDENT' },
-    { name: 'Resident — Ravi', roleLabel: 'RESIDENT' },
-  ];
-
-  const currentResident = residents[residentIndex % residents.length];
-  const activePersonaName = staff ? 'SDP Staff' : currentResident.name;
-  const activeRoleLabel = staff ? 'SDP STAFF' : currentResident.roleLabel;
+  const activePersonaName = data?.profiles.find(profile => profile.id === actor?.id)?.display_name || 'Demo account';
+  const activeRoleLabel = actor?.role === 'staff' ? 'SDP STAFF' : 'RESIDENT';
   const townshipName = data?.township?.name || 'Komuniti Bijak';
 
   const myReportsCount = data?.complaints
@@ -74,29 +68,22 @@ export function AppHeader({
     : 0;
 
   function handleSwitchAccount() {
-    if (staff) {
-      session?.setView('resident');
-      if (data?.preferences?.rememberWorkspace) store?.setWorkspace('resident');
-      navigate?.('map');
-      notify?.('Switched to resident view.');
-    } else {
-      setResidentIndex(prev => prev + 1);
-      const nextName = residents[(residentIndex + 1) % residents.length].name;
-      notify?.(`Switched active account to ${nextName}.`);
-    }
+    handleNavigate('sign-in');
   }
 
   function handleSelectWorkspace(mode) {
     if (mode === 'resident') {
-      session?.setView('resident');
-      if (data?.preferences?.rememberWorkspace) store?.setWorkspace('resident');
-      navigate?.('map');
-      notify?.('Resident view active.');
+      navigate?.('home', () => {
+        session?.setView('resident');
+        if (data?.preferences?.rememberWorkspace) store?.setWorkspace('resident');
+        notify?.('Resident view active.');
+      });
     } else {
-      session?.setView('sdp');
-      if (data?.preferences?.rememberWorkspace) store?.setWorkspace('sdp');
-      navigate?.('sdp');
-      notify?.('SDP demo workspace active.');
+      navigate?.('sdp', () => {
+        session?.setView('sdp');
+        if (data?.preferences?.rememberWorkspace) store?.setWorkspace('sdp');
+        notify?.('SDP demo workspace active.');
+      });
     }
     setMenuOpen(false);
   }
@@ -116,18 +103,20 @@ export function AppHeader({
 
   return (
     <>
-      <header className="app-header">
+      <header className={`app-header ${variant === 'bulletin' ? 'bulletin-header' : ''}`}>
         <div className="app-header-brand-wrap">
           <a
-            href="#map"
+            href="#home"
             className="brand"
             aria-label="KoBi home"
             onClick={() => setMenuOpen(false)}
           >
-            <span>KoBi</span>
-            <span className="brand-fold" aria-hidden="true" />
+            <img src="/assets/brand/kobi-logo.png" alt="KoBi" className="brand-logo" />
+            <span className="sr-only">KoBi</span>
           </a>
         </div>
+
+        {variant === 'bulletin' && <span className="bulletin-township">{townshipName}</span>}
 
         <button
           type="button"
@@ -137,7 +126,7 @@ export function AppHeader({
           aria-controls="app-burger-drawer"
           onClick={() => setMenuOpen(prev => !prev)}
         >
-          <svg
+          {variant === 'bulletin' ? <BurgerNavIcon name="profile" size={24} /> : <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -157,7 +146,7 @@ export function AppHeader({
                 <rect x="2" y="16" width="20" height="3" fill="var(--color-wine)" />
               </>
             )}
-          </svg>
+          </svg>}
         </button>
       </header>
 

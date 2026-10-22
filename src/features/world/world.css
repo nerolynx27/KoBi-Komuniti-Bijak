@@ -7,13 +7,13 @@
 .schematic-ground { fill: var(--surface-context); }
 .schematic-path { fill: var(--surface-page); }
 .schematic-grid { stroke: var(--surface-selected); stroke-width: 1; fill: none; }
-.schematic-object rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 2; }
-.schematic-object text, .schematic-ghost text { fill: var(--text-primary); font: 400 24px var(--font-action); }
-.classic-grid-map .schematic-object text { font-size: inherit; font-family: var(--font-heading); fill: var(--color-vanilla, #E5E0CD); text-shadow: 1px 1px 0 #1b120c; }
-.classic-grid-map .schematic-object rect { fill: transparent; stroke: none; stroke-width: 0; }
+.schematic-object > rect { fill: var(--surface-panel); stroke: var(--border-strong); stroke-width: 2; }
+.schematic-object > text, .schematic-ghost text { fill: var(--text-primary); font: 400 24px var(--font-action); }
+.classic-grid-map .schematic-object > text { font-size: inherit; font-family: var(--font-heading); fill: var(--color-vanilla, #E5E0CD); text-shadow: 1px 1px 0 #1b120c; }
+.classic-grid-map .schematic-object > rect { fill: transparent; stroke: none; stroke-width: 0; }
 .classic-grid-map .schematic-object.is-selected rect { fill: var(--surface-selected); stroke: var(--color-gold, #CEA257); stroke-width: 3; }
 .classic-grid-map .schematic-object:hover rect { stroke: var(--color-sand, #D1BF9A); stroke-width: 1.5; }
-.schematic-object.is-selected rect { fill: var(--surface-selected); stroke-width: 4; }
+.schematic-object.is-selected > rect { fill: var(--surface-selected); stroke-width: 4; }
 .schematic-ghost rect { fill: var(--surface-selected); stroke: var(--border-strong); stroke-width: 3; stroke-dasharray: 5 3; }
 .schematic-ghost.is-invalid rect { fill: var(--surface-panel); stroke: var(--text-error); }
 .place-list { display: grid; gap: var(--space-3); }
@@ -76,3 +76,34 @@
 .history-note { font-family: var(--font-body); font-size: 14px; margin: 0; color: var(--text-primary); }
 .action-hint { font-family: var(--font-body); font-size: 14px; color: var(--text-secondary); font-style: italic; margin: 0; }
 .activity-cards { display: flex; flex-direction: column; gap: var(--space-2); }
+
+/* Interactive hit areas preserve the approved artwork's own fills and lettering. */
+.approved-map { shape-rendering: crispEdges; image-rendering: pixelated; }
+.approved-map .schematic-object { cursor: pointer; outline: none; }
+.approved-map .schematic-object > .approved-map-hit { fill: transparent; stroke: transparent; stroke-width: 2; pointer-events: all; }
+.approved-map .schematic-object:is(:hover, :focus-visible, .is-selected) > .approved-map-hit { fill: transparent; stroke: var(--border-strong); stroke-width: 2; stroke-dasharray: 4 2; }
+.approved-map-viewport { max-height: none; }
+.temporary-map .schematic-hover-hud { height: 52px; min-height: 52px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; overflow: hidden; }
+.temporary-map .schematic-hover-hud > :is(strong, span) { display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Resident map owns the viewport; the editor keeps its surrounding workspace. */
+.app-shell.map-shell { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; min-height: 0; margin: 0; border: 0; overflow: hidden; }
+.map-shell .main-content { padding: 0; height: 100%; }
+.map-shell .view-stack { display: block; height: 100%; }
+.map-shell .storage-recovery { position: absolute; inset: 72px 12px auto; z-index: 5; max-height: 65dvh; overflow: auto; background: var(--surface-panel); padding: 12px; }
+.resident-map, .map-experience { position: relative; display: block; width: 100%; height: 100%; }
+.resident-map .approved-map-viewport { position: absolute; inset: 0; height: 100%; max-height: none; border: 0; }
+.temporary-map .approved-map-viewport { touch-action: none; overscroll-behavior: none; scrollbar-width: none; background: var(--surface-context); }
+.temporary-map .approved-map-viewport::-webkit-scrollbar { display: none; }
+.map-stage { position: relative; }
+.temporary-map .schematic-canvas-container { aspect-ratio: 4 / 3; }
+.temporary-map .approved-map { width: 100%; height: 100%; }
+.map-back { position: absolute; z-index: 2; top: calc(12px + env(safe-area-inset-top, 0px)); left: calc(12px + env(safe-area-inset-left, 0px)); }
+.resident-map .schematic-controls { position: absolute; z-index: 2; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); left: max(8px, env(safe-area-inset-left, 0px)); right: max(8px, env(safe-area-inset-right, 0px)); display: grid; grid-template-columns: minmax(0, 1.3fr) 44px 44px minmax(0, 1fr); gap: 6px; margin: 0 auto; max-width: 560px; align-items: stretch; }
+.resident-map .schematic-controls > .button { min-width: 0; min-height: 48px; padding: 10px 5px; font-size: .6875rem; line-height: 1.3; }
+.resident-map .schematic-controls .button-label { white-space: normal; }
+.resident-map .schematic-scale { font-family: var(--font-body); }
+.resident-map .field-error { position: absolute; z-index: 2; top: 80px; padding: 8px; background: var(--surface-panel); }
+.editor-map .approved-map-viewport { height: min(60vh, 520px); }
+.map-shell :is(button, [role="button"]):focus-visible { outline: 3px solid var(--color-wine); outline-offset: 3px; }
+.map-world-background { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.resident-map .approved-map-viewport { background: transparent; }

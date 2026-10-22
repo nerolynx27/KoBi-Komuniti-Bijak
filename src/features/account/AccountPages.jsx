@@ -17,7 +17,7 @@ export function AccountPages({ registration = false, store, snapshot, session, n
     event.preventDefault(); const invalid = validateAccountForm(values, registration); setFields(invalid);
     if (Object.keys(invalid).length) { requestAnimationFrame(() => document.querySelector('[aria-invalid="true"]')?.focus()); return; }
     if (registration) { session.setView('resident'); form.submit('profile.prepareResident', { displayName: values.displayName, email: values.email }); }
-    else { registerGuard(null); session.setView(view); if (snapshot.data.preferences.rememberWorkspace) store.setWorkspace(view); notify('Demo view opened. No credentials were verified.'); navigate(view === 'sdp' ? 'sdp' : 'map'); }
+    else { registerGuard(null); session.setView(view); if (snapshot.data.preferences.rememberWorkspace) store.setWorkspace(view); notify('Demo view opened. No credentials were verified.'); navigate(view === 'sdp' ? 'sdp' : 'home'); }
   }
   return <div className="section-stack account-page"><Card className="demo-explainer"><h2>Your neighbourhood, together</h2><p>Try KoBi with a local demo profile. This form simulates an account flow. No real account is created, no password is stored and credentials are not checked.</p></Card>
     <form className="form-stack" noValidate onSubmit={submit}>

@@ -26,6 +26,6 @@ export const statusLabels = {
   started: { label: 'Started', icon: 'clock', tone: 'muted' },
 };
 export const navigation = [
-  { id: 'map', label: 'Map', icon: 'map' }, { id: 'reports', label: 'Reports', icon: 'report' },
+  { id: 'home', label: 'Home', icon: 'home' }, { id: 'reports', label: 'Reports', icon: 'report' },
   { id: 'activities', label: 'Activities', icon: 'activity' }, { id: 'profile', label: 'Profile', icon: 'profile' },
 ];

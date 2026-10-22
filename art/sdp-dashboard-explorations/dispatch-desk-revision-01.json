@@ -1,0 +1,24 @@
+{
+  "job_id": "cf2f2407-8d7f-41b3-9622-052b49ec2ba0",
+  "status": "completed",
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_025238_cf2f2407-8d7f-41b3-9622-052b49ec2ba0.png",
+  "requested": {
+    "model": "nano_banana_pro",
+    "resolution": "2k",
+    "aspect_ratio": "9:16",
+    "count": 1,
+    "medias": [
+      {
+        "role": "image",
+        "value": "d97a47b8-00a6-45c8-bca4-1aab6bba9412"
+      },
+      {
+        "role": "image",
+        "value": "7531cdf9-7434-4f27-b59d-339b97b74b47"
+      }
+    ],
+    "prompt": "Edit the FIRST reference image (Dispatch Desk SDP dashboard). It is the master design. The SECOND reference (Operations Bento) is reference ONLY for its bottom navigation. Make exactly these two targeted edits: (1) Replace the first image's bottom navigation with the bottom navigation concept from the second image, faithfully matching its arrangement, icon treatment, proportions, outlines, spacing, background and gold selected Workspace state. Keep the navigation labels Workspace, Reports, Activities, World and preserve readable touch targets. (2) Remove the entire Demo mode card/panel/badge from the first image, including its label and enclosing card treatment; naturally close the resulting gap with clean spacing. Do not replace it with any new warning or placeholder. Preserve the rest of FIRST image's design and content as closely as possible: KoBi brand header, SDP workspace title, Elmina location, Dispatch Desk composition, existing illustrations, stats, Needs attention maintenance tickets, upcoming activity strip, Review reports, Manage activities and World editor actions, remaining Sample data labels. Do not borrow the second image's dashboard body or bento layout. Retain exact approved five-colour UI palette wine #6C1A21, cherry #B92C2C, gold #CEA257, sand #D1BF9A and vanilla #E5E0CD. Preserve Bungee heading/button typography and Yanone Kaffeesatz supporting text. Crisp Pixel Stickers stepped geometry, hard offset shadows, English copy. Output one flat straight-on mobile screen at 2K, same 9:16 aspect ratio, no phone frame, no annotations, no side-by-side comparison."
+  },
+  "reportedModel": "nano_banana_2",
+  "note": "Requested Pro; status tool reports Nano Banana 2. Image concept revision only; app UI has not been modified."
+}

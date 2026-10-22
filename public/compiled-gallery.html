@@ -604,7 +604,7 @@
             ASSEMBLED REAL TOWNSHIP MAP (PELAN INDUK ELMINA U16)
           </h2>
           <p class="assembled-map-desc">
-            The 8 approved 2D pixel-art assets compiled from this catalog assembled into a real top-down neighborhood map using the verified Elmina Seksyen U16 composition. Featuring the Persiaran Elmina arterial corridor, Jalan Frekuensi avenue grid, Dewan Komuniti, Surau Al-Falah, Elmina Central Park with playground &amp; wetland eco-lake, JKR streetlights on sidewalk verges, and terrace &amp; semi-D housing precincts.
+            The 8 approved 2D pixel-art assets compiled from this catalog assembled into a real top-down neighborhood map using the verified Elmina Seksyen U16 composition. Featuring the Persiaran Elmina arterial corridor, Jalan Frekuensi avenue grid, Dewan Komuniti, Masjid Al Falah, Elmina Central Park with playground &amp; wetland eco-lake, JKR streetlights on sidewalk verges, and terrace &amp; semi-D housing precincts.
           </p>
         </div>
       </div>
@@ -615,7 +615,7 @@
           <span style="font-family: var(--font-heading); font-size: 11px; color: var(--accent-gold); align-self: center; margin-right: 4px;">LOCATE:</span>
           <button class="nav-pill active" onclick="focusAmenity('all', this)">🌐 Whole Map</button>
           <button class="nav-pill" onclick="focusAmenity('hall', this)">🏛️ Dewan Komuniti</button>
-          <button class="nav-pill" onclick="focusAmenity('surau', this)">🕌 Surau Al-Falah</button>
+          <button class="nav-pill" onclick="focusAmenity('surau', this)">🕌 Masjid Al Falah</button>
           <button class="nav-pill" onclick="focusAmenity('park', this)">🛝 Taman Permainan</button>
           <button class="nav-pill" onclick="focusAmenity('lake', this)">🌊 Tasik Ekologi</button>
           <button class="nav-pill" onclick="focusAmenity('alex', this)">★ Alex Home (Lot 12)</button>
@@ -710,7 +710,7 @@
               <ellipse cx="82" cy="38" rx="3" ry="2" fill="#74BA5E" />
             </symbol>
 
-            <!-- 2. Component Symbol: Surau Al-Falah (mosque-01-classic-dome-surau.svg) -->
+            <!-- 2. Component Symbol: Masjid Al Falah (mosque-01-classic-dome-surau.svg) -->
             <symbol id="sym-surau" viewBox="0 0 96 66">
               <rect x="4" y="58" width="88" height="6" fill="#141c19" />
               <rect x="8" y="50" width="80" height="10" fill="#D1BF9A" />
@@ -812,9 +812,6 @@
 
             <!-- 5. Component Symbol: Lampu JKR (streetlight-01-jkr-galvanised.svg) -->
             <symbol id="sym-streetlight" viewBox="0 0 60 70">
-              <rect x="6" y="60" width="48" height="6" fill="#141a1f" />
-              <rect x="6" y="58" width="22" height="2" fill="#569443" />
-              <rect x="28" y="58" width="26" height="2" fill="#2d3339" />
               <rect x="13" y="50" width="8" height="8" fill="#E5E0CD" stroke="#374151" stroke-width="0.5" />
               <rect x="14" y="51" width="6" height="2" fill="#CEA257" />
               <rect x="14" y="53" width="6" height="2" fill="#1f2937" />
@@ -827,8 +824,6 @@
               <polygon points="36,7 48,10 47,14 35,11" fill="#4B5563" />
               <polygon points="38,8 46,10 45,13 37,11" fill="#9CA3AF" />
               <rect x="38" y="12" width="8" height="2" fill="#FFFBEB" />
-              <polygon points="38,14 46,14 56,58 28,58" fill="#CEA257" opacity="0.18" />
-              <ellipse cx="42" cy="58" rx="14" ry="4" fill="#CEA257" opacity="0.28" />
             </symbol>
 
             <!-- 6. Component Symbol: Modern Terrace House (house-01-modern-terrace.svg) -->
@@ -894,6 +889,15 @@
               <ellipse cx="54" cy="46" rx="3" ry="1.5" fill="#D1BF9A" />
               <ellipse cx="54" cy="50" rx="3" ry="1.5" fill="#D1BF9A" />
             </symbol>
+            <!-- Only asphalt receives light; the boulevard median and lawns stay unlit. -->
+            <clipPath id="road-light-clip" clipPathUnits="userSpaceOnUse">
+              <rect x="0" y="220" width="640" height="17" />
+              <rect x="0" y="243" width="640" height="17" />
+              <rect x="140" y="0" width="40" height="480" />
+              <rect x="360" y="0" width="40" height="480" />
+              <rect x="180" y="100" width="180" height="20" />
+              <rect x="400" y="300" width="240" height="20" />
+            </clipPath>
           </defs>
 
           <!-- 1. Base Terrain Ground -->
@@ -919,8 +923,8 @@
           <rect x="0" y="216" width="640" height="48" fill="#D1BF9A" />
           <rect x="136" y="0" width="48" height="480" fill="#D1BF9A" />
           <rect x="356" y="0" width="48" height="480" fill="#D1BF9A" />
-          <rect x="180" y="97" width="180" height="26" fill="#D1BF9A" />
-          <rect x="400" y="297" width="240" height="26" fill="#D1BF9A" />
+          <rect x="180" y="96" width="180" height="28" fill="#D1BF9A" />
+          <rect x="400" y="296" width="240" height="28" fill="#D1BF9A" />
 
           <!-- Persiaran Elmina Dual-Carriageway Boulevard -->
           <rect id="geom-boulevard" x="0" y="220" width="640" height="40" fill="url(#assem-asphalt-pattern)" />
@@ -976,14 +980,8 @@
             <rect x="132" y="248" width="6" height="4" /><rect x="182" y="248" width="6" height="4" /><rect x="352" y="248" width="6" height="4" /><rect x="402" y="248" width="6" height="4" />
           </g>
 
-          <!-- Street Name Signs -->
-          <g class="street-labels" pointer-events="none">
-            <rect x="14" y="229" width="120" height="20" rx="4" fill="#6C1A21" stroke="#CEA257" stroke-width="1.5" />
-            <text x="74" y="243" fill="#E5E0CD" font-size="9.5" font-family="Bungee" text-anchor="middle" letter-spacing="0.04em">PERSIARAN ELMINA</text>
-
-            <rect x="430" y="229" width="136" height="20" rx="4" fill="#6C1A21" stroke="#CEA257" stroke-width="1.5" />
-            <text x="498" y="243" fill="#E5E0CD" font-size="9.5" font-family="Bungee" text-anchor="middle" letter-spacing="0.04em">PERSIARAN ELMINA</text>
-
+          <!-- Frekuensi 1-3 signs sit beneath both road illumination and lamp fixtures. -->
+          <g id="frekuensi-under-light" class="street-labels" pointer-events="none">
             <rect x="148" y="14" width="24" height="130" rx="4" fill="#6C1A21" stroke="#D1BF9A" stroke-width="1" />
             <text x="160" y="79" fill="#E5E0CD" font-size="8" font-family="Bungee" text-anchor="middle" writing-mode="vertical-rl">JALAN FREKUENSI 1</text>
 
@@ -992,7 +990,74 @@
 
             <rect x="225" y="102" width="95" height="15" rx="3" fill="#6C1A21" stroke="#D1BF9A" stroke-width="1" />
             <text x="272" y="113" fill="#E5E0CD" font-size="7" font-family="Bungee" text-anchor="middle">JLN FREKUENSI 3</text>
+          </g>
 
+          <!-- Stretched light cones and road pools share the exact asphalt clip. -->
+          <g id="map-road-lighting" clip-path="url(#road-light-clip)" pointer-events="none">
+            <g class="road-light" data-lamp="f1-north">
+              <polygon points="148.5,54.5 152.5,54.5 178,90 142,90" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="160" cy="83" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="160" cy="83" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f1-middle">
+              <polygon points="148.5,144.5 152.5,144.5 178,180 142,180" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="160" cy="173" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="160" cy="173" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f1-south">
+              <polygon points="148.5,304.5 152.5,304.5 178,340 142,340" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="160" cy="333" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="160" cy="333" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f1-end">
+              <polygon points="148.5,424.5 152.5,424.5 178,460 142,460" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="160" cy="453" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="160" cy="453" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f2-north">
+              <polygon points="387.5,49.5 391.5,49.5 398,85 362,85" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="380" cy="78" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="380" cy="78" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f2-middle">
+              <polygon points="387.5,149.5 391.5,149.5 398,185 362,185" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="380" cy="178" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="380" cy="178" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f2-south">
+              <polygon points="387.5,414.5 391.5,414.5 398,450 362,450" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="380" cy="443" rx="18" ry="10" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="380" cy="443" rx="10.799999999999999" ry="6.0" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="boulevard-west">
+              <polygon points="75.5,197.5 79.5,197.5 103,236 53,236" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="78" cy="229" rx="25" ry="7" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="78" cy="229" rx="15.0" ry="4.2" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="boulevard-central">
+              <polygon points="285.5,241.5 289.5,241.5 313,258 263,258" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="288" cy="251" rx="25" ry="7" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="288" cy="251" rx="15.0" ry="4.2" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="boulevard-east">
+              <polygon points="515.5,197.5 519.5,197.5 543,236 493,236" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="518" cy="229" rx="25" ry="7" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="518" cy="229" rx="15.0" ry="4.2" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f3">
+              <polygon points="220.5,77.5 224.5,77.5 248,117 198,117" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="223" cy="110" rx="25" ry="7" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="223" cy="110" rx="15.0" ry="4.2" fill="#E5E0CD" opacity="0.18" />
+            </g>
+            <g class="road-light" data-lamp="f4">
+              <polygon points="430.5,277.5 434.5,277.5 458,317 408,317" fill="#CEA257" opacity="0.22" />
+              <ellipse cx="433" cy="310" rx="25" ry="7" fill="#CEA257" opacity="0.32" />
+              <ellipse cx="433" cy="310" rx="15.0" ry="4.2" fill="#E5E0CD" opacity="0.18" />
+            </g>
+          </g>
+
+          <!-- Frekuensi 4 street sign -->
+          <g class="street-labels" pointer-events="none">
             <rect x="530" y="302" width="95" height="15" rx="3" fill="#6C1A21" stroke="#D1BF9A" stroke-width="1" />
             <text x="577" y="313" fill="#E5E0CD" font-size="7" font-family="Bungee" text-anchor="middle">JLN FREKUENSI 4</text>
           </g>
@@ -1031,7 +1096,7 @@
             </g>
           </g>
 
-          <!-- Amenity 2: Surau Al-Falah (Spiritual & Community Center) -->
+          <!-- Amenity 2: Masjid Al Falah (Spiritual & Community Center) -->
           <g
             id="map-amenity-surau"
             class="map-hotspot"
@@ -1039,9 +1104,9 @@
             onmouseenter="hoverAmenity('surau')"
           >
             <use href="#sym-surau" xlink:href="#sym-surau" x="440" y="320" width="80" height="55" />
-            <g transform="translate(480, 315)" pointer-events="none">
+            <g transform="translate(480, 394)" pointer-events="none">
               <rect x="-42" y="-12" width="84" height="14" rx="3" fill="rgba(108,26,33,0.95)" stroke="#CEA257" stroke-width="1" />
-              <text x="0" y="-2" fill="#E5E0CD" font-size="7" font-family="Bungee" text-anchor="middle">SURAU AL-FALAH</text>
+              <text x="0" y="-2" fill="#E5E0CD" font-size="7" font-family="Bungee" text-anchor="middle">MASJID AL FALAH</text>
             </g>
           </g>
 
@@ -1088,55 +1153,43 @@
             <text x="20" y="-3" fill="#E5E0CD" font-size="6.5" font-family="Bungee" text-anchor="middle">RECYCLE POINT</text>
           </g>
 
-          <!-- Amenity 6: Garden Bench -->
-          <g transform="translate(340, 280)" pointer-events="none">
-            <rect x="0" y="0" width="20" height="10" rx="2" fill="#D1BF9A" stroke="#6C1A21" stroke-width="1" />
-            <line x1="2" y1="4" x2="18" y2="4" stroke="#6C1A21" stroke-width="1.5" />
-            <text x="10" y="-2" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">BENCH</text>
-          </g>
-
-          <!-- 7. JKR Galvanised Tubular Streetlights (at all 6 roadside positions) -->
+<!-- 7. Twelve curb-mounted streetlights. Map plinths touch the asphalt without entering it. -->
           <g id="map-group-lamps" class="map-hotspot" onclick="inspectAmenity('lamps')">
-            <!-- Lamp #01: Frekuensi 1 West Verge -->
-            <g transform="translate(120, 60)" onmouseenter="hoverAmenity('lamps')">
-              <use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-10" y="-5" width="30" height="35" />
-              <rect x="-4" y="-14" width="40" height="11" rx="2" fill="rgba(108,26,33,0.9)" />
-              <text x="16" y="-6" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">LAMP #01</text>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="138" data-base-y="75" transform="translate(138, 75)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
             </g>
-
-            <!-- Lamp #02: Frekuensi 1 West Verge, near Persiaran Elmina -->
-            <g transform="translate(120, 200)" onmouseenter="hoverAmenity('lamps')">
-              <use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-10" y="-5" width="30" height="35" />
-              <rect x="-4" y="-14" width="40" height="11" rx="2" fill="rgba(108,26,33,0.9)" />
-              <text x="16" y="-6" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">LAMP #02</text>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="138" data-base-y="165" transform="translate(138, 165)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
             </g>
-
-            <!-- Streetlight #10: Persiaran Elmina North Verge -->
-            <g transform="translate(260, 200)" onmouseenter="hoverAmenity('lamps')">
-              <use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-10" y="-5" width="30" height="35" />
-              <rect x="-20" y="-14" width="50" height="11" rx="2" fill="rgba(108,26,33,0.9)" />
-              <text x="5" y="-6" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">LIGHT #10</text>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="138" data-base-y="325" transform="translate(138, 325)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
             </g>
-
-            <!-- Lamp #03: Frekuensi 1 East Verge / Park corner -->
-            <g transform="translate(180, 280)" onmouseenter="hoverAmenity('lamps')">
-              <use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-10" y="-5" width="30" height="35" />
-              <rect x="-18" y="-14" width="46" height="11" rx="2" fill="rgba(108,26,33,0.9)" />
-              <text x="5" y="-6" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">LAMP #03</text>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="138" data-base-y="445" transform="translate(138, 445)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
             </g>
-
-            <!-- Streetlight #11: Persiaran Elmina North Verge, near Dewan -->
-            <g transform="translate(460, 200)" onmouseenter="hoverAmenity('lamps')">
-              <use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-10" y="-5" width="30" height="35" />
-              <rect x="-20" y="-14" width="50" height="11" rx="2" fill="rgba(108,26,33,0.9)" />
-              <text x="5" y="-6" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">LIGHT #11</text>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="402" data-base-y="70" transform="translate(402, 70)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(-1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
             </g>
-
-            <!-- Streetlight #12: Persiaran Elmina South Verge / Frekuensi 2 -->
-            <g transform="translate(320, 260)" onmouseenter="hoverAmenity('lamps')">
-              <use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-10" y="-5" width="30" height="35" />
-              <rect x="-20" y="-14" width="50" height="11" rx="2" fill="rgba(108,26,33,0.9)" />
-              <text x="5" y="-6" fill="#E5E0CD" font-size="6" font-family="Bungee" text-anchor="middle">LIGHT #12</text>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="402" data-base-y="170" transform="translate(402, 170)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(-1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
+            </g>
+            <g class="map-streetlight" data-curb="vertical" data-base-x="402" data-base-y="435" transform="translate(402, 435)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(-1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
+            </g>
+            <g class="map-streetlight" data-curb="horizontal" data-base-x="65" data-base-y="218" transform="translate(65, 218)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
+            </g>
+            <g class="map-streetlight" data-curb="horizontal" data-base-x="275" data-base-y="262" transform="translate(275, 262)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
+            </g>
+            <g class="map-streetlight" data-curb="horizontal" data-base-x="505" data-base-y="218" transform="translate(505, 218)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
+            </g>
+            <g class="map-streetlight" data-curb="horizontal" data-base-x="210" data-base-y="98" transform="translate(210, 98)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
+            </g>
+            <g class="map-streetlight" data-curb="horizontal" data-base-x="420" data-base-y="298" transform="translate(420, 298)" onmouseenter="hoverAmenity('lamps')">
+              <g transform="scale(1, 1)"><use href="#sym-streetlight" xlink:href="#sym-streetlight" x="-8.5" y="-27" width="30" height="35" /></g>
             </g>
           </g>
 
@@ -1629,7 +1682,7 @@
           </svg>
         </div>
         <div class="asset-card-body">
-          <h3 class="asset-card-title">Surau &amp; Minaret (Surau Al-Falah)</h3>
+          <h3 class="asset-card-title">Surau &amp; Minaret (Masjid Al Falah)</h3>
           <div class="asset-card-category">Spiritual &amp; Community Center</div>
           <p class="asset-card-desc">
             Spiritual landmark featuring a gold dome with crescent finial, freestanding octagonal minaret tower, Moorish keyhole arched prayer hall entrance, stained-glass arch windows, and ablution portico.
@@ -1776,7 +1829,7 @@
         elementId: 'map-amenity-dewan'
       },
       surau: {
-        name: '🕌 Surau Al-Falah (Surau Komuniti)',
+        name: '🕌 Masjid Al Falah',
         category: 'Spiritual & Community Center',
         description: 'Spiritual landmark featuring a gold dome with crescent finial, freestanding octagonal minaret tower, Moorish keyhole arched prayer hall entrance, stained-glass arch windows, and ablution portico.',
         coords: 'Lot 22, y=16 (Grid 22, 16 · px: 440, 320) · 4 x 3 Map Tiles',
@@ -1818,8 +1871,8 @@
       lamps: {
         name: '💡 JKR / TNB Tubular Streetlight Network',
         category: 'Roadway Infrastructure & Public Lighting',
-        description: 'Authentic Malaysian street lighting with concrete plinths, gold/black reflective hazard striped bases, weatherized fuse panel boxes, curved steel outreach arms, and high-lumens LED cobra lanterns with soft ground illumination positioned along sidewalk verges.',
-        coords: '6 Sidewalk Verge Locations (Persiaran Elmina & Frekuensi 1/2 corridors)',
+        description: 'Authentic Malaysian street lighting with concrete plinths, gold/black reflective hazard striped bases, weatherized fuse panel boxes, curved steel outreach arms, and high-lumens LED cobra lanterns with stretched light cones confined to the road, and twelve concrete bases aligned with the road curbs.',
+        coords: '12 curb locations (Persiaran Elmina and Frekuensi 1–4)',
         asset: 'streetlight-01-jkr-galvanised.svg',
         distance: '25 m to 240 m across township',
         status: 'Verified On-Verge Electrical Infrastructure',

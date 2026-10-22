@@ -1,4 +1,4 @@
-import { RESIDENT_ID, STAFF_ID } from './demoSamples.js';
+import { RESIDENT_ID, STAFF_ID, upgradeApprovedMap } from './demoSamples.js';
 
 const exactKeys = (value, keys) => value && typeof value === 'object' && !Array.isArray(value) && Object.keys(value).sort().join() === keys.split(' ').sort().join();
 const text = (value, min = 1, max = 1000) => typeof value === 'string' && value.trim().length >= min && value.length <= max;
@@ -94,7 +94,7 @@ export function readDemoEnvelope(raw) {
   if (envelope.version === 1) {
     if (!exactKeys(envelope, 'version data')) return failure('INVALID_DATA', 'The version 1 envelope is invalid.');
     try {
-      const data = migrateV1(envelope.data);
+      const data = upgradeApprovedMap(migrateV1(envelope.data));
       const validation = validateDemoData(data);
       if (!validation.valid) return failure('INVALID_DATA', validation.issues.join(' '));
       return { data: { version: 2, revision: 0, data, migrated: true }, error: null };
@@ -103,5 +103,8 @@ export function readDemoEnvelope(raw) {
   if (!exactKeys(envelope, 'version revision data') || !Number.isSafeInteger(envelope.revision) || envelope.revision < 0) return failure('INVALID_DATA', 'The saved demo revision is invalid.');
   const validation = validateDemoData(envelope.data);
   if (!validation.valid) return failure('INVALID_DATA', validation.issues.join(' '));
-  return { data: { version: 2, revision: envelope.revision, data: envelope.data, migrated: false }, error: null };
+  const data = upgradeApprovedMap(envelope.data);
+  const upgradedValidation = validateDemoData(data);
+  if (!upgradedValidation.valid) return failure('INVALID_DATA', upgradedValidation.issues.join(' '));
+  return { data: { version: 2, revision: envelope.revision, data, migrated: data !== envelope.data }, error: null };
 }

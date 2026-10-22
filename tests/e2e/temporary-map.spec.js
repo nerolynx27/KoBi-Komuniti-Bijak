@@ -6,7 +6,8 @@ test('public sheets, report prefill and explicit colocated activity choice', asy
   await page.goto('/#map');
   const places = [
     { name: 'Walkway lamp #01 (Jalan Frekuensi)', isHouse: false },
-    { name: 'Garden bench (Elmina Central Park)', isHouse: false },
+    { name: 'Masjid Al Falah', isHouse: false },
+    { name: 'Tasik Ekologi', isHouse: false },
     { name: 'Community garden & park (Elmina Central Park)', isHouse: false },
     { name: 'Community hall (Dewan Komuniti Elmina)', isHouse: false },
     { name: 'Recycling point (Elmina Station)', isHouse: false },
@@ -49,7 +50,7 @@ test('report and activity map links focus current objects; zoom scroll stays int
   await page.goto(`/#reports/${envelope.data.complaints[0].id}`); await page.reload();
   await page.getByRole('link', { name: 'View on map', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Walkway lamp #01/ })).toBeFocused();
-  await expect(page.locator('.schematic-object.is-selected rect')).toHaveAttribute('x', '580');
+  await expect(page.locator('#object-lamp-01')).toHaveAttribute('transform', 'translate(460, 0)');
   await page.goto(`/#activities/${envelope.data.activities[0].id}`);
   await page.getByRole('button', { name: 'View on map', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Community garden/ })).toBeFocused();

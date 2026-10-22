@@ -4,6 +4,8 @@
 **Status:** Parts 1–2 implement the local frontend shell. The final pixel world/assets and optional backend remain later phases.  
 **Nama projek:** KoBi — Komuniti Bijak (Smart Community).
 
+**22 October 2026 — Bulletin landing/navigation:** approved Phase 2 adds resident Home (`#home`, also the empty URL), using the same v2 browser-demo store. Home derives the current resident's reports and maintenance notes, unique joined published/cancelled activities and the earliest future published township activity. No schema, samples or backend scope changes. Enter World opens the existing map; `#map?facility=<id>` remains direct. Brand/resident sign-in/workspace exit lead Home, remembered SDP still opens SDP, and draft/history guards remain. The Home header's Demo mode ticket was removed at the user's request; Sample data and explicit demo account/workspace language remain. See [current verification](../verification/BULLETIN_DASHBOARD_PHASE_2.md).
+
 **Current decision — updated 19 October 2026:** [product.md](product.md) is the authoritative Pixel Stickers design and English UI specification. Use its replacement five-colour UI palette and Bungee/Yanone Kaffeesatz typography plan. The palette exempts future pixel-world artwork; the two-font rule applies to the whole project. The initial revision was documentation only; a subsequent user request authorized replacing/applying the fonts. The later approved colour plan has also been executed: the current build uses Bungee/Yanone Kaffeesatz and the five approved UI colours. All app UI, conversation, and new documentation use English; historical Malay examples below describe behavior, not final interface copy. This update does not change the demo/backend scope.
 
 ## 1. Cara Codex menggunakan dokumen ini

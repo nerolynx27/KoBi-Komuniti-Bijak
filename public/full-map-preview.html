@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KoBi — Full map overview</title>
+  <style>
+    @font-face { font-family: Bungee; src: url('/assets/ui/bungee-regular.ttf') format('truetype'); font-display: swap; }
+    @font-face { font-family: 'Yanone Kaffeesatz'; src: url('/assets/ui/yanone-kaffeesatz-variable.ttf') format('truetype'); font-weight: 200 700; font-display: swap; }
+    :root { --surface-page: #E5E0CD; --text-primary: #6C1A21; --font-body: 'Yanone Kaffeesatz', sans-serif; --font-heading: Bungee, sans-serif; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--surface-page); color: var(--text-primary); }
+    body { display: flex; flex-direction: column; padding: 12px; gap: 8px; font: 20px var(--font-body); }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    h1 { font: 18px var(--font-heading); margin: 0; }
+    p { margin: 0; }
+    a { color: inherit; }
+    main { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    object { display: block; width: 100%; height: 100%; border: 0; }
+    footer { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>KoBi · Full map overview</h1>
+      <p>Demo mode · Master catalog map · Twelve curb-mounted streetlights</p>
+    </div>
+    <a href="/compiled-gallery.html" target="_blank" rel="noopener">Open compiled assets library</a>
+  </header>
+  <main>
+    <object data="/assets/world/elmina-map.svg" type="image/svg+xml" aria-label="Entire Elmina sample neighbourhood map">
+      <a href="/assets/world/elmina-map.svg">Open the full map</a>
+    </object>
+  </main>
+  <footer>Selected map assembly · Sample neighbourhood · Entire 32 × 24 tile map</footer>
+</body>
+</html>

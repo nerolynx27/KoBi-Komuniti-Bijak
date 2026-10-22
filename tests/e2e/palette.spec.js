@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { enterEditor, coordinates } from '../helpers/shellActions.js';
+import { coordinates } from '../helpers/shellActions.js';
 import { mkdir } from 'node:fs/promises';
 
 const wine = 'rgb(108, 26, 33)', cherry = 'rgb(185, 44, 44)', gold = 'rgb(206, 162, 87)', sand = 'rgb(209, 191, 154)', vanilla = 'rgb(229, 224, 205)';
@@ -16,7 +16,7 @@ test('shared controls resolve to the approved palette', async ({ page }) => {
   const colors = await page.evaluate(() => {
     const css = (selector, property) => getComputedStyle(document.querySelector(selector))[property];
     return {
-      page: css('.app-shell', 'backgroundColor'), input: css('.form-input', 'backgroundColor'),
+      page: css('.app-shell', 'backgroundColor'), input: css('.paper-input-face', 'backgroundColor'),
       primary: [css('.button-primary', 'color'), css('.button-primary .frame-fill', 'fill')],
       secondary: [css('.button-secondary', 'color'), css('.button-secondary .frame-fill', 'fill')],
       quiet: [css('.button-quiet', 'color'), css('.button-quiet .frame-fill', 'fill')],
@@ -68,7 +68,8 @@ test('modal backdrop uses solid wine and retains keyboard focus', async ({ page 
 });
 
 test('placement previews distinguish valid and invalid positions without blended colours', async ({ page }) => {
-  await page.goto('/#map'); await enterEditor(page);
+  await page.goto('/#sdp/world');
+  await page.getByRole('button', { name: 'Enter editor', exact: true }).click();
   await page.getByRole('button', { name: 'Add component', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: /^Garden bench/ }).click();
   await coordinates(page, 30, 22);

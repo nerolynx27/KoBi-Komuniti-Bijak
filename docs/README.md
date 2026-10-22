@@ -21,3 +21,6 @@ Other material:
 Existing plans and verification captures/results describe the earlier build. Historical colour/font instructions are superseded by the current product specification; do not treat a completed test or plan as evidence that the new palette/fonts have shipped.
 
 Paths in inline code in the product documents are relative to the project root unless stated otherwise. Markdown links are relative to their containing document.
+
+- [Repository layout and Git policy](REPOSITORY_LAYOUT.md) — current folder ownership, generated-file exclusions and report/presentation locations.
+- [Report working files](reports/kobi-report/) and [presentation PDF](presentations/presentation.pdf).

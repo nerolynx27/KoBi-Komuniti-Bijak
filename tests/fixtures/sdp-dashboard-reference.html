@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="viewport" content="width=device-width,initial-scale=1"><title>SDP visual fixture — not saved demo records</title></head>
+<body><div id="root"></div>
+<script type="module">
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import '/src/styles/tokens.css';
+import '/src/styles/app.css';
+import '/src/styles/components.css';
+import { SdpDashboardPage } from '/src/dev/sdp-workspace/SdpDashboardPage.jsx';
+import { SdpBottomNav } from '/src/components/sdp/SdpBottomNav.jsx';
+const data = {
+  township: { id: 'fixture' }, profiles: [],
+  facilities: [{ id: 'lamp', township_id: 'fixture', name: 'Frekuensi 2' }, { id: 'bench', township_id: 'fixture', name: 'Central park' }],
+  complaints: Array.from({ length: 12 }, (_, i) => ({ id: `report-${String(i).padStart(2, '0')}`, facility_id: i === 1 ? 'bench' : 'lamp', title: i === 1 ? 'Park bench repair' : 'Streetlight not working', description: i === 1 ? 'Broken slat.' : 'Light flicker reported.', status: i > 7 ? 'in_progress' : 'received', created_at: '2026-10-16T00:00:00Z' })),
+  activities: Array.from({ length: 3 }, (_, i) => ({ id: `event-${i}`, township_id: 'fixture', title: 'Community clean-up', description: 'Volunteers needed.', status: 'published', starts_at: '2026-10-24T00:00:00Z' })),
+};
+createRoot(document.getElementById('root')).render(React.createElement('div', { className: 'app-shell staff-shell sdp-workspace-shell sdp-dispatch-shell', 'aria-label': 'Visual comparison fixture. Not saved demo records.' },
+  React.createElement('header', { className: 'sdp-dispatch-masthead' }, React.createElement('a', { href: '#sdp' }, 'KoBi'), React.createElement('span', { className: 'sdp-desk-ticket' }, "Today's desk")),
+  React.createElement('main', { className: 'main-content' }, React.createElement(SdpDashboardPage, { data, actor: { id: 'fixture' }, nowIso: '2026-10-22T00:00:00Z' })),
+  React.createElement(SdpBottomNav, { active: 'workspace' })));
+</script></body></html>

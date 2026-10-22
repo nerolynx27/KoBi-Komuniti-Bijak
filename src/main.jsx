@@ -9,6 +9,7 @@ import './styles/app.css';
 import './styles/components.css';
 import './styles/reports-folders.css';
 import './styles/activities-board.css';
+import './styles/paper-textures.css';
 
 // Accessing localStorage itself can throw, so defer it inside the adapter.
 const session = createDemoSession();

@@ -1,0 +1,246 @@
+/* Deck B (Reimagined Civic Toolkit Composition) Styles */
+
+.deck-b-slide {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 100px 60px 40px 60px;
+}
+
+/* Slide 1 Command Center */
+.deck-b-s1-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.deck-b-s1-left {
+  flex: 1.1;
+  background-color: var(--color-vanilla);
+  border: 5px solid var(--color-wine);
+  box-shadow: 12px 12px 0 var(--color-wine);
+  padding: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deck-b-s1-right {
+  flex: 0.9;
+  position: relative;
+  background-color: var(--color-wine);
+  border: 5px solid var(--color-wine);
+  box-shadow: 12px 12px 0 var(--color-wine);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide 2 3-Swimlane Cause-and-Effect */
+.deck-b-s2-swimlane {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-vanilla);
+  border: 4px solid var(--color-wine);
+  box-shadow: 8px 8px 0 var(--color-wine);
+  margin-bottom: 24px;
+  min-height: 230px;
+}
+
+.deck-b-s2-problem-zone {
+  flex: 1;
+  padding: 24px 32px;
+  background-color: var(--color-sand);
+  border-right: 4px solid var(--color-wine);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.deck-b-s2-conduit-zone {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gold);
+  border-right: 4px solid var(--color-wine);
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.deck-b-s2-objective-zone {
+  flex: 1.2;
+  padding: 24px 32px;
+  background-color: var(--color-vanilla);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Slide 3 Dual Dossiers */
+.deck-b-s3-container {
+  display: flex;
+  gap: 40px;
+  height: 100%;
+}
+
+.deck-b-s3-dossier {
+  flex: 1;
+  background-color: var(--color-vanilla);
+  border: 4px solid var(--color-wine);
+  box-shadow: 10px 10px 0 var(--color-wine);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.deck-b-s3-photo-window {
+  position: relative;
+  height: 380px;
+  border-bottom: 4px solid var(--color-wine);
+  overflow: hidden;
+}
+
+.deck-b-s3-photo-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slide 4 Connected Workflow Pipeline */
+.deck-b-s4-pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 28px;
+}
+
+.deck-b-s4-step-card {
+  flex: 1;
+  height: 720px;
+  background-color: var(--color-vanilla);
+  border: 5px solid var(--color-wine);
+  box-shadow: 10px 10px 0 var(--color-wine);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Slides 5-7 Mobile Split Showcase */
+.deck-b-showcase-container {
+  display: flex;
+  height: calc(100% - 90px);
+  gap: 48px;
+  margin-top: 20px;
+}
+
+.deck-b-showcase-left {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deck-b-showcase-right {
+  flex: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-b-phone-frame {
+  width: 440px;
+  height: 800px;
+  background-color: var(--color-vanilla);
+  border: 6px solid var(--color-wine);
+  box-shadow: 12px 12px 0 var(--color-wine);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Slide 8 Panoramic 2-Row Matrix */
+.deck-b-s8-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+}
+
+.deck-b-s8-row {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  border: 4px solid var(--color-wine);
+  box-shadow: 8px 8px 0 var(--color-wine);
+  box-sizing: border-box;
+}
+
+/* Slide 9 Side-by-Side Spec & Evaluation */
+.deck-b-s9-container {
+  display: flex;
+  gap: 48px;
+  height: 100%;
+}
+
+.deck-b-s9-panel {
+  flex: 1;
+  border: 5px solid var(--color-wine);
+  box-shadow: 10px 10px 0 var(--color-wine);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide 10 Manifesto Ticket Plaque */
+.deck-b-s10-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-b-s10-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.deck-b-s10-plaque {
+  position: relative;
+  z-index: 10;
+  width: 1500px;
+  background-color: var(--color-vanilla);
+  border: 6px solid var(--color-wine);
+  box-shadow: 16px 16px 0 var(--color-wine);
+  padding: 60px 80px;
+  box-sizing: border-box;
+}
+
+/* Slide 11 Postcard */
+.deck-b-s11-postcard {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-vanilla);
+  border: 6px solid var(--color-wine);
+  box-shadow: 16px 16px 0 var(--color-wine);
+  padding: 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

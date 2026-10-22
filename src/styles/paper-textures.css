@@ -1,0 +1,73 @@
+:root { --paper-texture-display: inline; }
+/* Texture changes finish only: every existing base paint remains the fallback. */
+:where(html, .app-shell, .app-header, .bottom-nav, .sdp-bottom-nav, .sdp-dispatch-masthead) { --paper-surface-mask: var(--paper-page-mask); --paper-ink: var(--paper-ink-vanilla); isolation: isolate; }
+:where(.card:not(:has(> .pixel-frame)), .feedback, .record-row, .modal, .toast, .app-burger-drawer, .burger-persona-card, .sdp-utilities, .paper-input-face, .act-notice-board-surface, .act-board-empty, .act-pinned-note, .act-polaroid-frame, .act-modal-card, .act-detail-meta-grid, .act-leave-confirm-box, .act-gallery-preview-photo-frame, .act-gallery-modal-photo-frame, .act-gallery-heading, .act-modal-illustration-frame, .sandbox-record-card, .sandbox-record-callout, .sandbox-evidence-card, .sandbox-history-list, .sandbox-facility-context-bar, .sandbox-save-notice, .sandbox-photo-attached) { --paper-surface-mask: var(--paper-panel-mask); --paper-ink: var(--paper-ink-vanilla); isolation: isolate; }
+:where(.framed:not(:has(> .pixel-frame)):not(.button-text), .act-filter-chip, .act-gallery-arrow-btn, .act-modal-icon-close, .act-sticker-btn, .act-close-preview-btn, .burger-workspace-pill, .burger-shortcut-btn, .burger-menu-btn.is-open, .sandbox-history-toggle, .segmented-options label.is-selected, .sdp-desk-ticket, .sdp-bottom-nav a[aria-current="page"], .resident-shell .nav-item.is-selected) { --paper-surface-mask: var(--paper-control-mask); --paper-ink: var(--paper-ink-vanilla); isolation: isolate; }
+:where(.card:not(:has(> .pixel-frame)), .feedback, .record-row, .toast, .burger-persona-card, .paper-input-face, .act-notice-board-surface, .act-board-empty, .act-polaroid-frame, .act-detail-meta-grid, .act-leave-confirm-box, .act-gallery-preview-photo-frame, .act-gallery-modal-photo-frame, .act-gallery-heading, .act-modal-illustration-frame, .sandbox-record-card, .sandbox-record-callout, .sandbox-evidence-card, .sandbox-history-list, .sandbox-facility-context-bar, .sandbox-save-notice, .sandbox-photo-attached, .act-filter-chip, .act-gallery-arrow-btn, .act-modal-icon-close, .act-sticker-btn, .act-close-preview-btn, .burger-workspace-pill, .burger-shortcut-btn, .sandbox-history-toggle, .segmented-options label.is-selected, .sdp-desk-ticket) { position: relative; }
+:where(html, .app-shell, .app-header, .bottom-nav, .sdp-bottom-nav, .sdp-dispatch-masthead, .card:not(:has(> .pixel-frame)), .feedback, .record-row, .modal, .toast, .app-burger-drawer, .burger-persona-card, .sdp-utilities, .paper-input-face, .act-notice-board-surface, .act-board-empty, .act-pinned-note, .act-polaroid-frame, .act-modal-card, .act-detail-meta-grid, .act-leave-confirm-box, .act-gallery-preview-photo-frame, .act-gallery-modal-photo-frame, .act-gallery-heading, .act-modal-illustration-frame, .sandbox-record-card, .sandbox-record-callout, .sandbox-evidence-card, .sandbox-history-list, .sandbox-facility-context-bar, .sandbox-save-notice, .sandbox-photo-attached, .framed:not(:has(> .pixel-frame)):not(.button-text), .act-filter-chip, .act-gallery-arrow-btn, .act-modal-icon-close, .act-sticker-btn, .act-close-preview-btn, .burger-workspace-pill, .burger-shortcut-btn, .burger-menu-btn.is-open, .sandbox-history-toggle, .segmented-options label.is-selected, .sdp-desk-ticket, .sdp-bottom-nav a[aria-current="page"], .resident-shell .nav-item.is-selected)::before {
+  content: ''; display: var(--paper-world-layer-display, var(--paper-layer-display, block)); position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-color: var(--paper-ink); mask-image: var(--paper-surface-mask);
+  mask-size: var(--paper-tile-size) var(--paper-tile-size); mask-repeat: repeat; mask-mode: alpha;
+}
+html::before { position: fixed; }
+.local-footer { --paper-ink: var(--paper-ink-vanilla); } /* Inherits the continuous shell field. */
+.framed, .card, .sandbox-folder-svg, .sandbox-stepped-field-svg, .sandbox-carousel-frame-svg, .sandbox-carousel-arrow-svg { --paper-ink: var(--paper-ink-vanilla); }
+.button-quiet, .button:disabled, .button[aria-disabled='true']:not([aria-busy='true']), .card-context, .card-subtle, .feedback:not(.feedback-error), .toast,
+.burger-persona-card, .burger-workspace-pill, .act-notice-board-surface, .act-board-empty, .note-theme-sand-cherry, .act-gallery-heading, .act-detail-meta-grid, .act-leave-confirm-box,
+.act-gallery-preview-photo-frame, .act-gallery-modal-photo-frame, .act-modal-illustration-frame, .sandbox-record-callout, .sandbox-evidence-card, .sandbox-history-list, .sandbox-facility-context-bar, .sandbox-save-notice, .sandbox-photo-attached, .act-modal-icon-close, .act-sticker-btn.is-quiet-sand, .carousel-neighbour-fill ~ .paper-texture { --paper-ink: var(--paper-ink-sand); }
+.button-primary, .filter-chip.is-selected, .nav-item.is-selected, .sdp-tone-gold, .note-theme-gold, .burger-workspace-pill.is-selected, .segmented-options .is-selected, .act-filter-chip[data-filter='joined'].is-selected, .act-sticker-btn.is-primary-gold { --paper-ink: var(--paper-ink-gold); }
+.button-strong, .card[data-frame-tone='strong'], .sdp-bottom-nav, .act-filter-chip.is-selected { --paper-ink: var(--paper-ink-wine); }
+.button-danger, .sdp-tone-cherry, .act-sticker-btn.is-danger-cherry, .act-close-preview-btn, .is-close-preview-cherry { --paper-ink: var(--paper-ink-cherry); }
+/* Gold masthead lettering keeps its existing smooth wine backing. */
+.sdp-dispatch-masthead { --paper-ink: var(--paper-ink-wine); }
+.sdp-dispatch-masthead > a { background-color: var(--color-wine); }
+.bottom-nav .nav-item.is-selected { --paper-ink: var(--paper-ink-sand); }
+.resident-shell .bottom-nav .nav-item.is-selected { --paper-ink: var(--paper-ink-vanilla); }
+.paper-input-face { display: grid; background-color: var(--surface-input); min-width: 0; }
+.paper-input-face[data-paper-tone='sand'] { background-color: var(--surface-disabled); --paper-ink: var(--paper-ink-sand); }
+.paper-input-face > .form-input { background: transparent; }
+/* Cherry validation text and tiny critical indicators retain their smooth backing. */
+.field-error, .inline-error, .tone-error, .feedback-error, .sandbox-error, .sdp-priority-label { background-image: none; }
+.feedback-error::before { content: none; }
+
+.act-modal-card { position: relative; }
+
+/* Hidden SVGs in these PNG-backed action strips still need a moving control face. */
+.sdp-card-report .sdp-report-action { --paper-surface-mask: var(--paper-control-mask); isolation: isolate; }
+.sdp-card-report .sdp-report-action::before {
+  content: ''; display: var(--paper-world-layer-display, var(--paper-layer-display, block)); position: absolute; inset: 4px 14px; z-index: -1; pointer-events: none;
+  background-color: var(--paper-ink); mask-image: var(--paper-control-mask);
+  mask-size: var(--paper-tile-size) var(--paper-tile-size); mask-repeat: repeat;
+}
+/* This previously transparent selected face has the same visible cream base;
+   owning that base prevents fine grain from doubling with the woven control. */
+.resident-shell .bottom-nav .nav-item.is-selected { background-color: var(--surface-panel); }
+html { --paper-ink: var(--paper-ink-sand); }
+
+/* Opaque subpanels in the report and activity compositions own one laid layer. */
+.act-board-filters, .sandbox-empty-state, .sandbox-modal-card { position: relative; isolation: isolate; --paper-surface-mask: var(--paper-panel-mask); --paper-ink: var(--paper-ink-sand); }
+.sandbox-modal-card { --paper-ink: var(--paper-ink-vanilla); }
+:where(.act-board-filters, .sandbox-empty-state, .sandbox-modal-card)::before {
+  content: ''; display: var(--paper-world-layer-display, var(--paper-layer-display, block)); position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-color: var(--paper-ink); mask-image: var(--paper-panel-mask);
+  mask-size: var(--paper-tile-size) var(--paper-tile-size); mask-repeat: repeat;
+}
+.burger-menu-btn.is-open { --paper-ink: var(--paper-ink-sand); }
+
+.burger-menu-btn.is-open { position: relative; }
+
+/* Latest user direction: paper on pages/panels; smooth controls and navigation. */
+button, .button, [role='button'], nav, .app-header, .sdp-dispatch-masthead,
+.framed, .act-filter-chip, .act-gallery-arrow-btn, .act-modal-icon-close,
+.act-sticker-btn, .act-close-preview-btn, .burger-workspace-pill, .burger-shortcut-btn,
+.burger-menu-btn, .sandbox-history-toggle, .segmented-options label, .sdp-desk-ticket {
+  --paper-layer-display: none;
+  --paper-texture-display: none;
+}
+.staff-nav { background-color: var(--surface-page); }
+/* The legacy recycling token resolves transparent over this sand board. */
+.act-filter-chip[data-filter='recycling'].is-selected { background-color: var(--color-sand); }
+html:has(.world-texture-free), .world-texture-free {
+  --paper-world-layer-display: none;
+  --paper-texture-display: none;
+}

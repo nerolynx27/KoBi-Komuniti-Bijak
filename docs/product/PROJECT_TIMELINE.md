@@ -1,5 +1,7 @@
 # KoBi — Komuniti Bijak: Pelan Prototaip Hackathon
 
+**22 October 2026 — Bulletin Phase 2:** the user-approved Home dashboard and Home → Enter World → map flow are implemented for review. Existing store/schema and labeled simulation remain. App-wide component rollout (Phase 3) is not authorized. Current results and inherited verification failures are in [Bulletin Phase 2 evidence](../verification/BULLETIN_DASHBOARD_PHASE_2.md).
+
 **Dikemas kini:** 16 Oktober 2026.  
 **Status:** Pelan dipersetujui; checklist bukan bukti implementasi.  
 **Matlamat utama:** Frontend lengkap untuk demo hackathon: semua UI shell, dunia pixel interaktif dan pengurusan dunia SDP. Backend sangat pilihan dan hanya dipertimbangkan selepas frontend lengkap.

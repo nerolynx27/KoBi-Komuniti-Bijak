@@ -39,6 +39,7 @@
   z-index: 30;
 }
 
+.sandbox-brand .brand-logo { height: 28px; width: auto; max-width: 110px; object-fit: contain; display: block; }
 .sandbox-brand {
   position: relative;
   display: inline-flex;

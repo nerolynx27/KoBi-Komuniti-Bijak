@@ -17,3 +17,22 @@ fabric/
 *-debug.png
 capture-*.cjs
 take-*.cjs
+
+# Local generated exports/builds; report sources live in docs/reports/.
+/output/
+/videos/**/renders/
+/videos/**/snapshots*/
+/videos/**/.hyperframes/
+/videos/**/.thumbnails/
+/videos/**/check-result.json
+/docs/reports/**/final-render/
+/docs/reports/**/original-render/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.pem
+*.key
+*.p12
+*.pfx

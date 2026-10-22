@@ -1,5 +1,7 @@
 # KoBi — Komuniti Bijak: Senarai UI dan Aset MVP
 
+**22 October 2026 — Bulletin Phase 2 supplement:** Home is the resident landing page and contains two artwork-only extracts from picture 4 (634×604 clean-up illustration and 1280×152 panorama). UI-03 remains the map reached by Enter World or a direct facility URL. Real bottom navigation is Home / Reports / Activities / Profile; the Development specimen preserves its original Map examples. Asset hashes/crops are recorded in `art/dashboard-bulletin/generation-record.json` and the runtime manifest. See [Phase 2 verification](../verification/BULLETIN_DASHBOARD_PHASE_2.md).
+
 **Status:** Senarai kerja, bukan inventori yang sudah dihasilkan.  
 **Rujukan skop:** [TECHNICAL_DOCUMENTATION.md](TECHNICAL_DOCUMENTATION.md).  
 **Urutan pelaksanaan:** [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md).

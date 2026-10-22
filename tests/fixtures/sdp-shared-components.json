@@ -1,0 +1,150 @@
+{
+  "current": [
+    {
+      "text": "Reports\n\nReview problems and record maintenance actions.\n\nReview reports",
+      "width": 358,
+      "height": 164,
+      "font": "\"Yanone Kaffeesatz\", sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgb(229, 224, 205)"
+    },
+    {
+      "text": "Review reports",
+      "width": 220.4375,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Activities\n\nPlan community and recycling events.\n\nManage activities",
+      "width": 358,
+      "height": 164,
+      "font": "\"Yanone Kaffeesatz\", sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgb(229, 224, 205)"
+    },
+    {
+      "text": "Manage activities",
+      "width": 250.609375,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "World editor\n\nArrange the temporary neighbourhood schematic.\n\nEnter editor",
+      "width": 358,
+      "height": 164,
+      "font": "\"Yanone Kaffeesatz\", sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgb(229, 224, 205)"
+    },
+    {
+      "text": "Enter editor",
+      "width": 197.140625,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Pitch deck\n\nLaunch official 16:9 presentation slides.\n\nPresentation Studio",
+      "width": 358,
+      "height": 164,
+      "font": "\"Yanone Kaffeesatz\", sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgb(229, 224, 205)"
+    },
+    {
+      "text": "Presentation Studio",
+      "width": 272.78125,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    }
+  ],
+  "gateway": [
+    {
+      "text": "Send report",
+      "width": 159.421875,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "View on map",
+      "width": 156.34375,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Keep editing",
+      "width": 166.859375,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Sign in",
+      "width": 120,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(229, 224, 205)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Remove",
+      "width": 120,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(229, 224, 205)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Back to list",
+      "width": 156.0625,
+      "height": 44,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Small action",
+      "width": 163.015625,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Medium action",
+      "width": 184.453125,
+      "height": 48,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Large action",
+      "width": 177.671875,
+      "height": 56,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "text": "Camera example",
+      "width": 44,
+      "height": 44,
+      "font": "Bungee, sans-serif",
+      "color": "rgb(108, 26, 33)",
+      "fill": "rgba(0, 0, 0, 0)"
+    }
+  ]
+}

@@ -84,6 +84,78 @@
         "chevron-right",
         "progress"
       ]
+    },
+    {
+      "key": "bulletin-cleanup.png",
+      "url": "/assets/dashboard/bulletin-cleanup.png",
+      "format": "png",
+      "bytes": 518579,
+      "sha256": "cdb03dd036b01ee226148910c44747aa294dc303723fb13d0dc9289235c85b4f",
+      "width": 634,
+      "height": 604,
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_011914_4be45171-bcb4-439d-8cd8-4e27fc61a0d8.png",
+      "revision": "4be45171-bcb4-439d-8cd8-4e27fc61a0d8",
+      "license": "User-selected generated design reference; no additional licensing verification claimed."
+    },
+    {
+      "key": "bulletin-neighbourhood-panorama.png",
+      "url": "/assets/dashboard/bulletin-neighbourhood-panorama.png",
+      "format": "png",
+      "bytes": 235569,
+      "sha256": "bfe301e6f5d8df7848225ec33138adee00bea2945388a116071e384fbd98f0a2",
+      "width": 1280,
+      "height": 152,
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_011914_4be45171-bcb4-439d-8cd8-4e27fc61a0d8.png",
+      "revision": "4be45171-bcb4-439d-8cd8-4e27fc61a0d8",
+      "license": "User-selected generated design reference; no additional licensing verification claimed."
+    },
+    {
+      "key": "poster-garden-20261022.webp",
+      "url": "/assets/activities/poster-garden-20261022.webp",
+      "format": "webp",
+      "bytes": 244404,
+      "sha256": "7ebecefa0f6f08f946300dc40825e71deccbf087bc86cb600cf4dbef101318e8",
+      "width": 2400,
+      "height": 1792,
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_cfbb3df2-a18d-4d4b-8510-9c6cf58fa452.png",
+      "revision": "cfbb3df2-a18d-4d4b-8510-9c6cf58fa452",
+      "license": "User-approved Higgsfield generated artwork; source provenance retained"
+    },
+    {
+      "key": "poster-ewaste-20261022.webp",
+      "url": "/assets/activities/poster-ewaste-20261022.webp",
+      "format": "webp",
+      "bytes": 181438,
+      "sha256": "cca5435da6a7259c10c2005865760924601e40d2d2fe808412bd3b7f14321b03",
+      "width": 2400,
+      "height": 1792,
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_8019b86d-d170-4e81-b015-73bababf88c6.png",
+      "revision": "8019b86d-d170-4e81-b015-73bababf88c6",
+      "license": "User-approved Higgsfield generated artwork; source provenance retained"
+    },
+    {
+      "key": "poster-craft-20261022.webp",
+      "url": "/assets/activities/poster-craft-20261022.webp",
+      "format": "webp",
+      "bytes": 212178,
+      "sha256": "240338dd8bee5a47c0d211d55f1b4a8f963df8492cc9a4eb2ccc3fb16cc23408",
+      "width": 2400,
+      "height": 1792,
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_5e7ceb61-c227-4a6f-b78d-5ce9659856e3.png",
+      "revision": "5e7ceb61-c227-4a6f-b78d-5ce9659856e3",
+      "license": "User-approved Higgsfield generated artwork; source provenance retained"
+    },
+    {
+      "key": "poster-taichi-20261022.webp",
+      "url": "/assets/activities/poster-taichi-20261022.webp",
+      "format": "webp",
+      "bytes": 123530,
+      "sha256": "e4222d375bf80d0fe31738f98c20032255b6a22c7ca0ee9334888d7cf4583f43",
+      "width": 2400,
+      "height": 1792,
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3EbIKJiq93OP4D7Jnqcrk4yIGeR/hf_20261022_143626_35ce1e29-1cc3-46bd-bc33-9d808a61897a.png",
+      "revision": "35ce1e29-1cc3-46bd-bc33-9d808a61897a",
+      "license": "User-approved Higgsfield generated artwork; source provenance retained"
     }
   ]
 }

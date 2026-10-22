@@ -1,15 +1,21 @@
 # KoBi — Komuniti Bijak
 
-KoBi Part 2 is a complete local demo shell for the selected Pixel Stickers system, covering UI-01–UI-20. Residents can report facility problems, follow repairs and join activities. The open SDP demo workspace manages those same reports, activities and a temporary neighbourhood schematic/editor.
+KoBi is a local frontend demo of the Pixel Stickers system. Residents use the Home bulletin, facility reports, activity board, profile and approved pixel-world map. The separate SDP workspace manages reports, activities and the world layout. Demo switching is not authentication; records persist in this browser.
 
-Part 3 desktop and phone-size verification is complete (18 October 2026): 137 unit tests, 92 browser tests, 3 production tests and 24 selected repeat checks passed, along with lint, assets and a fresh build. One shared focus/scroll-clearance defect was repaired. Physical testing was explicitly excluded by the user's later instruction; the original physical Android gate remains unverified.
+Historical Part 3 desktop and phone-size verification (18 October 2026): 137 unit tests, 92 browser tests, 3 production tests and 24 selected repeat checks passed, along with lint, assets and a fresh build. One shared focus/scroll-clearance defect was repaired. Physical testing was explicitly excluded by the user's later instruction; the original physical Android gate remains unverified.
+
+Current folder ownership and commit policy: [repository layout](docs/REPOSITORY_LAYOUT.md). Latest UI/asset decisions: [product specification](docs/product/product.md).
 
 ## Folder guide
 
 - `src/` — React app, shared controls, styles and browser demo data.
 - `public/` — runtime assets served by the app.
 - `art/` — artwork sources, font originals, licenses and asset provenance.
-- `references/` — visual reference material.
+- `references/` — visual references, palette and the archived map snapshot.
+- `docs/reports/kobi-report/` — report sources, final reports, evidence and authoring utilities.
+- `docs/presentations/` — the shareable presentation PDF.
+- `output/` — local generated builds/review exports; ignored.
+- `videos/` — video source/assets; renders and caches are ignored.
 - [docs/](docs/README.md) — product specifications, competition guidance, plans and verification evidence.
 - `scripts/` — asset preparation and evidence utilities.
 - `tests/` — unit, browser and production checks.
@@ -30,6 +36,20 @@ Run `graphify cluster-only . --no-label` after extraction to refresh the report 
 
 ## Run locally
 
+For the separate SDP workspace rework preview, run `npm run dev:sdp` and open
+`http://127.0.0.1:5177/sdp-workspace.html`. It starts in the SDP demo workspace.
+The sandbox now opens the Dispatch Desk dashboard, with live township report/activity
+counts and shared staff bottom navigation. [Phase 2 evidence](docs/verification/SDP_DASHBOARD_PHASE_2.md) records the checks and visual differences.
+The editable shell copy is `src/dev/sdp-workspace/SdpWorkspaceApp.jsx`; shared
+components and styles retain the current UI. Demo records use the separate
+`kobi.sdp-workspace.v1` browser storage key. Changes to shared components/styles
+still affect both previews.
+
+The separate [SDP cards & buttons specimen](http://127.0.0.1:5177/sdp-workspace.html?specimen=cards-buttons)
+shows the opt-in Dispatch Desk component family. It is development-only, reads/writes
+no demo records, and is also linked from the existing Development specimen.
+See [Phase 1 verification](docs/verification/SDP_DASHBOARD_PHASE_1.md).
+
 Use Node **22.13+ in the 22.x line, or 24+**, and npm. Verified runtime: Node 24.15.0 / npm 11.12.1. Dependencies remain pinned in the existing lockfile; Part 2 added no packages.
 
 ```sh
@@ -37,7 +57,7 @@ npm ci
 npm run dev
 ```
 
-Open [KoBi](http://127.0.0.1:5173/#map). Explicit demo account forms are at [Sign in](http://127.0.0.1:5173/#sign-in) and [Create account](http://127.0.0.1:5173/#create-account). The bare home URL opens resident mode or the remembered SDP workspace. The [development specimen](http://127.0.0.1:5173/#design-system) includes shared controls and explicitly simulated loading, session/access and artwork-failure states; it is excluded from production. The isolated reports design sandbox is at [Reports Sandbox](http://127.0.0.1:5173/reports-sandbox.html).
+Open [KoBi](http://127.0.0.1:5173/#home). Explicit demo account forms are at [Sign in](http://127.0.0.1:5173/#sign-in) and [Create account](http://127.0.0.1:5173/#create-account). The bare home URL opens resident mode or the remembered SDP workspace. The [development specimen](http://127.0.0.1:5173/#design-system) includes shared controls and explicitly simulated loading, session/access and artwork-failure states; it is excluded from production. The isolated reports design sandbox is at [Reports Sandbox](http://127.0.0.1:5173/reports-sandbox.html).
 
 ```sh
 npm run lint
@@ -48,7 +68,7 @@ npm run test:production
 npm run preview
 ```
 
-Playwright manages localhost servers on ports 5173 and 4173. Build before the production check. Browser checks require local socket/process access; in a restricted Codex sandbox they were run with approved process permissions. Do not leave an inaccessible sandbox server occupying those ports. Use `npm run dev -- --host 0.0.0.0` for later LAN/device testing when the host firewall allows it.
+The regular Playwright suite uses port 5177; production checks use their configured preview server. Build before the production check. Browser checks require local socket/process access; in a restricted Codex sandbox they were run with approved process permissions. Do not leave an inaccessible sandbox server occupying those ports. Use `npm run dev -- --host 0.0.0.0` for later LAN/device testing when the host firewall allows it.
 
 ## Workflows
 
@@ -73,7 +93,7 @@ Reset replaces only KoBi's storage key and restores profiles, reports/history, a
 
 ## Design, assets and evidence
 
-The **current build** uses semantic HTML, plain CSS and measured SVG PixelFrame geometry, with the approved wine/cherry/gold/sand/vanilla palette and locally hosted Bungee 400 and Yanone Kaffeesatz variable fonts. Bungee supplies headings/buttons/branding; Yanone Kaffeesatz supplies body and supporting text. The selected reference sheet is not a runtime import. No UI PNGs, paid artwork or backend infrastructure were added.
+The **current build** uses semantic HTML, plain CSS and measured SVG PixelFrame geometry, with the approved wine/cherry/gold/sand/vanilla palette and locally hosted Bungee 400 and Yanone Kaffeesatz variable fonts. Bungee supplies headings/buttons/branding; Yanone Kaffeesatz supplies body and supporting text. The selected reference sheet is not a runtime import. Recent approved work includes PNG-backed SDP cards, static paper masks, and generated activity artwork with provenance. Headers/navigation/buttons and both world views are smooth; paper texture remains on ordinary page/panel surfaces elsewhere.
 
 The **approved specification, revised 19 October 2026**, limits all UI to `#6C1A21`, `#B92C2C`, `#CEA257`, `#D1BF9A` and `#E5E0CD` from the [user's palette reference](https://i.pinimg.com/736x/78/71/af/7871af2062e7b91f2a7d4672865e71fa.jpg). Future pixel-world artwork is exempt; UI/editor overlays are included. Only Bungee is selected for titles, headers, wordmark and all buttons, and Yanone Kaffeesatz for descriptions, long text, supporting copy and form text across the whole project, including future world text. See [the authoritative design system](docs/product/product.md). The user subsequently authorized both font replacement and execution of the colour plan; both are now implemented. See [colour-migration verification](docs/verification/UI_COLOUR_MIGRATION.md) for current evidence. Old Play/Press Start 2P source/runtime fonts and their licenses have been removed from active asset directories. Existing Part 1–3 verification reports describe the earlier build.
 
@@ -83,4 +103,4 @@ See [Part 2 verification](docs/verification/PART_2.md), [execution progress](doc
 
 See [Part 3 report](docs/verification/PART_3.md), [S01–S17 coverage](docs/verification/PART_3_MATRIX.md), [defects and retests](docs/verification/PART_3_ISSUES.md), [physical scope record/future checklist](docs/verification/PART_3_ANDROID.md), and [fresh captures](docs/verification/part-3/automated/captures). The report discloses that legacy capture paths were refreshed by their existing suites; original historical image bytes were not frozen before the baseline.
 
-Physical Android keyboard/gallery/camera, TalkBack, hardware Back, nonzero safe areas and background/resume remain unobserved by explicit user choice. Phone-size Chromium inspection and touch emulation do not prove them. The original overall Part 3 physical gate remains unchecked; no phone access is currently requested. The pixel world, final artwork, backend, APK and deployment remain later work, and Part 4 was not started.
+Physical Android keyboard/gallery/camera, TalkBack, hardware Back, nonzero safe areas and background/resume remain unobserved by explicit user choice. Phone-size Chromium inspection and touch emulation do not prove them. The original overall Part 3 physical gate remains unchecked; no phone access is currently requested. The approved pixel world and recent artwork are now integrated. Backend, APK and deployment remain outside the current local frontend scope.

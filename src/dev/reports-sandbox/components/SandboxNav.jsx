@@ -123,8 +123,8 @@ export function SandboxHeader({ onMenuClick, menuOpen = false }) {
         aria-label="KoBi home"
         onClick={event => event.preventDefault()}
       >
-        <span>KoBi</span>
-        <span className="brand-fold" aria-hidden="true" />
+        <img src="/assets/brand/kobi-logo.png" alt="KoBi" className="brand-logo" />
+        <span className="sr-only">KoBi</span>
       </a>
 
       <button

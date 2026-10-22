@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { PaperTexture } from '../../../components/ui/PaperTexture.jsx';
 import { observeSize } from '../../../components/ui/PixelFrame.jsx';
 
 function buildJacketPolygon(w, h, tabH, tabL, tabR, inset, flushBottom) {
@@ -217,6 +218,7 @@ export function SteppedFieldFrame({ children, className = '' }) {
         >
           <path d={outer} fill="var(--color-wine)" />
           <path d={inner} fill="var(--color-vanilla)" />
+          <PaperTexture facePath={inner} role="panel" />
         </svg>
       )}
       {children}
@@ -394,6 +396,7 @@ export function FolderCard({
           className={active && isOpen ? 'folder-svg-jacket-active' : 'folder-svg-jacket-inactive'}
           d={jacketFill}
         />
+        <g style={{ '--paper-ink': active && isOpen ? 'var(--color-sand)' : 'var(--color-gold)' }}><PaperTexture facePath={jacketFill} role="control" /></g>
 
         {/* Right-edge vertical tab shape */}
         {showRightTab && (
@@ -410,6 +413,7 @@ export function FolderCard({
               className={active && isOpen ? 'folder-svg-jacket-active' : 'folder-svg-jacket-inactive'}
               d={rightTabFill}
             />
+            <g style={{ '--paper-ink': active && isOpen ? 'var(--color-sand)' : 'var(--color-gold)' }}><PaperTexture facePath={rightTabFill} role="control" /></g>
           </g>
         )}
 
@@ -418,6 +422,7 @@ export function FolderCard({
           <g className="folder-svg-paper-group">
             <path className="folder-svg-ink" d={paperOuter} />
             <path className="folder-svg-paper" d={paperFill} />
+            <PaperTexture facePath={paperFill} role="panel" />
             <path className="folder-svg-fold-shadow" d={foldPaths.shadow} />
             <path className="folder-svg-ink" d={foldPaths.outer} />
             <path className="folder-svg-fold" d={foldPaths.inner} />

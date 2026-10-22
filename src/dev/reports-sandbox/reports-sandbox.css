@@ -29,6 +29,7 @@
   gap: 8px;
 }
 
+.sandbox-brand .brand-logo { height: 32px; width: auto; max-width: 120px; object-fit: contain; display: block; }
 .sandbox-brand {
   font: 400 1.625rem / 2rem var(--font-brand);
   color: var(--color-wine);

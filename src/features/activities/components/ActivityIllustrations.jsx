@@ -17,10 +17,10 @@ export function buildSteppedRect(x, y, w, h, step = 4) {
 }
 
 export const ARTWORK_IMAGE_MAP = {
-  'garden-harvest': '/assets/activities/poster-garden.png',
-  'ewaste-bins': '/assets/activities/poster-ewaste.png',
-  'upcycling-craft': '/assets/activities/poster-craft.png',
-  'tai-chi': '/assets/activities/poster-taichi.png',
+  'garden-harvest': '/assets/activities/poster-garden-20261022.webp',
+  'ewaste-bins': '/assets/activities/poster-ewaste-20261022.webp',
+  'upcycling-craft': '/assets/activities/poster-craft-20261022.webp',
+  'tai-chi': '/assets/activities/poster-taichi-20261022.webp',
   'cleanup-event': '/assets/activities/gallery-cleanup.png',
   'harvest-day': '/assets/activities/gallery-harvest.png',
   'recycling-drive': '/assets/activities/gallery-recycling.png',

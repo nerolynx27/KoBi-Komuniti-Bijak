@@ -9,3 +9,10 @@ graphify-out/
 docs/verification/
 docs/screenshots/
 package-lock.json
+
+output/
+.superpowers/
+**/renders/
+**/snapshots*/
+**/.hyperframes/
+**/.thumbnails/

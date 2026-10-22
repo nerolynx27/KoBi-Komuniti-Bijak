@@ -3,7 +3,7 @@ import { Button, ActionLink } from '../../components/ui/Button.jsx';
 import { FormField, Choice } from '../../components/ui/FormField.jsx';
 import { Card } from '../../components/ui/Feedback.jsx';
 import { useCommandForm } from '../../app/useCommandForm.js';
-export function ProfilePage({ data, actor, store, snapshot, registerGuard, notify, openSignOut, openReset, enterStaff }) {
+export function ProfilePage({ data, actor, store, snapshot, registerGuard, notify, openSignOut, openReset }) {
   const profile = data.profiles.find(row => row.id === actor.id) || data.profiles[0];
   const [name, setName] = useState(profile.display_name);
   const form = useCommandForm({ store, snapshot, registerGuard, dirty: name !== profile.display_name, onSuccess: () => notify('Profile saved on this browser.') });

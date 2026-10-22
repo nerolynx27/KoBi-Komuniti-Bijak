@@ -1,0 +1,70 @@
+{
+  "s1Images": [
+    {
+      "tag": "IMG",
+      "src": "blob:https://www.canva.com/4ebce41d-2ee8-4037-9b4c-163656b44f31",
+      "x": 1395.7841796875,
+      "y": 629.199951171875,
+      "w": 306.7999267578125,
+      "h": 306.800048828125
+    },
+    {
+      "tag": "IMG",
+      "src": "https://media.canva.com/v2/image-resize/format:JPG/height:800/quality:92/uri:ifs%3A%2F%2FM%2Fe8ce2dae-88c5-4259-adb7-2b6fdfb4ecb1/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAALki8Fw-x92rHMOtFzRjWsktOclBWf1n3wgNmCSyuO3i&exp=1792571863&osig=AAAAAAAAAAAAAAAAAAAAAFwfZrlgIW5DQAKe1VcO1TvewdWvjZ9XwRdvDWfsA1d2&signer=media-rpc&token=AAIAAU0AJGU4Y2UyZGFlLTg4YzUtNDI1OS1hZGI3LTJiNmZkZmI0ZWNiMQAAAAABoV2b79hanIWifTFNrkUGHpZ223EvD-7-6ao97Al2-2NOhexpgQ&x-canva-quality=screen",
+      "x": 665.6892700195312,
+      "y": 371.86328125,
+      "w": 286.52490234375,
+      "h": 286.52490234375
+    },
+    {
+      "tag": "IMG",
+      "src": "https://media.canva.com/v2/image-resize/format:PNG/height:141/quality:100/uri:ifs%3A%2F%2FM%2Fdcb38a1d-5713-4f40-9bde-ecfc9915e746/watermark:F/width:200?csig=AAAAAAAAAAAAAAAAAAAAAFj5nOxtNVeB-x7rModSAiPPQmvz8h_X10vnf9IuVESM&exp=1792572145&osig=AAAAAAAAAAAAAAAAAAAAADDV_YC1S0wSY62vZa1Z9glZUFmLtRsE8pBUs-CTzqQr&signer=media-rpc&token=AAIAAU0AJGRjYjM4YTFkLTU3MTMtNGY0MC05YmRlLWVjZmM5OTE1ZTc0NgAAAAABoV2gPWhYpaF7YQRQ-uI9rFr_mDgv8Wjb0vAzPibwllio9UIxHw&x-canva-quality=thumbnail",
+      "x": 314.21875,
+      "y": 167.79470825195312,
+      "w": 173.61810302734375,
+      "h": 122.72885131835938
+    }
+  ],
+  "s3Images": [
+    {
+      "tag": "IMG",
+      "src": "https://media.canva.com/v2/image-resize/format:PNG/height:1599/quality:100/uri:ifs%3A%2F%2FM%2Fa7afc5f1-095d-4014-83e5-295d646d48e3/watermark:F/width:1066?csig=AAAAAAAAAAAAAAAAAAAAACN8BUB4prElA2b1jMeotX3S_KiuXsbfsUQ754Qg-Gkm&exp=1792571758&osig=AAAAAAAAAAAAAAAAAAAAAOJpQHXI8SPPYqOY6qwdj3hFPg7dpuVFMOuG58grxpXO&signer=media-rpc&token=AAIAAU0AJGE3YWZjNWYxLTA5NWQtNDAxNC04M2U1LTI5NWQ2NDZkNDhlMwAAAAABoV2aVbCChoh_caXe1pPLuGeMpsNqFhedDQ2pP_pUUxDbko-t2w&x-canva-quality=screen_2x",
+      "x": 312.1448974609375,
+      "y": 110.33311462402344,
+      "w": 708.2210693359375,
+      "h": 1062.0042724609375
+    },
+    {
+      "tag": "IMG",
+      "src": "https://media.canva.com/v2/image-resize/format:PNG/height:1065/quality:100/uri:ifs%3A%2F%2FM%2Fb04a25f8-279e-4e89-ab6f-f1f50c3bc6f0/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAJp0uFH3n_jyao1NqjD7V-pyakl9kuEFbMQWueg1azGY&exp=1792571408&osig=AAAAAAAAAAAAAAAAAAAAANh-PwphCYmEHQPfgnCeuK2fdG3Ll4VyVaVIigef8bh3&signer=media-rpc&token=AAIAAU0AJGIwNGEyNWY4LTI3OWUtNGU4OS1hYjZmLWYxZjUwYzNiYzZmMAAAAAABoV2U_oDyTAj3UBCGsEMhP3-v1eX4KjG1wAOI2XxvZh_Jir3hDw&x-canva-quality=screen_3x",
+      "x": 814.2342529296875,
+      "y": 346.6775817871094,
+      "w": 1167.599853515625,
+      "h": 777.1866455078125
+    },
+    {
+      "tag": "IMG",
+      "src": "https://media-public.canva.com/i7p_E/MAHLsbi7p_E/1/t.png",
+      "x": 729.9615478515625,
+      "y": 403.1703796386719,
+      "w": 182.939208984375,
+      "h": 92.37954711914062
+    },
+    {
+      "tag": "IMG",
+      "src": "https://media.canva.com/v2/image-resize/format:PNG/height:150/quality:100/uri:ifs%3A%2F%2FM%2F53662412-447f-45ad-93c5-6d0db8b4cd20/watermark:F/width:150?csig=AAAAAAAAAAAAAAAAAAAAAD91vNigXy7IS4d_zSF4ffABX1quALTwtrQiOx4T_gwp&exp=1792573493&osig=AAAAAAAAAAAAAAAAAAAAAJijpkDjW51AxLopCppLR8c255u9k5bPgv5tv2K_-bgJ&signer=media-rpc&token=AAIAAU0AJDUzNjYyNDEyLTQ0N2YtNDVhZC05M2M1LTZkMGRiOGI0Y2QyMAAAAAABoV20zwgDp2GFONDrN4Yze3bhO6CxjyuJyU1rTAD7jKBo2TuYUQ&x-canva-quality=micro_thumbnail",
+      "x": 1056.9656982421875,
+      "y": 380.766357421875,
+      "w": 120.3209228515625,
+      "h": 120.32089233398438
+    },
+    {
+      "tag": "IMG",
+      "src": "https://media.canva.com/v2/image-resize/format:PNG/height:141/quality:100/uri:ifs%3A%2F%2FM%2Fdcb38a1d-5713-4f40-9bde-ecfc9915e746/watermark:F/width:200?csig=AAAAAAAAAAAAAAAAAAAAAFj5nOxtNVeB-x7rModSAiPPQmvz8h_X10vnf9IuVESM&exp=1792572145&osig=AAAAAAAAAAAAAAAAAAAAADDV_YC1S0wSY62vZa1Z9glZUFmLtRsE8pBUs-CTzqQr&signer=media-rpc&token=AAIAAU0AJGRjYjM4YTFkLTU3MTMtNGY0MC05YmRlLWVjZmM5OTE1ZTc0NgAAAAABoV2gPWhYpaF7YQRQ-uI9rFr_mDgv8Wjb0vAzPibwllio9UIxHw&x-canva-quality=thumbnail",
+      "x": 314.21875,
+      "y": 167.79470825195312,
+      "w": 173.61810302734375,
+      "h": 122.72885131835938
+    }
+  ]
+}

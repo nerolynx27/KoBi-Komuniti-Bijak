@@ -19,3 +19,17 @@
   --motion-press: 80ms; --motion-hover: 120ms; --motion-sheet: 160ms;
   --layer-world: 0; --layer-world-controls: 10; --layer-sticky: 20; --layer-navigation: 30; --layer-backdrop: 40; --layer-dialog: 50; --layer-toast: 60;
 }
+
+/* Static 640px masks repeat at the preview's 2:1 source/CSS scale. */
+:root {
+  --paper-page-mask: url('/assets/ui/paper/fine-grain-mask.png');
+  --paper-panel-mask: url('/assets/ui/paper/laid-paper-mask.png');
+  --paper-control-mask: url('/assets/ui/paper/woven-paper-mask.png');
+  --paper-tile-size: 320px;
+  --paper-ink: var(--color-sand);
+  --paper-ink-vanilla: var(--color-sand);
+  --paper-ink-sand: var(--color-gold);
+  --paper-ink-gold: var(--color-sand);
+  --paper-ink-wine: var(--color-cherry);
+  --paper-ink-cherry: var(--color-wine);
+}

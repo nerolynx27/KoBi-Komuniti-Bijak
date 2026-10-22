@@ -30,8 +30,8 @@ describe('temporary layout safety', () => {
   });
   it('validates catalog identities and actor authority without changing input data', () => {
     const data = createSampleData(), before = structuredClone(data);
-    const input = { objectId: 'new-object', facilityId: 'new-facility', assetKey: 'lamp', x: 28, y: 20 };
-    for (const patch of [{ assetKey: 'unknown' }, { objectId: '' }, { objectId: 'bad id' }, { facilityId: null }, { facilityId: 'lamp-01' }, { x: 3, y: 8 }]) expect(applyLayoutCommand(data, command('world.add', { ...input, ...patch }), context(data)).error).not.toBeNull();
+    const input = { objectId: 'new-object', facilityId: 'new-facility', assetKey: 'lamp', x: 29, y: 20 };
+    for (const patch of [{ assetKey: 'unknown' }, { objectId: '' }, { objectId: 'bad id' }, { facilityId: null }, { facilityId: 'lamp-01' }, { x: data.layout.find(o => o.assetKey === 'tree').x, y: data.layout.find(o => o.assetKey === 'tree').y }]) expect(applyLayoutCommand(data, command('world.add', { ...input, ...patch }), context(data)).error).not.toBeNull();
     for (const actor of [data.profiles[0], { ...data.profiles[1], role: 'resident' }, { ...data.profiles[1], id: 'missing' }]) expect(applyLayoutCommand(data, command('world.add', input), { actor, revision: 4 }).error.code).toBe('FORBIDDEN');
     expect(data).toEqual(before);
     const house = applyLayoutCommand(data, command('world.add', { ...input, assetKey: 'house', facilityId: null }), context(data));

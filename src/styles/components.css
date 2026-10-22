@@ -1,6 +1,12 @@
 .icon { display: inline-block; flex: none; width: 20px; height: 20px; vertical-align: middle; fill: currentColor; }
 .icon-large { width: 40px; height: 40px; }
 .card { border: 2px solid var(--border-strong); padding: var(--space-4); box-shadow: 2px 2px var(--shadow-hard); background: var(--surface-panel); }
+.card[data-frame-style='gateway'] { position: relative; --frame-fill: var(--surface-panel); --frame-rim: var(--surface-panel); --frame-ink: var(--border-strong); --frame-shadow: var(--shadow-hard); }
+.card[data-frame-style='gateway'][data-frame-tone='strong'] { --frame-fill: var(--action-strong); --frame-rim: var(--action-primary); color: var(--text-inverse); background: var(--action-strong); }
+.card[data-frame-style='gateway'][data-frame-tone='strong'] > .pixel-frame .frame-keyline { fill: var(--surface-panel); }
+.card[data-frame-style='gateway'][data-frame-tone='strong'] .status-badge { color: var(--text-primary); }
+.card[data-frame-style='gateway']:has(> .pixel-frame) { border-color: transparent; background: transparent; box-shadow: none; }
+.card[data-frame-style='gateway'] > :not(.pixel-frame) { position: relative; }
 .card h2, .feedback h2 { font-size: var(--type-section); line-height: var(--line-section); }
 .card h3 { font-size: var(--type-card); line-height: var(--line-card); }
 .card > :last-child { margin-bottom: 0; }

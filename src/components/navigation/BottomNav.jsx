@@ -13,6 +13,7 @@ export function NavStickerIcon({ name, active = false, size = 26 }) {
       focusable="false"
       shapeRendering="crispEdges"
     >
+      {name === 'home' && <g fill="var(--color-wine)"><path d="M2 12h3V9h3V6h3V3h6v3h3v3h3v3h3v4h-4v10H6V16H2z" /><path d="M8 13h3v-3h3V7h1v3h3v3h2v11h-4v-7h-4v7H8z" fill={active ? 'var(--color-gold)' : 'var(--color-vanilla)'} /></g>}
       {name === 'map' && (
         <g>
           <path
@@ -101,7 +102,7 @@ function NavItem({ item, active }) {
   );
 }
 
-export function BottomNav({ active, specimen = false }) {
+export function BottomNav({ active, specimen = false, items = navigation }) {
   const ref = useRef(null);
   useEffect(() => {
     if (specimen) return;
@@ -122,7 +123,7 @@ export function BottomNav({ active, specimen = false }) {
       aria-label={specimen ? 'Specimen navigation' : 'Main navigation'}
       className={`bottom-nav ${specimen ? 'specimen-nav' : ''}`}
     >
-      {navigation.map(item => (
+      {items.map(item => (
         <NavItem key={item.id} item={item} active={item.id === active} />
       ))}
     </nav>

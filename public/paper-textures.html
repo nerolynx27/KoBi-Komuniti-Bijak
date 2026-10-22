@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KoBi · Paper texture options</title>
+  <style>
+    @font-face { font-family: Bungee; src: url('/assets/ui/bungee-regular.ttf'); }
+    @font-face { font-family: Yanone; src: url('/assets/ui/yanone-kaffeesatz-variable.ttf'); }
+    :root { color: #6C1A21; background: #D1BF9A; font-family: Yanone, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 40px 24px 56px; }
+    main { max-width: 1080px; margin: auto; }
+    header { margin-bottom: 32px; }
+    h1 { font: 400 clamp(22px, 3vw, 32px)/1.3 Bungee, sans-serif; margin: 0 0 12px; }
+    header p { font-size: 22px; margin: 0; max-width: 65ch; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 28px; }
+    figure { margin: 0; min-width: 0; }
+    .paper { width: 100%; aspect-ratio: 1; background: #E5E0CD; border: 2px solid #6C1A21; box-shadow: 4px 4px #6C1A21; overflow: hidden; }
+    canvas { display: block; width: 100%; height: 100%; }
+    figcaption { padding-top: 14px; }
+    h2 { font: 400 14px/1.5 Bungee, sans-serif; margin: 0 0 4px; }
+    figcaption p { font-size: 20px; line-height: 1.2; margin: 0; }
+    footer { border-top: 1px solid #6C1A21; margin-top: 36px; padding-top: 16px; font-size: 20px; }
+    @media (max-width: 760px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; } body { padding: 28px 20px; } }
+    @media (max-width: 440px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>A little texture for KoBi</h1>
+      <p>Six paper finishes at stronger intensity, on the same app cream. Choose a number to try in the app.</p>
+    </header>
+    <div class="grid">
+      <figure><div class="paper"><canvas data-texture="grain" aria-label="Fine grain cream paper"></canvas></div><figcaption><h2>01 · Fine grain</h2><p>A light dusting of tiny paper specks.</p></figcaption></figure>
+      <figure><div class="paper"><canvas data-texture="cotton" aria-label="Cotton fibre cream paper"></canvas></div><figcaption><h2>02 · Cotton fibres</h2><p>Soft, scattered threads in handmade paper.</p></figcaption></figure>
+      <figure><div class="paper"><canvas data-texture="recycled" aria-label="Recycled cream paper"></canvas></div><figcaption><h2>03 · Recycled paper</h2><p>Small irregular flecks with a tactile finish.</p></figcaption></figure>
+      <figure><div class="paper"><canvas data-texture="laid" aria-label="Laid cream paper"></canvas></div><figcaption><h2>04 · Laid paper</h2><p>Delicate horizontal fibres and fine grain.</p></figcaption></figure>
+      <figure><div class="paper"><canvas data-texture="woven" aria-label="Woven cream paper"></canvas></div><figcaption><h2>05 · Woven paper</h2><p>A fine cross-grain, like a cloth-bound page.</p></figcaption></figure>
+      <figure><div class="paper"><canvas data-texture="parchment" aria-label="Mottled cream parchment"></canvas></div><figcaption><h2>06 · Mottled parchment</h2><p>Uneven clouds of grain with an aged feel.</p></figcaption></figure>
+    </div>
+    <footer>Base: #E5E0CD · Texture: #D1BF9A · Preview only</footer>
+  </main>
+  <script>
+    // Seeded, palette-only marks keep every option stable and directly comparable.
+    for (const [index, canvas] of [...document.querySelectorAll('canvas')].entries()) {
+      canvas.width = canvas.height = 640;
+      const ctx = canvas.getContext('2d');
+      let seed = 20261022 + index;
+      const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296; };
+      const dot = (x, y, w = 2, h = 2) => ctx.fillRect(Math.floor(x), Math.floor(y), w, h);
+      ctx.fillStyle = '#E5E0CD'; ctx.fillRect(0, 0, 640, 640);
+      ctx.fillStyle = '#D1BF9A';
+      const type = canvas.dataset.texture;
+      const count = type === 'grain' ? 19000 : type === 'recycled' ? 3600 : 5200;
+      for (let n = 0; n < count; n++) {
+        const x = random() * 640, y = random() * 640;
+        if (type === 'cotton') {
+          const length = 4 + Math.floor(random() * 12), dx = random() < .5 ? 1 : -1;
+          for (let i = 0; i < length; i++) if (random() > .18) dot(x + i * dx, y + Math.floor(i / 3));
+        } else if (type === 'recycled') {
+          const w = 2 + Math.floor(random() * 5), h = 2 + Math.floor(random() * 4);
+          dot(x, y, w, h); if (w > 2) dot(x + 1, y - 1, w - 2, 1);
+        } else { dot(x, y); }
+      }
+      if (type === 'laid' || type === 'woven') {
+        for (let y = 3; y < 640; y += type === 'laid' ? 9 : 12) {
+          for (let x = 0; x < 640; x += 2) if (random() < .58) dot(x, y + (random() < .12 ? 1 : 0));
+        }
+        if (type === 'woven') for (let x = 4; x < 640; x += 12) {
+          for (let y = 0; y < 640; y += 2) if (random() < .48) dot(x, y);
+        }
+      }
+      if (type === 'parchment') {
+        for (let cloud = 0; cloud < 90; cloud++) {
+          const cx = random() * 640, cy = random() * 640, radius = 14 + random() * 60;
+          for (let n = 0; n < radius * 22; n++) {
+            const angle = random() * Math.PI * 2, r = radius * Math.sqrt(random());
+            if (random() > r / radius) dot(cx + Math.cos(angle) * r, cy + Math.sin(angle) * r);
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

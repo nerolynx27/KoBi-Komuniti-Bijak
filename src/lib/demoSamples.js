@@ -1,3 +1,5 @@
+import { approvedPlacements } from '../features/world/approvedMap.generated.js';
+
 export const TOWNSHIP_ID = '00000000-0000-4000-8000-000000000001';
 export const RESIDENT_ID = '00000000-0000-4000-8000-000000000002';
 export const STAFF_ID = '00000000-0000-4000-8000-000000000003';
@@ -11,7 +13,7 @@ export const ELMINA_ROADS = [
   { id: 'road-frekuensi-4', name: 'JALAN FREKUENSI 4', x: 20, y: 15, width: 12, height: 1, orientation: 'horizontal', primary: false },
 ];
 
-export function createSampleData(referenceTime) {
+function createLegacySampleData(referenceTime) {
   const start = referenceTime === undefined ? '2026-11-07T01:00:00Z' : new Date(new Date(referenceTime).getTime() + 7 * 86400000).toISOString();
   const end = referenceTime === undefined ? '2026-11-07T03:00:00Z' : new Date(Date.parse(start) + 7200000).toISOString();
 
@@ -126,4 +128,60 @@ export function createSampleData(referenceTime) {
     attachments: [],
     layout,
   };
+}
+
+export function upgradeApprovedMap(data) {
+  const pilotLayout = [
+    ...['lamp', 'bench', 'park', 'hall', 'recycling'].map((type, i) => ({ objectId: `object-${type}-01`, facilityId: `${type}-01`, assetKey: type, x: 3 + i * 4, y: 8, width: 1, height: 1 })),
+    { objectId: 'object-house-01', facilityId: null, assetKey: 'house', x: 4, y: 3, width: 3, height: 3 },
+  ];
+  const legacy = createLegacySampleData();
+  const approved = new Map(approvedPlacements.map(o => [o.objectId, o]));
+  // Recognize only the shipped untouched pilot, including its first partial upgrade.
+  // Any movement, addition, removal or custom label makes that saved layout ambiguous.
+  const partialPilot = pilotLayout.map(o => approved.has(o.objectId) ? { ...o, facilityId: o.facilityId || approved.get(o.objectId).facilityId, label: approved.get(o.objectId).label } : o)
+    .concat(approvedPlacements.filter(o => !legacy.layout.some(old => old.objectId === o.objectId)));
+  const sameLayout = expected => data.layout.length === expected.length && expected.every(o => {
+    const saved = data.layout.find(row => row.objectId === o.objectId);
+    return saved && ['facilityId', 'assetKey', 'x', 'y', 'width', 'height', 'label'].every(key => saved[key] === o[key]);
+  });
+  if (data.township.id === TOWNSHIP_ID && ['pilot-map', 'elmina-approved-v1'].includes(data.township.map_id)
+    && !data.profiles.some(p => p.home_object_id)
+    && (sameLayout(pilotLayout) || sameLayout(partialPilot))) {
+    const facilities = [...data.facilities];
+    for (const facility of legacy.facilities) if (!facilities.some(f => f.id === facility.id)) facilities.push({ ...facility });
+    for (const o of approvedPlacements) if (o.facilityId && !facilities.some(f => f.id === o.facilityId)) facilities.push({ id: o.facilityId, name: o.label, type: o.assetKey, township_id: data.township.id, reportable: o.assetKey !== 'house' });
+    const mosque = facilities.find(f => f.id === 'surau-01');
+    if (mosque?.name === 'Surau Al-Falah (Elmina U16)') facilities[facilities.indexOf(mosque)] = { ...mosque, name: 'Masjid Al Falah' };
+    return { ...data, township: { ...data.township, map_id: 'elmina-approved-v1' }, facilities,
+      profiles: data.profiles.map(p => p.id === RESIDENT_ID ? { ...p, home_object_id: 'object-house-01', home_facility_id: 'house-01' } : p),
+      layout: approvedPlacements.map(o => ({ ...o })) };
+  }
+  if (data.township.map_id !== 'pilot-map' || !data.profiles.some(p => p.home_object_id === 'object-house-01')) return data;
+  const previous = new Map(legacy.layout.map(o => [o.objectId, o]));
+  const matchesOriginal = object => {
+    const original = previous.get(object.objectId);
+    return original && ['assetKey', 'x', 'y', 'width', 'height'].every(key => object[key] === original[key]);
+  };
+  const layout = data.layout
+    .filter(o => o.objectId !== 'object-bench-01' || !matchesOriginal(o))
+    .map(object => {
+      const next = approved.get(object.objectId);
+      if (!next || next.assetKey !== object.assetKey) return object;
+      return { ...object, ...(matchesOriginal(object) ? next : {}), facilityId: object.facilityId || next.facilityId, label: next.label };
+    });
+  for (const placement of approvedPlacements) {
+    // A missing original object was removed by its owner; only introduce genuinely new assets.
+    if (!previous.has(placement.objectId) && !layout.some(o => o.objectId === placement.objectId)) layout.push({ ...placement });
+  }
+  const facilities = data.facilities.map(f => f.id === 'surau-01' && f.name === 'Surau Al-Falah (Elmina U16)' ? { ...f, name: 'Masjid Al Falah' } : f);
+  for (const placement of layout) {
+    if (!placement.facilityId || facilities.some(f => f.id === placement.facilityId)) continue;
+    facilities.push({ id: placement.facilityId, name: placement.label, type: placement.assetKey, township_id: data.township.id, reportable: placement.assetKey !== 'house' });
+  }
+  return { ...data, township: { ...data.township, map_id: 'elmina-approved-v1' }, layout, facilities };
+}
+
+export function createSampleData(referenceTime) {
+  return upgradeApprovedMap(createLegacySampleData(referenceTime));
 }

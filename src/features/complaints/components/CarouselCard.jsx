@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { PaperTexture } from '../../../components/ui/PaperTexture.jsx';
 import { observeSize } from '../../../components/ui/PixelFrame.jsx';
 
 function buildSteppedRect(w, h, inset = 0, threeStep = true) {
@@ -359,6 +360,7 @@ function CarouselArrowButton({ direction, label, onClick }) {
           <path className="carousel-arrow-ink" d={frameOuter} />
           <path className="carousel-arrow-rim" d={frameRim} />
           <path className="carousel-arrow-fill" d={frameFill} />
+          <PaperTexture facePath={frameFill} role="control" />
           {isPrev ? (
             <path
               className="carousel-arrow-glyph"
@@ -423,11 +425,13 @@ export function CarouselFrameBox({ selected = true, children, className = '', on
             <path className="carousel-frame-gold" d={goldBandPath} />
             <path className="carousel-frame-ink" d={innerWinePath} />
             <path className="carousel-frame-canvas" d={innerCanvasPath} />
+          <PaperTexture facePath={innerCanvasPath} role="panel" />
           </>
         ) : (
           <>
             <path className="carousel-neighbour-rim" d={outerPath} />
             <path className="carousel-neighbour-fill" d={neighbourFillPath} />
+          <PaperTexture facePath={neighbourFillPath} role="panel" />
           </>
         )}
       </svg>

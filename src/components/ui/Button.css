@@ -3,6 +3,7 @@
 .button-primary { --frame-fill: var(--action-primary); }
 .button-quiet { --frame-fill: var(--action-quiet); }
 .button-strong { --frame-fill: var(--action-strong); color: var(--text-inverse); }
+.button-strong:has(> .pixel-frame-gateway[data-frame-shape='ticket']) { --frame-rim: var(--action-primary); }
 .button-danger { --frame-fill: var(--action-danger); color: var(--text-inverse); }
 .button-sm { min-height: 44px; min-width: 80px; padding-inline: var(--space-4); }
 .button-lg { min-height: 56px; min-width: 160px; padding-inline: var(--space-6); }
