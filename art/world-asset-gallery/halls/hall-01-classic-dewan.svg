@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="66" viewBox="0 0 96 66" style="shape-rendering: crispEdges; image-rendering: pixelated;">
+  <!-- Set 1: Classic Malaysian Dewan Serbaguna (Dewan Komuniti) -->
+  <rect x="4" y="58" width="88" height="6" fill="#18211a" />
+  <rect x="10" y="52" width="76" height="8" fill="#D1BF9A" />
+  <line x1="10" y1="56" x2="86" y2="56" stroke="#CEA257" stroke-width="0.5" />
+  <rect x="36" y="50" width="24" height="4" fill="#CEA257" />
+  <rect x="38" y="48" width="20" height="2" fill="#E5E0CD" />
+  <rect x="14" y="24" width="68" height="26" fill="#E5E0CD" />
+  <rect x="16" y="26" width="64" height="24" fill="#FAF8F5" />
+  <rect x="18" y="30" width="8" height="10" fill="#347CA1" />
+  <rect x="19" y="31" width="6" height="8" fill="#7FC3E5" />
+  <rect x="70" y="30" width="8" height="10" fill="#347CA1" />
+  <rect x="71" y="31" width="6" height="8" fill="#7FC3E5" />
+  <rect x="32" y="28" width="32" height="22" fill="#6C1A21" />
+  <rect x="42" y="34" width="12" height="16" fill="#3B1D19" />
+  <line x1="48" y1="34" x2="48" y2="50" stroke="#CEA257" stroke-width="1" />
+  <rect x="44" y="42" width="1.5" height="1.5" fill="#CEA257" />
+  <rect x="50" y="42" width="1.5" height="1.5" fill="#CEA257" />
+  <rect x="34" y="28" width="3" height="22" fill="#E5E0CD" />
+  <rect x="59" y="28" width="3" height="22" fill="#E5E0CD" />
+  <rect x="30" y="22" width="36" height="6" fill="#6C1A21" stroke="#CEA257" stroke-width="1" />
+  <text x="48" y="26.5" fill="#E5E0CD" font-size="3.5" font-family="Bungee, sans-serif" text-anchor="middle">DEWAN KOMUNITI</text>
+  <polygon points="8,24 48,8 88,24" fill="#6C1A21" stroke="#3B1D19" stroke-width="1" />
+  <polygon points="12,22 48,10 84,22" fill="#B92C2C" />
+  <polygon points="26,16 48,6 70,16" fill="#6C1A21" />
+  <line x1="28" y1="15" x2="68" y2="15" stroke="#CEA257" stroke-width="1" />
+  <line x1="14" y1="20" x2="14" y2="52" stroke="#9CA3AF" stroke-width="1" />
+  <polygon points="14,20 19,22 14,24" fill="#B92C2C" />
+  <rect x="80" y="44" width="4" height="6" fill="#6C1A21" />
+  <ellipse cx="82" cy="41" rx="5" ry="4" fill="#569443" />
+  <ellipse cx="82" cy="38" rx="3" ry="2" fill="#74BA5E" />
+</svg>

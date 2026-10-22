@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="76" height="60" viewBox="0 0 76 60" style="shape-rendering: crispEdges; image-rendering: pixelated;">
+  <!-- Set 3: Contemporary Semi-D (Parkside Villa Style) -->
+  <rect x="6" y="52" width="64" height="6" fill="#14211c" />
+  <rect x="12" y="44" width="36" height="10" fill="#D1BF9A" />
+  <rect x="48" y="44" width="16" height="10" fill="#3F8233" />
+  <rect x="14" y="16" width="48" height="28" fill="#E5E0CD" />
+  <rect x="16" y="18" width="44" height="26" fill="#FAF8F5" />
+  <polygon points="10,16 34,8 66,16" fill="#6C1A21" stroke="#3b1d19" stroke-width="1" />
+  <polygon points="14,15 34,10 62,15" fill="#B92C2C" />
+  <rect x="38" y="10" width="8" height="4" fill="#347CA1" stroke="#E5E0CD" stroke-width="0.5" />
+  <rect x="48" y="10" width="8" height="4" fill="#347CA1" stroke="#E5E0CD" stroke-width="0.5" />
+  <rect x="18" y="20" width="18" height="8" fill="#347CA1" />
+  <rect x="19" y="21" width="16" height="6" fill="#7FC3E5" />
+  <line x1="21" y1="22" x2="31" y2="26" stroke="#FFFFFF" stroke-width="1" opacity="0.6" />
+  <rect x="22" y="32" width="12" height="12" fill="#6C1A21" />
+  <line x1="28" y1="32" x2="28" y2="44" stroke="#CEA257" stroke-width="1" />
+  <rect x="36" y="33" width="10" height="10" fill="#347CA1" />
+  <line x1="12" y1="28" x2="42" y2="28" stroke="#CEA257" stroke-width="2" />
+  <line x1="16" y1="27" x2="16" y2="33" stroke="#6C1A21" stroke-width="1.5" />
+  <line x1="26" y1="27" x2="26" y2="33" stroke="#6C1A21" stroke-width="1.5" />
+  <line x1="36" y1="27" x2="36" y2="33" stroke="#6C1A21" stroke-width="1.5" />
+  <rect x="52" y="32" width="2" height="12" fill="#4A2E18" />
+  <circle cx="53" cy="28" r="6" fill="#569443" />
+  <circle cx="55" cy="26" r="4" fill="#74BA5E" />
+  <circle cx="51" cy="27" r="3" fill="#CEA257" />
+  <ellipse cx="54" cy="46" rx="3" ry="1.5" fill="#D1BF9A" />
+  <ellipse cx="54" cy="50" rx="3" ry="1.5" fill="#D1BF9A" />
+</svg>

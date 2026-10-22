@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="66" viewBox="0 0 96 66" style="shape-rendering: crispEdges; image-rendering: pixelated;">
+  <!-- Base Ground Landscape -->
+  <rect x="4" y="6" width="88" height="54" fill="#3F8233" />
+  
+  <!-- Northern Sidewalk & Curb (Pedestrian Walkway) -->
+  <rect x="4" y="12" width="88" height="6" fill="#D1BF9A" />
+  <rect x="4" y="17" width="88" height="1" fill="#6C1A21" /> <!-- Road kerb line -->
+  
+  <!-- Carriageway Lane 1 (Westbound Asphalt) -->
+  <rect x="4" y="18" width="88" height="12" fill="#24282C" />
+  <!-- White Dashed Lane Divider -->
+  <line x1="8" y1="24" x2="16" y2="24" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="24" y1="24" x2="32" y2="24" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="40" y1="24" x2="48" y2="24" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="56" y1="24" x2="64" y2="24" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="72" y1="24" x2="80" y2="24" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="88" y1="24" x2="92" y2="24" stroke="#E5E0CD" stroke-width="1" />
+  
+  <!-- Center Landscaped Median Divider Strip (Pembahagi Jalan Berpokok) -->
+  <rect x="4" y="30" width="88" height="6" fill="#CEA257" /> <!-- Kerb edge -->
+  <rect x="4" y="31" width="88" height="4" fill="#569443" /> <!-- Turf median -->
+  <!-- Median Shrubs & Streetlight Mast -->
+  <circle cx="16" cy="33" r="1.5" fill="#74BA5E" />
+  <circle cx="32" cy="33" r="1.5" fill="#74BA5E" />
+  <circle cx="48" cy="33" r="2" fill="#6C1A21" /> <!-- Light Pole Base -->
+  <circle cx="64" cy="33" r="1.5" fill="#74BA5E" />
+  <circle cx="80" cy="33" r="1.5" fill="#74BA5E" />
+  
+  <!-- Carriageway Lane 2 (Eastbound Asphalt) -->
+  <rect x="4" y="36" width="88" height="12" fill="#24282C" />
+  <!-- White Dashed Lane Divider -->
+  <line x1="8" y1="42" x2="16" y2="42" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="24" y1="42" x2="32" y2="42" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="40" y1="42" x2="48" y2="42" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="56" y1="42" x2="64" y2="42" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="72" y1="42" x2="80" y2="42" stroke="#E5E0CD" stroke-width="1" />
+  <line x1="88" y1="42" x2="92" y2="42" stroke="#E5E0CD" stroke-width="1" />
+  
+  <!-- Zebra Pedestrian Crosswalk (Lintasan Belang) on Left -->
+  <rect x="22" y="18" width="4" height="2" fill="#E5E0CD" />
+  <rect x="22" y="22" width="4" height="2" fill="#E5E0CD" />
+  <rect x="22" y="26" width="4" height="2" fill="#E5E0CD" />
+  <rect x="22" y="38" width="4" height="2" fill="#E5E0CD" />
+  <rect x="22" y="42" width="4" height="2" fill="#E5E0CD" />
+  <rect x="22" y="46" width="4" height="2" fill="#E5E0CD" />
+  
+  <!-- Southern Sidewalk & Stormwater Drain Kerb -->
+  <rect x="4" y="48" width="88" height="1" fill="#6C1A21" />
+  <rect x="4" y="49" width="88" height="6" fill="#D1BF9A" />
+</svg>

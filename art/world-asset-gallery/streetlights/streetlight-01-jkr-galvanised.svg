@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="70" viewBox="0 0 60 70" style="shape-rendering: crispEdges; image-rendering: pixelated;">
+  <!-- Set 1: Classic JKR / TNB Tubular Mast (Galvanised Steel with Hazard-Striped Base) -->
+  <rect x="6" y="60" width="48" height="6" fill="#141a1f" />
+  <rect x="6" y="58" width="22" height="2" fill="#569443" />
+  <rect x="28" y="58" width="26" height="2" fill="#2d3339" />
+  <rect x="13" y="50" width="8" height="8" fill="#E5E0CD" stroke="#374151" stroke-width="0.5" />
+  <rect x="14" y="51" width="6" height="2" fill="#CEA257" />
+  <rect x="14" y="53" width="6" height="2" fill="#1f2937" />
+  <rect x="14" y="55" width="6" height="2" fill="#CEA257" />
+  <rect x="15" y="16" width="4" height="34" fill="#9CA3AF" />
+  <rect x="16" y="16" width="2" height="34" fill="#E5E7EB" />
+  <rect x="14" y="38" width="6" height="4" fill="#6B7280" />
+  <path d="M 17 16 C 17 8, 22 4, 34 6 L 40 8" fill="none" stroke="#9CA3AF" stroke-width="3" />
+  <path d="M 17 16 C 17 9, 22 5, 34 7 L 40 9" fill="none" stroke="#E5E7EB" stroke-width="1" />
+  <polygon points="36,7 48,10 47,14 35,11" fill="#4B5563" />
+  <polygon points="38,8 46,10 45,13 37,11" fill="#9CA3AF" />
+  <rect x="38" y="12" width="8" height="2" fill="#FFFBEB" />
+  <polygon points="38,14 46,14 56,58 28,58" fill="#CEA257" opacity="0.18" />
+  <ellipse cx="42" cy="58" rx="14" ry="4" fill="#CEA257" opacity="0.28" />
+</svg>
