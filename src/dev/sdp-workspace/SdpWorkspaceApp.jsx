@@ -126,8 +126,8 @@ export default function SdpWorkspaceApp({ store, session }) {
     const link = event.target.closest('a[href^="#"]'); if (!link || link.getAttribute('href') === '#main-content' || event.ctrlKey || event.metaKey) return; event.preventDefault(); navigate(link.getAttribute('href'));
   }}>
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); heading.current?.focus(); }}>Skip to content</a>
-    {!fullMap && (route.name === 'sdp' ? <header className="sdp-dispatch-masthead"><a href="#sdp" aria-label="KoBi workspace"><img src="/assets/brand/icon only.png" alt="" style={{ height: "24px", width: "auto", marginRight: "8px" }} /><span>KoBi</span></a><details className="sdp-desk-menu"><summary className="sdp-desk-ticket" aria-label="Workspace options">Today's desk</summary><div className="sdp-utilities">{workspaceOptions}</div></details></header> : <AppHeader
-      variant={!staff && !devPage ? 'bulletin' : 'current'}
+    {!fullMap && <AppHeader
+      variant={!devPage ? 'bulletin' : 'current'}
       staff={staff}
       actor={actor}
       session={session}
@@ -136,7 +136,7 @@ export default function SdpWorkspaceApp({ store, session }) {
       navigate={navigate}
       openReset={openReset}
       notify={notify}
-    />)}
+    />}
     <main id="main-content" className="main-content">
       {fullMap && <h1 className="sr-only" ref={heading} tabIndex={-1}>Neighbourhood map</h1>}
       {!home && !fullMap && route.name !== 'sdp' && <div className={`page-heading ${route.name === 'reports' ? 'reports-page-heading' : route.name === 'activities' ? 'activities-page-heading' : ''}`}>

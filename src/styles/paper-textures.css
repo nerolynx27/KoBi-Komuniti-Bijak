@@ -71,3 +71,9 @@ html:has(.world-texture-free), .world-texture-free {
   --paper-world-layer-display: none;
   --paper-texture-display: none;
 }
+
+/* SDP keeps paper grain on the page field only. */
+.sdp-workspace-shell > * {
+  --paper-layer-display: none;
+  --paper-texture-display: none;
+}

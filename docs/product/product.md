@@ -400,3 +400,5 @@ Before calling the system implemented:
 | 2026-10-19 | Subsequent user approval authorized execution of the saved colour plan. Five-colour UI migration implemented; solid modal/editor paints, readable error surfaces and measured-frame focus separation verified. |
 
 The font replacement and approved colour palette are implemented and verified within the recorded browser scope. Historical completion evidence refers to the earlier build.
+
+**23 October 2026 — SDP workspace fine tuning:** the isolated workspace now uses the resident header structure throughout its staff routes, with wine/vanilla colours inverted. SDP cards, controls, forms and overlays are smooth; only the page background retains grain (the world editor remains texture-free). The dashboard ticket dividers and their 12px text insets align, and the upcoming-event heading has a reserved band above its body. Resident screens retain their existing finish and header. See [verification](../verification/SDP_FINE_TUNE.md).

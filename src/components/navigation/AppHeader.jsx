@@ -106,9 +106,9 @@ export function AppHeader({
       <header className={`app-header ${variant === 'bulletin' ? 'bulletin-header' : ''}`}>
         <div className="app-header-brand-wrap">
           <a
-            href="#home"
+            href={staff ? '#sdp' : '#home'}
             className="brand"
-            aria-label="KoBi home"
+            aria-label={staff ? 'KoBi workspace' : 'KoBi home'}
             onClick={() => setMenuOpen(false)}
           >
             <img src="/assets/brand/kobi-logo.png" alt="KoBi" className="brand-logo" />

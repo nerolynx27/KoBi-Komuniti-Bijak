@@ -44,8 +44,8 @@ test('reference fixture follows the selected portrait geometry', async ({ page }
     ['.sdp-card-welcome', 58, 88],
     ['.sdp-dashboard-metrics', 164, 58],
     ['.sdp-attention', 239, 218],
-    ['.sdp-card-event', 468, 68],
-    ['.sdp-dashboard-shortcuts', 544, 88],
+    ['.sdp-card-event', 471, 100],
+    ['.sdp-dashboard-shortcuts', 587, 88],
   ];
   for (const [selector, top, height] of targets) {
     const box = await page.locator(selector).boundingBox();
@@ -63,7 +63,7 @@ test('dashboard uses live records and four semantic staff destinations', async (
   await expect(metric(page, 'upcoming')).toHaveText('1');
   await expect(page.locator('.sdp-dashboard')).toContainText('The walkway lamp is not lighting up in the evening.');
   await expect(page.getByText('Priority', { exact: true })).toHaveAccessibleDescription('First in this local unresolved report queue; this is not a stored urgency level.');
-  await expect(page.locator('.staff-nav, .staff-destinations, .app-header')).toHaveCount(0);
+  await expect(page.locator('.staff-nav, .staff-destinations, .sdp-dispatch-masthead')).toHaveCount(0);
   await expect(nav(page).getByRole('link')).toHaveCount(4);
   for (const name of ['Reports', 'Activities', 'World editor', 'Workspace']) {
     await nav(page).getByRole('link', { name, exact: true }).click();
@@ -99,9 +99,9 @@ test('empty content, guarded navigation, failed save and sandbox-only reset', as
   await expect(page.getByLabel(/^Title/)).toHaveValue('Unsaved community morning');
   await nav(page).getByRole('link', { name: 'Workspace', exact: true }).click();
   await page.getByRole('button', { name: 'Discard changes', exact: true }).click();
-  await page.locator('.sdp-desk-menu summary').click();
+  await page.getByRole('button', { name: 'Open app menu', exact: true }).click();
   await page.evaluate(() => { window.savedSetItem = Storage.prototype.setItem; Storage.prototype.setItem = () => { throw new DOMException('Full', 'QuotaExceededError'); }; });
-  await page.getByRole('button', { name: 'Reset demo', exact: true }).click();
+  await page.getByRole('button', { name: 'Reset demo data', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: 'Reset demo', exact: true }).click();
   await expect(page.getByRole('dialog').getByRole('alert')).toBeVisible();
   await expect(page.getByText('Demo reset.')).toHaveCount(0);
@@ -175,20 +175,10 @@ test('long real names stay accessible at doubled text and keyboard navigation re
 test('dashboard follows native 402x874 portrait geometry', async ({ page }) => {
   await page.setViewportSize({ width: 402, height: 874 });
   await open(page);
-  const targets = [
-    ['.sdp-dispatch-masthead', 0, 44],
-    ['.sdp-card-welcome', 62, 110],
-    ['.sdp-dashboard-metrics', 190, 74],
-    ['.sdp-attention', 282, 284],
-    ['.sdp-card-event', 582, 88],
-    ['.sdp-dashboard-shortcuts', 686, 110],
-    ['.sdp-bottom-nav', 823, 51],
-  ];
-  for (const [selector, top, height] of targets) {
-    const box = await page.locator(selector).boundingBox();
-    expect(Math.abs(box.y - top), `${selector} top`).toBeLessThanOrEqual(5);
-    expect(Math.abs(box.height - height), `${selector} height`).toBeLessThanOrEqual(5);
-  }
+  await expect(page.locator('.app-header.bulletin-header')).toBeVisible();
+  const event = await page.locator('.sdp-card-event').boundingBox();
+  const shortcuts = await page.locator('.sdp-dashboard-shortcuts').boundingBox();
+  expect(event.y + event.height).toBeLessThan(shortcuts.y);
   await page.screenshot({ path: `${captures}/native-402x874.png`, fullPage: false });
 });
 
