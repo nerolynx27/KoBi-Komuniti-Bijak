@@ -23,9 +23,9 @@ import { useAppNavigation } from '../../app/useAppNavigation.js';
 import { demoPhotos } from '../../lib/demoPhotos.js';
 import { DashboardPage } from '../../features/dashboard/DashboardPage.jsx';
 import { FrameStyleProvider } from '../../components/ui/FrameStyle.jsx';
-import { SdpDashboardPage } from './SdpDashboardPage.jsx';
+import { SdpDashboardPage } from '../../features/sdp/SdpDashboardPage.jsx';
 import { SdpBottomNav } from '../../components/sdp/SdpBottomNav.jsx';
-import './sdp-dashboard.css';
+import '../../features/sdp/sdp-dashboard.css';
 const DesignSystemPage = import.meta.env.DEV ? lazy(() => import('../../dev/DesignSystemPage.jsx')) : null;
 const PresentationStudio = lazy(() => import('../../slides/PresentationStudio.jsx').then(m => ({ default: m.PresentationStudio })));
 

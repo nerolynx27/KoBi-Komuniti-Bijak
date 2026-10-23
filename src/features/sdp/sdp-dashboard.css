@@ -372,3 +372,14 @@
 @media (min-height: 750px) and (min-width: 380px) {
   .sdp-dashboard { --ticket-panel-inset: 12px; }
 }
+/* Let the event label grow with text zoom instead of overlapping its body. */
+.sdp-dashboard .sdp-card-event { padding-top: 0; }
+.sdp-dashboard .sdp-card-event .sdp-card-label {
+  position: relative !important;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin: 0 -8px 6px;
+}
+.sdp-dashboard .sdp-report-priority { display: flex; flex-direction: column; }
+.sdp-dashboard .sdp-report-priority .sdp-report-action { margin-top: auto; flex: none; }

@@ -136,3 +136,11 @@ KoBi was developed with Codex assistance and Higgsfield-generated artwork. Asset
 The locally hosted **Bungee** and **Yanone Kaffeesatz** fonts retain their [Bungee](public/assets/ui/licenses/bungee-OFL.txt) and [Yanone Kaffeesatz](public/assets/ui/licenses/yanone-kaffeesatz-OFL.txt) SIL Open Font License notices.
 
 No repository-wide code licence has been selected. Third-party assets retain their own terms; project and township references do not imply official endorsement.
+
+## Updating the main app
+
+The reviewed SDP dashboard is part of the normal app at `/#sdp`; `/sdp-workspace.html` is a development preview and is not required to use it.
+
+After the integration commit is available on your chosen GitHub branch, pull that branch or download its latest ZIP into a clean folder. Run `npm ci`, then `npm run dev` and open the local URL Vite prints. For the built app, run `npm run build` followed by `npm run preview`. Enter SDP from the app menu.
+
+A hosted copy must be rebuilt and redeployed after updating its source. Updating source or rebuilding does not require clearing browser storage or resetting the demo. Existing records belong to their browser origin; localhost and a hosted URL have separate storage.

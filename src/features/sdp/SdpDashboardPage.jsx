@@ -1,8 +1,8 @@
 import { SdpActionLink, SdpCard } from '../../components/sdp/SdpPrimitives.jsx';
 import { SdpMotif } from '../../components/sdp/SdpMotif.jsx';
 import { Icon } from '../../components/ui/Icon.jsx';
-import { useActivityClock } from '../../features/activities/ActivityDetail.jsx';
-import { formatMalaysiaDateTime } from '../../features/activities/dateTime.js';
+import { useActivityClock } from '../activities/ActivityDetail.jsx';
+import { formatMalaysiaDateTime } from '../activities/dateTime.js';
 import { selectSdpDashboard } from './sdpDashboardSelectors.js';
 import './sdp-dashboard.css';
 

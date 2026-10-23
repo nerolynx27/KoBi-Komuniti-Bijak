@@ -2,7 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useRef, useState, useSyncExtern
 import { AppHeader } from './components/navigation/AppHeader.jsx';
 import { BottomNav } from './components/navigation/BottomNav.jsx';
 import { Button, ActionLink } from './components/ui/Button.jsx';
-import { Card, FeedbackState, Toast } from './components/ui/Feedback.jsx';
+import { FeedbackState, Toast } from './components/ui/Feedback.jsx';
 import { ModalHost, ConfirmDialog } from './components/ui/Modal.jsx';
 import { PhotoPreview } from './components/ui/PhotoPreview.jsx';
 import { uiText } from './content/uiText.js';
@@ -23,6 +23,8 @@ import { useAppNavigation } from './app/useAppNavigation.js';
 import { demoPhotos } from './lib/demoPhotos.js';
 import { DashboardPage } from './features/dashboard/DashboardPage.jsx';
 import { FrameStyleProvider } from './components/ui/FrameStyle.jsx';
+import { SdpDashboardPage } from './features/sdp/SdpDashboardPage.jsx';
+import { SdpBottomNav } from './components/sdp/SdpBottomNav.jsx';
 const DesignSystemPage = import.meta.env.DEV ? lazy(() => import('./dev/DesignSystemPage.jsx')) : null;
 const PresentationStudio = lazy(() => import('./slides/PresentationStudio.jsx').then(m => ({ default: m.PresentationStudio })));
 
@@ -44,7 +46,6 @@ export default function App({ store, session }) {
   const route = parsedRoute.name === 'design-system' && !import.meta.env.DEV ? { ...parsedRoute, name: 'not-found', title: 'Page not found' } : parsedRoute;
   const navigate = useCallback((target, onAccepted) => { origins.current[typeof target === 'string' ? target.replace(/^#/, '') : target.path] = route.path; requestNavigation(target, onAccepted); }, [requestNavigation, route.path]);
   const enterStaff = () => navigate('sdp', () => { session.setView('sdp'); if (data.preferences.rememberWorkspace) store.setWorkspace('sdp'); });
-  const exitStaff = () => navigate('home', () => { session.setView('resident'); if (data.preferences.rememberWorkspace) store.setWorkspace('resident'); });
   const home = route.name === 'home';
   const fullMap = route.name === 'map';
   const devPage = import.meta.env.DEV && route.name === 'design-system';
@@ -115,15 +116,15 @@ export default function App({ store, session }) {
   else if (route.name === 'profile') view = <ProfilePage key={actor.id} {...common} />;
   else if (route.name === 'settings') view = <SettingsPage {...common} />;
   else if (account) view = <AccountPages key={route.name} {...common} registration={route.name === 'create-account'} />;
-  else if (route.name === 'sdp') view = <div className="section-stack"><p className="page-intro">Manage the neighbourhood's local demo records. This open workspace does not provide staff authorization.</p><div className="staff-destinations"><Card><h2>Reports</h2><p>Review problems and record maintenance actions.</p><ActionLink href="#sdp/reports" icon="report">Review reports</ActionLink></Card><Card><h2>Activities</h2><p>Plan community and recycling events.</p><ActionLink href="#sdp/activities" icon="activity">Manage activities</ActionLink></Card><Card><h2>World editor</h2><p>Arrange the temporary neighbourhood schematic.</p><ActionLink href="#sdp/world" icon="catalog">Enter editor</ActionLink></Card><Card><h2>Pitch deck</h2><p>Launch official 16:9 presentation slides.</p><ActionLink href="#presentation" icon="catalog">Presentation Studio</ActionLink></Card></div><Button onClick={exitStaff} variant="quiet">Exit SDP demo workspace</Button></div>;
+  else if (route.name === 'sdp') view = <SdpDashboardPage data={data} actor={actor} headingRef={heading} />;
   else if (devPage) view = <Suspense fallback={<p role="status">Loading specimen…</p>}><DesignSystemPage /></Suspense>;
   else view = <FeedbackState title={route.name === 'not-found' ? 'This page is unavailable' : 'This view is being connected'}><ActionLink href="#home">Return to Home</ActionLink></FeedbackState>;
-  return <FrameStyleProvider value={home ? 'gateway' : 'current'}><div className={`app-shell ${fullMap ? 'map-shell' : ''} ${fullMap || route.name === 'world-editor' ? 'world-texture-free' : ''} ${home ? 'bulletin-shell' : ''} ${!staff && !devPage ? 'resident-shell' : ''} ${staff ? 'staff-shell' : ''} ${devPage ? 'dev-shell' : ''} ${account ? 'account-shell' : ''}`} onClick={event => {
+  return <FrameStyleProvider value={home ? 'gateway' : 'current'}><div className={`app-shell ${fullMap ? 'map-shell' : ''} ${fullMap || route.name === 'world-editor' ? 'world-texture-free' : ''} ${home ? 'bulletin-shell' : ''} ${!staff && !devPage ? 'resident-shell' : ''} ${staff ? 'staff-shell sdp-workspace-shell' : ''} ${route.name === 'sdp' ? 'sdp-dispatch-shell' : ''} ${devPage ? 'dev-shell' : ''} ${account ? 'account-shell' : ''}`} onClick={event => {
     const link = event.target.closest('a[href^="#"]'); if (!link || link.getAttribute('href') === '#main-content' || event.ctrlKey || event.metaKey) return; event.preventDefault(); navigate(link.getAttribute('href'));
   }}>
     <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); heading.current?.focus(); }}>Skip to content</a>
     {!fullMap && <AppHeader
-      variant={!staff && !devPage ? 'bulletin' : 'current'}
+      variant={!devPage ? 'bulletin' : 'current'}
       staff={staff}
       actor={actor}
       session={session}
@@ -135,17 +136,18 @@ export default function App({ store, session }) {
     />}
     <main id="main-content" className="main-content">
       {fullMap && <h1 className="sr-only" ref={heading} tabIndex={-1}>Neighbourhood map</h1>}
-      {!home && !fullMap && <div className={`page-heading ${route.name === 'reports' ? 'reports-page-heading' : route.name === 'activities' ? 'activities-page-heading' : ''}`}>
+      {!home && !fullMap && route.name !== 'sdp' && <div className={`page-heading ${route.name === 'reports' ? 'reports-page-heading' : route.name === 'activities' ? 'activities-page-heading' : ''}`}>
         <div>
           {route.name !== 'reports' && route.name !== 'activities' && <span className="eyebrow">{staff ? 'SDP demo workspace' : account ? 'Welcome to KoBi' : data.township.name}</span>}
           <h1 ref={heading} tabIndex={-1} className={route.name === 'reports' ? 'reports-page-title-banner' : route.name === 'activities' ? 'activities-page-title-banner' : ''}>{route.title}</h1>
         </div>
       </div>}
       {(error || persistence === 'recovery') && <div className="storage-recovery"><FeedbackState error title={uiText.storageTitle}>{error?.message || 'Reload the saved demo records before continuing.'}</FeedbackState><div className="form-actions"><Button onClick={() => { if (store.retry()) notify('Pending data saved on this browser.'); }}>{uiText.retry}</Button>{snapshot.pendingOperation && <Button variant="quiet" onClick={() => store.discardPending(snapshot.pendingOperation.operationId)}>Discard pending change</Button>}<Button disabled={Boolean(snapshot.pendingOperation)} onClick={() => store.refresh()}>Reload saved data</Button><Button onClick={openReset} icon="reset-demo">{uiText.reset}</Button></div></div>}
-      {staff && route.name !== 'sdp' && <nav className="staff-nav" aria-label="SDP navigation"><ActionLink href="#sdp" variant="text" icon="back">Workspace</ActionLink><ActionLink href="#sdp/reports" variant="text">Reports</ActionLink><ActionLink href="#sdp/activities" variant="text">Activities</ActionLink><ActionLink href="#sdp/world" variant="text">World editor</ActionLink><Button variant="quiet" size="sm" onClick={exitStaff}>Exit SDP workspace</Button></nav>}
+
       <div className="view-stack" key={resetEpoch}>{view}</div>
-      {!fullMap && <footer className="local-footer">{import.meta.env.DEV && <ActionLink href="#design-system" variant="text" size="sm">Development specimen</ActionLink>}</footer>}
+      {!fullMap && !staff && <footer className="local-footer">{import.meta.env.DEV && <ActionLink href="#design-system" variant="text" size="sm">Development specimen</ActionLink>}</footer>}
     </main>
+    {!fullMap && staff && <SdpBottomNav active={route.path.startsWith('sdp/reports') ? 'reports' : route.path.startsWith('sdp/activities') ? 'activities' : route.path.startsWith('sdp/world') ? 'world' : 'workspace'} />}
     {!fullMap && !staff && !devPage && !account && <BottomNav active={route.nav} />}
     <ModalHost open={Boolean(modal)} title={modal?.title} description={modal?.description} mode={modal?.mode || 'dialog'} onClose={closeModal} dismissible={modal?.dismissible !== false}>{modal?.confirm ? <ConfirmDialog confirmLabel={modalOp.current ? 'Retry storage' : modal.confirmLabel} cancelLabel={modal.cancelLabel} loadingLabel={modal.loadingLabel} onCancel={closeModal} onConfirm={confirmCurrent} error={modalError} /> : <>{modal?.content}<div className="paint-space"><Button variant="quiet" onClick={closeModal} data-initial-focus>Close</Button></div></>}</ModalHost>
     <Toast>{toast}</Toast>

@@ -1,5 +1,7 @@
 # KoBi Product and Design System — Pixel Stickers
 
+**23 October 2026 - SDP main-app integration:** the reviewed Dispatch Desk now renders through the normal main entry at `/#sdp`, using shared production feature files. Staff routes share the inverted header, smooth controls/cards and bottom navigation; existing `kobi.demo.v1` records are preserved. The preview consumes the same dashboard. The event label grows in normal flow at text zoom. GitHub/release status is recorded separately; local implementation is not proof of a remote update. See [verification](../verification/SDP_PRODUCTION_INTEGRATION.md).
+
 Version 1.1 · 19 October 2026 · Platform: mobile web
 
 **22 October 2026 — shared resident header/navigation:** the user requested Home's header and navigation styling across resident sections, excluding SDP. Both app entries now share that compact resident shell; map layout and staff treatments are preserved. Four activity-board image requests returned Nano Banana 2 despite explicit Nano Banana Pro submissions; the user accepted that substitution and all four board pictures are now installed as 2400×1792 WebP assets, with originals/provenance retained. See [verification](../verification/RESIDENT_SHELL_ACTIVITY_REFRESH.md).

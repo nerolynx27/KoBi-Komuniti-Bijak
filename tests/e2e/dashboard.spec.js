@@ -1,3 +1,4 @@
+import { exitStaffWorkspace } from '../helpers/shellActions.js';
 import { test, expect } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createSampleData, RESIDENT_ID } from '../../src/lib/demoSamples.js';
@@ -31,7 +32,8 @@ async function seed(page, data = fixture(), path = '/') {
   await page.evaluate(() => document.fonts.ready);
 }
 async function home(page) {
-  if (await page.locator('.map-shell').count()) await page.getByRole('button', { name: 'Back', exact: true }).click();
+  if (await page.locator('.sdp-workspace-shell').count()) await exitStaffWorkspace(page);
+  else if (await page.locator('.map-shell').count()) await page.getByRole('button', { name: 'Back', exact: true }).click();
   else await page.getByRole('link', { name: 'KoBi home', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The neighbourhood bulletin');
 }
@@ -98,8 +100,8 @@ test('artwork failures, empty states and storage recovery keep actions reachable
 test('remembered SDP and resident workspace keep their landing semantics', async ({ page }) => {
   const data = fixture(); data.preferences.workspace = 'sdp';
   await seed(page, data);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace');
-  await page.getByRole('button', { name: 'Exit SDP demo workspace', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace — Elmina');
+  await exitStaffWorkspace(page);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The neighbourhood bulletin');
   await page.goto('/'); await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The neighbourhood bulletin');
@@ -191,7 +193,7 @@ test('resident sign-in opens Home and workspace switching waits for draft approv
   await page.getByRole('button', { name: 'Open app menu', exact: true }).click();
   await page.getByRole('button', { name: /^SDP WORKSPACE/ }).click();
   await page.getByRole('button', { name: 'Discard changes', exact: true }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace — Elmina');
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).data.preferences.workspace, key)).toBe('sdp');
 });
 

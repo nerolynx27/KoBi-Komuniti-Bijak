@@ -240,6 +240,9 @@ export function AppHeader({
                   <Icon name="catalog" />
                   <span>World editor</span>
                 </button>
+                <button type="button" className="burger-shortcut-btn" onClick={() => handleNavigate('presentation')}>
+                  <Icon name="catalog" /><span>Presentation Studio</span>
+                </button>
               </div>
             )}
           </section>
@@ -274,6 +277,8 @@ export function AppHeader({
               </button>
             </div>
           </section>
+
+          {staff && <Button variant="quiet" onClick={() => handleSelectWorkspace('resident')}>Exit SDP workspace</Button>}
 
           {/* 4. Demo Storage Footer */}
           <footer className="burger-footer" aria-label="Demo storage controls">

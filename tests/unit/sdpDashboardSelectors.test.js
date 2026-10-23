@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { createSampleData } from '../../src/lib/demoSamples.js';
-import { selectSdpDashboard } from '../../src/dev/sdp-workspace/sdpDashboardSelectors.js';
+import { selectSdpDashboard } from '../../src/features/sdp/sdpDashboardSelectors.js';
 
 const now = '2026-10-22T00:00:00Z';
 describe('SDP township dispatch summary', () => {

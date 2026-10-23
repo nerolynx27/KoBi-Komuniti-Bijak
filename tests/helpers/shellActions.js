@@ -7,7 +7,7 @@ export const nav = (page, name) => page.getByRole('navigation', { name: 'Main na
 export async function enterStaffWorkspace(page) {
   await button(page, 'Open app menu').click();
   await page.getByRole('button', { name: /^SDP WORKSPACE/ }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('SDP workspace — Elmina');
 }
 export async function openResetDemo(page) {
   const reset = button(page, 'Reset demo');
@@ -47,4 +47,9 @@ export async function fillActivity(page, title, facilityId = 'park-01') {
   await page.getByLabel(/^End date/).fill('2026-10-25');
   await page.getByLabel(/^End time/).fill('11:00');
   await page.getByLabel('Instructions', { exact: true }).fill('Bring a water bottle.');
+}
+
+export async function exitStaffWorkspace(page) {
+  await button(page, 'Open app menu').click();
+  await button(page, 'Exit SDP workspace').click();
 }
